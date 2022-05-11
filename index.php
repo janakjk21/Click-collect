@@ -59,6 +59,7 @@
 
     <?php include "./Swiper.php" ?>
 
+    <?php include "./footer.php" ?>
 
 
 
