@@ -169,7 +169,7 @@
 
 
 ?>
-<?php include'header.php' ?>
+<?php include'navbar.php' ?>
 <style>
     .ui ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   
