@@ -291,7 +291,7 @@ if (!empty($header[0]['currency_format'])) {
             </nav>
         </div>
     </div>
-
+    <?php include "./script.php" ?>
 
 
 </body>

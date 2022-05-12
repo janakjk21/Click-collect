@@ -30,6 +30,7 @@
 		.swiper {
 			width: 100%;
 
+
 		}
 
 		.swiper-slide {
@@ -78,7 +79,7 @@
 				<div class="swiper-slide">
 					<div style="width: 300px">
 						<a class="" href="" style="text-decoration: none">
-							<div class="nasa-cat-thumb text-center nasa-transition">
+							<div>
 								<img src="./assets/img/swiper/product04.webp" alt="Milks &amp; Creams" data-ll-status="loaded" class="entered lazyloaded" />
 							</div>
 							<h3 style="color: #a2c207">Milks & Creams</h3>
@@ -88,7 +89,7 @@
 				<div class="swiper-slide">
 					<div style="width: 323px">
 						<a class="" href="" style="text-decoration: none">
-							<div class="nasa-cat-thumb text-center nasa-transition">
+							<div>
 								<img src="./assets/img/swiper/product05.webp" alt="Milks &amp; Creams" data-ll-status="loaded" class="entered lazyloaded" />
 							</div>
 							<h3 style="color: #a2c207">Milks & Creams</h3>
@@ -98,7 +99,7 @@
 				<div class="swiper-slide">
 					<div style="width: 323px">
 						<a class="" href="" style="text-decoration: none">
-							<div class="nasa-cat-thumb text-center nasa-transition">
+							<div>
 								<img src="./assets/img/swiper/product06.webp" alt="Milks &amp; Creams" data-ll-status="loaded" class="entered lazyloaded" />
 							</div>
 							<h3 style="color: #a2c207">Milks & Creams</h3>
@@ -108,7 +109,7 @@
 				<div class="swiper-slide">
 					<div style="width: 323px">
 						<a class="" href="" style="text-decoration: none">
-							<div class="nasa-cat-thumb text-center nasa-transition">
+							<div>
 								<img src="./assets/img/swiper/product07.webp" alt="Milks &amp; Creams" data-ll-status="loaded" class="entered lazyloaded" />
 							</div>
 							<h3 style="color: #a2c207">Milks & Creams</h3>
@@ -118,7 +119,7 @@
 				<div class="swiper-slide">
 					<div style="width: 323px">
 						<a class="" href="" style="text-decoration: none">
-							<div class="nasa-cat-thumb text-center nasa-transition">
+							<div>
 								<img src="./assets/img/swiper/product07.webp" alt="Milks &amp; Creams" data-ll-status="loaded" class="entered lazyloaded" />
 							</div>
 							<h3 style="color: #a2c207">Milks & Creams</h3>
@@ -128,7 +129,7 @@
 				<div class="swiper-slide">
 					<div style="width: 323px">
 						<a class="" href="" style="text-decoration: none">
-							<div class="nasa-cat-thumb text-center nasa-transition">
+							<div>
 								<img src="./assets/img/swiper/product07.webp" alt="Milks &amp; Creams" data-ll-status="loaded" class="entered lazyloaded" />
 							</div>
 							<h3 style="color: #a2c207">Milks & Creams</h3>
@@ -167,7 +168,7 @@
 					spaceBetween: 40,
 				},
 				1024: {
-					slidesPerView: 5,
+					slidesPerView: 4,
 					spaceBetween: 50,
 				},
 			},
