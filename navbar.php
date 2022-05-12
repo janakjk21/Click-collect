@@ -208,11 +208,11 @@ if (!empty($header[0]['currency_format'])) {
                                         $image = $email_pass['imagee'];
                                         */
 
-                                $sql = "SELECT * FROM customer WHERE customer_id='$name'";
+                                $sql = "SELECT * FROM CUSTOMER WHERE CUSTOMER_ID='$customer_id'";
                                 $query = oci_parse($conn, $sql);
                                 oci_execute($query);
                                 $email_pass = oci_fetch_array($query);
-                                $customer_name = $email_pass['CUSTOMER_NAME'];
+                                $customer_name = $email_pass['NAME'];
                                 $image = $email_pass['IMAGE'];
 
                             ?>

@@ -96,13 +96,10 @@ include('connection.php');
 
 <body>
     <div id="navbar">
-        <?php include "navbar.php";
-<<<<<<< HEAD
-        include "connection.php";
-=======
-        include "./connection.php";
->>>>>>> b0e02528ec5d84ec8817a5fcba33ace18c1ce040
-        ?></div>
+        <?php 
+            include "navbar.php";
+        ?>
+    </div>
     <section class="customer-profile">
         <div class="container mt-3">
             <div class="row">
@@ -167,8 +164,8 @@ include('connection.php');
                                     <div class="text-center">
                                         <img class="img-fluid rounded-circle mt-5 mb-2" height="120px" width="120px" src="<?php echo $image ?>" alt="customer pic">
                                         <p>Name: <?php echo $customer_name ?> </p>
-                                        <p>Email: <?php echo $phone ?></p>
-                                        <p>Phone Number: <?php echo $email ?> </p>
+                                        <p>Email: <?php echo $email ?></p>
+                                        <p>Phone Number: <?php echo $phone ?> </p>
                                         <p>Address: <?php echo $address ?> </p>
                                     </div>
                                 </div>
