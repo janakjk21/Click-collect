@@ -291,6 +291,9 @@ if (!empty($header[0]['currency_format'])) {
             </nav>
         </div>
     </div>
+
+
+
 </body>
 
 </html>
