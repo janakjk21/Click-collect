@@ -10,5 +10,3 @@ else {
    //print "Connected to Oracle!"; 
 } 
     // oci_close($conn);
-
-?>
