@@ -51,13 +51,17 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <?php include "./product_card_image_tiles.php" ?>
+        </div>
     </div>
 
 
 
-
-
     <?php include "./Swiper.php" ?>
+
+
+
 
     <?php include "./footer.php" ?>
 
