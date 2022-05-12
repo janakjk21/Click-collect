@@ -13,8 +13,11 @@
 <body>
 
     <div id="navbar">
-        <?php include "navbar.php";
-        include "./connection.php"
+        <?php
+
+        include "./connection.php";
+        include "navbar.php";
+
 
         ?></div>
     <div class="container">
