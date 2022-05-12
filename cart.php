@@ -1,10 +1,9 @@
 <?php
-session_start();
+// session_start();
 include('connection.php');
 $active = 'Cart';
 
 if (!isset($_SESSION['cid'])) {
-    header("location: customerview.php");
 } else {
     $customerid = $_SESSION['cid'];
     $_SESSION['cid'] = $customerid;
@@ -134,8 +133,6 @@ SPLIT;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Cart - Click & Collect Groceries</title>
-    <link rel="stylesheet" href="Styles/bootstrap-337.min.css">
-    <link rel="stylesheet" href="Styles/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="styles.css">
@@ -196,98 +193,15 @@ SPLIT;
         .product_rassurance .list-inline li:hover {
             color: #343a40;
         }
-
-        .pagination {
-            margin-top: 20px;
-        }
-
-        .td {
-            width: 80px;
-            height: 60px;
-
-        }
-
-        img {
-            width: 80px;
-            height: 60px;
-
-        }
-
-        .btn-primary {
-            background-color: #ff5300;
-            border: none;
-        }
-
-        .navbar {
-            background-color: #000000;
-        }
-
-        .navbar-collapse .right {
-            float: right;
-        }
-
-        .navbar-brand {
-            float: left;
-            padding: 10px 15px;
-            font-size: 18px;
-            line-height: 20px;
-            height: 70px;
-        }
-
-        .navbar-brand:hover,
-        .navbar-brand:focus {
-            text-decoration: none;
-        }
-
-        .navbar ul.nav>li>a {
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        .navbar ul.nav>li>a:hover {
-            background: #e7e7e7;
-        }
-
-        .padding-nav {
-            padding-top: 10px;
-        }
-
-        .btn-primary {
-            background: #ed0651;
-
-        }
-
-        #search .navbar-form {
-            float: right;
-        }
-
-        #search {
-            clear: both;
-            border-top: solid 1px #74b72e;
-            text-align: right;
-        }
-
-        #search .navbar-form .input-group {
-            display: table;
-        }
-
-        #search .navbar-form .input-group .form-control {
-            width: 100%;
-        }
-
-        #slider {
-            margin-bottom: 40px;
-        }
     </style>
 
 </head>
 
 <body>
-
+    <?php include './navbar.php'; ?>
 
     <!-- cart section -->
-    <div id="content">
+    <div id="content" style="margin-top:40px;">
         <!-- #content Begin -->
         <div class="container">
             <!-- container Begin -->
