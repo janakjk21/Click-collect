@@ -11,7 +11,7 @@
         $repass =$_POST['CUSTOMER_REPASSWORD'];
         if(isset($_FILES['PROFILEPIC']))
         {//if customer select a file
-            $target_dir = "images/";
+            $target_dir = "./assets/images";
             $filename = $_FILES['PROFILEPIC']['name'];
             $target_file = $target_dir . basename($_FILES["PROFILEPIC"]["name"]);
             $uploadOk = 1;
@@ -90,16 +90,16 @@
                                             if($e){
                                                 $to      = $email; // Send email to our user
                                                 $subject = 'Signup | Comfirmation'; // Give the email a subject 
-                                                $message = 'Thanks for being member of cleckdiced. Your account has been activated, you can now login to your  account with the following Detais:
+                                                $message = 'Thanks for being member of Click & Collect Groceries. Your account has been activated, you can now login to your  account with the following Detais:
                                                      -----------------------------------------
                                                      User Type: Customer
                                                      Username: '.$name.'
                                                      Password: '.$repass.'
                                                      -----------------------------------------
                                                      Click the link below to login to your account 
-                                                     http://localhost/final/login.php  
+                                                     http://localhost/Click-collect/login.php  
                                                      '; // Our message above including the link
-                                                $headers = 'From:cleckdiced2021@gmail.com' . "\r\n"; // Set from headers
+                                                $headers = 'From:Click & Collect Groceries' . "\r\n"; // Set from headers
                                                 $c = mail($to, $subject, $message, $headers); // Send our email
                                                 if($c){
                                                     $success = "A Customer Account Confirmation Message Has Been Sent,Please Check Your Email.";

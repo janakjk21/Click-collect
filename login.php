@@ -16,7 +16,7 @@ if (isset($_POST['login'])) {
         if ($opq == 1) {
             $_SESSION['cid'] = $row['CUSTOMER_ID'];
             $_SESSION['NAME'] = $name;
-            header("location:customerview.php");
+            header("location:customer-profile.php");
         } else {
             $errormessage = "Invalid Login Details !!!";
         }
@@ -44,7 +44,7 @@ if (isset($_POST['login'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CleckDiced</title>
+    <title>Login - Click & Collect Groceries</title>
     <link rel="stylesheet" href="Styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="Styles/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

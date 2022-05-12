@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/footer.css">
-    <title>Home | Click-collect</title>
 </head>
 
 <body>
@@ -18,7 +16,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="widget company-intro-widget">
-                            <a href="index.html" class="site-logo"><img src="https://i.ibb.co/vLDyPtM/ak-logo-yellow.png" alt="logo"></a>
+                            <a href="index.php" class="site-logo"><img src="./assets/img/click & clect groceries.png" alt="Click & Collect Groceries Company Logo" style="height:40px"></a>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
                             <ul class="company-footer-contact-list">
                                 <li><i class="fas fa-phone"></i>0123456789</li>
@@ -77,7 +75,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-6 text-sm-left text-center">
-                        <span class="copy-right-text">© 2019 <a href="https://codepen.io/anupkumar92">Anup</a> All Rights Reserved.</span>
+                        <span class="copy-right-text">© 2022 <a href="https://codepen.io/anupkumar92">Click & Collect Groceries</a> All Rights Reserved.</span>
                     </div>
                     <div class="col-md-6 col-sm-6">
                         <ul class="terms-privacy d-flex justify-content-sm-end justify-content-center">

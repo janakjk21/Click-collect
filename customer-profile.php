@@ -1,4 +1,26 @@
 <?php
+session_start();
+$active = 'Account';
+if (!isset($_SESSION['cid'])) {
+    header("location:login.php");
+    # code...
+  }
+
+    else {
+        
+        $customerid=$_SESSION['cid'];
+    
+    }
+
+  
+
+include('connection.php');
+?>
+
+
+
+
+<?php
 // session_start();
 // if(!isset($_SESSION['username'])){
 //     header("Location: index.php");
@@ -13,7 +35,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" referrerpolicy="no-referrer" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Customer Profile | LocalMarket</title>
+    <title>Customer Profile - Click & Collect Groceries</title>
 
     <style>
         .customer-profile h6 {
@@ -75,7 +97,7 @@
 <body>
     <div id="navbar">
         <?php include "navbar.php";
-        include "config.php";
+        include "connection.php";
         ?></div>
     <section class="customer-profile">
         <div class="container mt-3">
@@ -83,7 +105,7 @@
                 <div class="col-md-12 col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.php" class="change-clr">LocalMarket</a></li>
+                            <li class="breadcrumb-item"><a href="index.php" class="change-clr">Click & Collect Groceries</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Customer Account</li>
                         </ol>
                     </nav>
@@ -122,15 +144,15 @@
                                 $image = $email_pass['imagee'];
                         */
 
-                        $sql = "SELECT * FROM customer WHERE customer_id='$name' ";
+                        $sql = "SELECT * FROM CUSTOMER WHERE CUSTOMER_ID='$customerid' ";
                         $query = oci_parse($conn, $sql);
                         oci_execute($query);
                         $email_pass = oci_fetch_assoc($query);
-                        $customer_name = $email_pass['CUSTOMER_NAME'];
-                        $phone = $email_pass['PHONE_NO'];
-                        $email = $email_pass['EMAIL'];
+                        $customer_name = $email_pass['NAME'];
+                        $phone = $email_pass['CUSTOMER_PHONE'];
+                        $email = $email_pass['CUSTOMER_EMAIL'];
                         $address = $email_pass['CUSTOMER_ADDRESS'];
-                        $image = $email_pass['IMAGE'];
+                        $image = $email_pass['PROFILEPIC'];
                         ?>
 
                         <div class="col-lg-9 col-md-8 d-md-block d-none">
