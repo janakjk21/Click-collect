@@ -1,0 +1,71 @@
+                @media screen and (max-width: 1060px) {
+            #primary {
+                width: 67%;
+            }
+            #secondary {
+                width: 30%;
+                margin-left: 3%;
+            }
+        }
+        /* Media Queries: Tabled Portrait */
+        
+        @media screen and (max-width: 768px) {
+            #primary {
+                width: 100%;
+            }
+            #secondary {
+                width: 100%;
+                margin: 0;
+                border: none;
+            }
+        }
+        
+        @media screen (max-width: 1200px) {
+            #logo {
+                // margin code here } }
+                /* FOOTER */
+                footer .foot {
+                    padding: 15px 100px;
+                    background-color: #1c1f19;
+                    text-decoration: white;
+                }
+                footer .footcon {
+                    padding: 0px 50px;
+                    color: white;
+                }
+                footer .social .fab {
+                    font-size: 30px;
+                    width: 60px;
+                    height: 60px;
+                    line-height: 60px;
+                    border-radius: 50%;
+                    text-align: center;
+                    background: none;
+                    color: white;
+                    text-decoration: none;
+                }
+                @media screen and (max-width: 320px) {
+                    footer .foot {
+                        padding: 5px 35px;
+                    }
+                    footer .footcon {
+                        padding: 0px 0px;
+                    }
+                    footer .footcon h5 {
+                        font-size: 20px;
+                    }
+                    footer .footcon li {
+                        font-size: 15px;
+                    }
+                    footer .social .fab {
+                        font-size: 10px;
+                        width: 20px;
+                        height: 20px;
+                        line-height: 20px;
+                        border-radius: 50%;
+                        text-align: center;
+                        background: white;
+                        color: white;
+                        text-decoration: none;
+                    }
+                }
