@@ -200,14 +200,6 @@ if (!empty($header[0]['currency_format'])) {
                             <?php if (isset($_SESSION['username'])) {
                                 $name = $_SESSION['id'];
 
-                                /*
-                                        $sql ="SELECT * FROM signup WHERE customer_id='$name' ";
-                                        $query=mysqli_query($conn,$sql);
-                                        $email_pass=mysqli_fetch_assoc($query);
-                                        $customer_name = $email_pass['customer_name'];
-                                        $image = $email_pass['imagee'];
-                                        */
-
                                 $sql = "SELECT * FROM customer WHERE customer_id='$name'";
                                 $query = oci_parse($conn, $sql);
                                 oci_execute($query);

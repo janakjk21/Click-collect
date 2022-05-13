@@ -1,0 +1,1782 @@
+.form-control {
+	display: block;
+	width: 100%;
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.75;
+	color: #457b9d;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 0.25rem;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+	.form-control {
+		transition: none;
+	}
+}
+.form-control:focus {
+	color: #457b9d;
+	background-color: #fff;
+	border-color: #ffadad;
+	outline: 0;
+	box-shadow: 0 0 0 0.25rem rgba(255, 90, 90, 0.25);
+}
+.form-control:-ms-input-placeholder {
+	color: #6c757d;
+	opacity: 1;
+}
+.form-control::placeholder {
+	color: #6c757d;
+	opacity: 1;
+}
+.form-control:disabled {
+	background-color: #e9ecef;
+	opacity: 1;
+}
+textarea.form-control {
+	min-height: calc(1.75em + 0.75rem + 2px);
+}
+.form-check-input {
+	width: 1em;
+	height: 1em;
+	margin-top: 0.375em;
+	vertical-align: top;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-size: contain;
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	-webkit-print-color-adjust: exact;
+	color-adjust: exact;
+}
+.form-check-input[type="radio"] {
+	border-radius: 50%;
+}
+.form-check-input:active {
+	filter: brightness(90%);
+}
+.form-check-input:focus {
+	border-color: #ffadad;
+	outline: 0;
+	box-shadow: 0 0 0 0.25rem rgba(255, 90, 90, 0.25);
+}
+.form-check-input:checked {
+	background-color: #ff5a5a;
+	border-color: #ff5a5a;
+}
+.form-check-input:checked[type="radio"] {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='2' fill='%23FFF'/%3E%3C/svg%3E");
+}
+.form-check-input:disabled {
+	pointer-events: none;
+	filter: none;
+	opacity: 0.5;
+}
+.form-check-input:disabled ~ .form-check-label {
+	opacity: 0.5;
+}
+.btn {
+	display: inline-block;
+	font-weight: 400;
+	line-height: 1.75;
+	color: #457b9d;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	border-radius: 0.25rem;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+		border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+	.btn {
+		transition: none;
+	}
+}
+.btn:hover {
+	color: #457b9d;
+}
+.btn:focus {
+	outline: 0;
+	box-shadow: 0 0 0 0.25rem rgba(255, 90, 90, 0.25);
+}
+.btn:disabled {
+	pointer-events: none;
+	opacity: 0.65;
+}
+.fade {
+	transition: opacity 0.15s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+	.fade {
+		transition: none;
+	}
+}
+.nav {
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+}
+.nav-link {
+	display: block;
+	padding: 0.5rem 1rem;
+	color: #ff5a5a;
+	text-decoration: none;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+		border-color 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+	.nav-link {
+		transition: none;
+	}
+}
+.nav-link:focus,
+.nav-link:hover {
+	color: #cc4848;
+}
+.tab-content > .tab-pane {
+	display: none;
+}
+.tab-content > .active {
+	display: block;
+}
+.me-0 {
+	margin-right: 0 !important;
+}
+.mb-0 {
+	margin-bottom: 0 !important;
+}
+@media (min-width: 992px) {
+	.me-lg-6 {
+		margin-right: 1.875rem !important;
+	}
+}
+/*! CSS Used from: https://htmldemo.net/merier/merier/assets/css/plugins/swiper-bundle.min.css */
+.swiper {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	overflow: hidden;
+	list-style: none;
+	padding: 0;
+	z-index: 1;
+}
+.swiper-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	display: flex;
+	transition-property: transform;
+	box-sizing: content-box;
+}
+.swiper-wrapper {
+	transform: translate3d(0px, 0, 0);
+}
+.swiper-pointer-events {
+	touch-action: pan-y;
+}
+.swiper-slide {
+	flex-shrink: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transition-property: transform;
+}
+.swiper-pagination {
+	position: absolute;
+	text-align: center;
+	transition: 0.3s opacity;
+	transform: translate3d(0, 0, 0);
+	z-index: 10;
+}
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+}
+.swiper-pagination-bullet {
+	width: var(
+		--swiper-pagination-bullet-width,
+		var(--swiper-pagination-bullet-size, 8px)
+	);
+	height: var(
+		--swiper-pagination-bullet-height,
+		var(--swiper-pagination-bullet-size, 8px)
+	);
+	display: inline-block;
+	border-radius: 50%;
+	background: var(--swiper-pagination-bullet-inactive-color, #000);
+	opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2);
+}
+.swiper-pagination-clickable .swiper-pagination-bullet {
+	cursor: pointer;
+}
+.swiper-pagination-bullet-active {
+	opacity: var(--swiper-pagination-bullet-opacity, 1);
+	background: var(--swiper-pagination-color, var(--swiper-theme-color));
+}
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+	.swiper-pagination-bullet {
+	margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px);
+}
+.swiper .swiper-notification {
+	position: absolute;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+	opacity: 0;
+	z-index: -1000;
+}
+.swiper-fade .swiper-slide {
+	pointer-events: none;
+	transition-property: opacity;
+}
+.swiper-fade .swiper-slide-active {
+	pointer-events: auto;
+}
+/*! CSS Used from: https://htmldemo.net/merier/merier/assets/css/plugins/font-awesome.min.css */
+.fa {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.fa-heart:before {
+	content: "\f004";
+}
+.fa-star:before {
+	content: "\f005";
+}
+.fa-star-o:before {
+	content: "\f006";
+}
+.fa-undo:before {
+	content: "\f0e2";
+}
+.fa-star-half-o:before {
+	content: "\f123";
+}
+/*! CSS Used from: https://htmldemo.net/merier/merier/assets/css/style.css */
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+h3,
+h4,
+h5 {
+	font-family: "Playfair Display", serif;
+	font-weight: 600;
+	line-height: 1.2;
+	margin-top: 0;
+	color: #1d3557;
+}
+p:last-child {
+	margin-bottom: 0;
+}
+a,
+button {
+	line-height: inherit;
+	cursor: pointer;
+	text-decoration: none;
+	color: inherit;
+}
+a:hover,
+a:active,
+a:focus {
+	box-shadow: none;
+	outline: none;
+	text-decoration: none;
+}
+a,
+button,
+img,
+input {
+	transition: all 0.5s ease 0s;
+}
+*:focus {
+	outline: none;
+}
+a:focus {
+	text-decoration: none;
+	color: inherit;
+	outline: none;
+}
+a:hover {
+	text-decoration: none;
+	color: #ff5a5a;
+}
+button {
+	cursor: pointer;
+}
+img {
+	height: auto;
+	max-width: 100%;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+	opacity: 1;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+	opacity: 1;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+	opacity: 1;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+	opacity: 1;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+ul li {
+	list-style: none;
+}
+.section-space {
+	padding-bottom: 110px;
+	padding-top: 110px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.section-space {
+		padding-top: 90px;
+		padding-bottom: 90px;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.section-space {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+}
+.btn {
+	background-color: #ff5a5a;
+	border: 1px solid #ff5a5a;
+	box-shadow: none;
+	border-radius: 30px;
+	color: #ffffff;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.1px;
+	line-height: 1.2;
+	padding: 11px 26px 9px;
+	text-align: center;
+	text-transform: uppercase;
+	transition: all 0.5s ease 0s;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.btn {
+		font-size: 11px;
+		padding: 9px 23px 8px;
+	}
+}
+.btn:hover {
+	background-color: #231942;
+	border-color: #231942;
+	color: #ffffff;
+}
+.btn:focus {
+	box-shadow: none;
+}
+textarea,
+input {
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
+.product-details {
+	border-bottom: 1px solid #a8dadc;
+	margin-bottom: 70px;
+	padding-bottom: 100px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.product-details {
+		padding-bottom: 90px;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.product-details {
+		padding-bottom: 80px;
+	}
+}
+.product-details-thumb {
+	position: relative;
+}
+.product-details-thumb img {
+	border-radius: 30px;
+	width: 100%;
+}
+.product-details-thumb .badges {
+	background-color: #ff5a5a;
+	border-radius: 50px;
+	color: #ffffff;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 400;
+	text-align: center;
+	padding: 9px 22px 10px;
+	line-height: 1;
+	position: absolute;
+	top: 30px;
+	right: 30px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+	only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.product-details-thumb .badges {
+		font-size: 14px;
+		padding: 5px 18px 8px;
+	}
+}
+.product-details-thumb .lightbox-image {
+	display: block;
+	position: relative;
+}
+.single-product-thumb-slider .swiper-pagination .swiper-pagination-bullet {
+	background-color: #a8dadc;
+	height: 10px;
+	opacity: 1;
+	width: 10px;
+}
+.single-product-thumb-slider
+	.swiper-pagination
+	.swiper-pagination-bullet.swiper-pagination-bullet-active {
+	background-color: #457b9d;
+}
+.single-product-nav-slider {
+	margin-top: 30px;
+}
+.single-product-nav-slider .nav-item {
+	border-radius: 30px;
+	cursor: pointer;
+}
+.single-product-nav-slider .nav-item.swiper-slide-thumb-active img {
+	border-color: #a8dadc;
+}
+.single-product-nav-slider .nav-item img {
+	border: 1px solid transparent;
+	width: 100%;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
+@media only screen and (max-width: 575px) {
+	.single-product-nav-slider .nav-item img {
+		margin-bottom: 1px;
+	}
+}
+.product-details-content {
+	padding-left: 0;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.product-details-content {
+		margin-top: 40px;
+	}
+}
+.product-details-content .product-details-title {
+	font-size: 36px;
+	margin-bottom: 22px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+	only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.product-details-content .product-details-title {
+		font-size: 24px;
+		margin-bottom: 18px;
+	}
+}
+.product-details-content .product-details-desc {
+	font-size: 18px;
+	line-height: 28px;
+	margin-bottom: 34px;
+	margin-right: 30px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+	only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.product-details-content .product-details-desc {
+		font-size: 15px;
+		line-height: 1.6;
+		margin-bottom: 25px;
+		margin-right: 0;
+	}
+}
+.product-details-review {
+	align-items: center;
+	display: flex;
+	margin-bottom: 32px;
+}
+.product-details-review .product-review-icon {
+	display: flex;
+	font-size: 18px;
+	color: #a8dadc;
+	letter-spacing: 5px;
+	line-height: 1;
+	margin-right: 18px;
+}
+.product-details-review .product-review-show {
+	background: none;
+	border: none;
+	color: #a8dadc;
+	margin: 0;
+	padding: 0;
+	font-style: italic;
+	font-size: 18px;
+	line-height: 1;
+}
+.product-details-review .product-review-show:hover {
+	color: #1d3557;
+}
+.product-details-color-list {
+	border-top: 1px solid #a8dadc;
+	border-bottom: 1px solid #a8dadc;
+	display: flex;
+	margin: 0 0 18px;
+	padding: 35px 0 33px;
+}
+.product-details-color-list h4 {
+	font-family: "Roboto", sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1;
+	margin-bottom: 0;
+	margin-right: 42px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+	only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.product-details-color-list h4 {
+		font-size: 14px;
+	}
+}
+.product-details-color-list .color-list-check {
+	line-height: 1;
+	margin-right: 30px;
+}
+.product-details-color-list .form-check-input {
+	cursor: pointer;
+	box-shadow: none;
+	width: 16px;
+	height: 16px;
+	background-color: #bababa;
+	border: 2px solid transparent;
+	margin-right: 7px;
+	margin-top: 0;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+	only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.product-details-color-list .form-check-input {
+		height: 13px;
+		margin-right: 4px;
+		width: 13px;
+	}
+}
+.product-details-color-list .form-check-input:checked[type="radio"] {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='2' fill='%231D3557'/%3E%3C/svg%3E");
+	background-size: 12px;
+	box-shadow: none;
+	border-color: #1d3557;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+	only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.product-details-color-list .form-check-input:checked[type="radio"] {
+		background-size: 11px;
+	}
+}
+.product-details-color-list .form-check-input.bg-red {
+	background-color: #ff0000;
+}
+.product-details-color-list .form-check-input.bg-green {
+	background-color: #0adc51;
+}
+.product-details-color-list .form-check-input.bg-blue {
+	background-color: #0066ff;
+}
+.product-details-color-list .form-check-label {
+	color: #1d3557;
+	cursor: pointer;
+	font-size: 18px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+	only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.product-details-color-list .form-check-label {
+		font-size: 15px;
+	}
+}
+.product-details-pro-qty {
+	align-items: center;
+	border-bottom: 1px solid #a8dadc;
+	display: flex;
+	padding-bottom: 18px;
+	margin-bottom: 40px;
+}
+.product-details-pro-qty h4 {
+	font-family: "Roboto", sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1;
+	margin-bottom: 0;
+	margin-right: 42px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+	only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.product-details-pro-qty h4 {
+		font-size: 14px;
+	}
+}
+.pro-qty {
+	display: inline-block;
+	position: relative;
+}
+.pro-qty input {
+	width: 100px;
+	height: 50px;
+	font-size: 18px;
+	border: 2px solid #a8dadc;
+	border-radius: 35px;
+	color: #1d3557;
+	padding: 0 25px 0;
+	text-align: center;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+	only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.pro-qty input {
+		font-size: 16px;
+		height: 45px;
+	}
+}
+.pro-qty .qty-btn {
+	cursor: pointer;
+	position: absolute;
+	line-height: 21px;
+	color: #1d3557;
+	top: 50%;
+	transform: translate(0%, -50%);
+	font-size: 18px;
+	text-align: center;
+	transition: all 0.5s ease 0s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.pro-qty .qty-btn:hover {
+	color: #ff5a5a;
+}
+.pro-qty .dec {
+	right: 0;
+	padding-right: 18px;
+}
+.pro-qty .inc {
+	left: 0;
+	padding-left: 18px;
+}
+.product-details-action {
+	align-items: center;
+	display: flex;
+	margin-top: 33px;
+}
+.product-details-action .product-action-btn {
+	background-color: transparent;
+	border: 3px solid #a8dadc;
+	border-radius: 50px;
+	color: #1d3557;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 0.2em;
+	margin-right: 30px;
+	padding: 10px 26px;
+	text-transform: uppercase;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+	only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.product-details-action .product-action-btn {
+		border-width: 2px;
+		font-size: 14px;
+		padding: 13px 23px;
+	}
+}
+@media only screen and (max-width: 575px) {
+	.product-details-action .product-action-btn {
+		border-radius: 30px;
+		font-size: 13px;
+		letter-spacing: 0.1em;
+		padding: 12px 25px;
+	}
+}
+.product-details-action .product-action-btn:hover {
+	background-color: #a8dadc;
+	color: #ffffff;
+}
+.product-details-action .product-action-wishlist {
+	background-color: transparent;
+	border: 3px solid #a8dadc;
+	border-radius: 50%;
+	box-shadow: none;
+	color: #e63946;
+	font-size: 22px;
+	height: 54px;
+	line-height: 52px;
+	text-align: center;
+	width: 54px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+	only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.product-details-action .product-action-wishlist {
+		border-width: 2px;
+		font-size: 18px;
+	}
+}
+.product-details-action .product-action-wishlist:hover {
+	background-color: #a8dadc;
+	color: #ffffff;
+}
+.product-details-price {
+	color: #1d3557;
+	font-family: "Playfair Display", serif;
+	font-size: 48px;
+	font-weight: 600;
+	line-height: 1;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+	only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.product-details-price {
+		font-size: 36px;
+	}
+}
+.product-details-price .price-old {
+	color: #457b9d;
+	font-size: 18px;
+	font-weight: 400;
+	margin-left: 11px;
+	-webkit-text-decoration-line: line-through;
+	text-decoration-line: line-through;
+	-webkit-text-decoration-color: rgba(69, 123, 157, 0.35);
+	text-decoration-color: rgba(69, 123, 157, 0.35);
+}
+.product-details-nav {
+	display: flex;
+	margin-bottom: 49px;
+}
+.product-details-nav .nav-link {
+	color: #a8dadc;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	line-height: 1.2;
+	font-family: "Playfair Display", serif;
+	font-weight: 600;
+	font-size: 24px;
+	position: relative;
+}
+@media only screen and (max-width: 575px) {
+	.product-details-nav .nav-link {
+		font-size: 20px;
+	}
+}
+.product-details-nav .nav-link.active {
+	color: #1d3557;
+}
+.product-details-nav .nav-link + .nav-link {
+	margin-left: 62px;
+}
+@media only screen and (max-width: 575px) {
+	.product-details-nav .nav-link + .nav-link {
+		margin-left: 35px;
+	}
+}
+.product-review-item {
+	background: #fafafa;
+	border-radius: 30px;
+	margin-bottom: 15px;
+	padding: 35px 30px 30px;
+	position: relative;
+}
+.product-review-item .product-review-top {
+	align-items: center;
+	display: flex;
+	margin-bottom: 20px;
+}
+@media only screen and (max-width: 575px) {
+	.product-review-item .product-review-top {
+		display: block;
+	}
+}
+.product-review-item .product-review-thumb {
+	margin-right: 20px;
+}
+@media only screen and (max-width: 575px) {
+	.product-review-item .product-review-thumb {
+		margin-bottom: 15px;
+		margin-right: 0;
+	}
+}
+.product-review-item .product-review-thumb img {
+	border-radius: 50%;
+}
+.product-review-item .product-review-content {
+	align-items: center;
+	display: flex;
+}
+@media only screen and (max-width: 575px) {
+	.product-review-item .product-review-content {
+		display: block;
+	}
+}
+.product-review-item .product-reviewer-name {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 1;
+	margin-bottom: 0;
+	margin-right: 32px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+	only screen and (max-width: 767px) {
+	.product-review-item .product-reviewer-name {
+		font-size: 14px;
+		margin-right: 15px;
+	}
+}
+@media only screen and (max-width: 575px) {
+	.product-review-item .product-reviewer-name {
+		font-size: 16px;
+		margin-bottom: 8px;
+		margin-right: 0;
+	}
+}
+.product-review-item .product-reviewer-designation {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1;
+	margin-bottom: 0;
+	margin-right: 44px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+	only screen and (max-width: 767px) {
+	.product-review-item .product-reviewer-designation {
+		font-size: 14px;
+		margin-right: 20px;
+	}
+}
+@media only screen and (max-width: 575px) {
+	.product-review-item .product-reviewer-designation {
+		font-size: 12px;
+		margin-bottom: 22px;
+		margin-right: 0;
+	}
+}
+.product-review-item .product-review-icon {
+	display: flex;
+	font-size: 13px;
+	color: #457b9d;
+	letter-spacing: 4px;
+	line-height: 1;
+}
+.product-review-item .desc {
+	font-size: 14px;
+	line-height: 24px;
+	margin-bottom: 0;
+}
+@media only screen and (max-width: 575px) {
+	.product-review-item .desc {
+		font-size: 13px;
+		line-height: 1.6;
+	}
+}
+.product-review-item .review-reply {
+	border-radius: 0;
+	border: none;
+	background: transparent;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 53px;
+	right: 50px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px),
+	only screen and (max-width: 767px) {
+	.product-review-item .review-reply {
+		right: 40px;
+	}
+}
+@media only screen and (max-width: 575px) {
+	.product-review-item .review-reply {
+		right: 38px;
+		top: 50px;
+	}
+}
+.product-review-item .review-reply:hover {
+	color: #ff5a5a;
+}
+.product-review-reply {
+	margin-left: 30px;
+	margin-right: -15px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.product-reviews-form-wrap {
+		margin-top: 80px;
+	}
+}
+@media only screen and (max-width: 575px) {
+	.product-reviews-form-wrap {
+		margin-top: 60px;
+	}
+}
+.product-reviews-form .form-input-item {
+	margin-bottom: 45px;
+}
+.product-reviews-form .form-control {
+	box-shadow: none;
+	color: #1d3557;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.2;
+	border-radius: 0;
+	resize: none;
+	border-width: 0 0 1px 0;
+	border-color: #a8dadc;
+	border-style: solid;
+	padding: 0 0 45px 0;
+}
+.product-reviews-form .form-control::-webkit-input-placeholder {
+	color: #1d3557;
+}
+.product-reviews-form .form-control:-moz-placeholder {
+	color: #1d3557;
+}
+.product-reviews-form .form-control::-moz-placeholder {
+	color: #1d3557;
+}
+.product-reviews-form .form-control:-ms-input-placeholder {
+	color: #1d3557;
+}
+.product-reviews-form textarea.form-control {
+	min-height: 113px;
+	padding: 0 0 15px 0;
+}
+@media only screen and (max-width: 575px) {
+	.product-reviews-form textarea.form-control {
+		min-height: 90px;
+	}
+}
+.product-reviews-form [type="submit"] {
+	background-color: transparent;
+	border: 3px solid #a8dadc;
+	border-radius: 50px;
+	color: #1d3557;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 0.2em;
+	margin-top: 23px;
+	padding: 13px 35px;
+	text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.product-reviews-form [type="submit"] {
+		border-width: 2px;
+		font-size: 14px;
+		margin-top: 0;
+	}
+}
+.product-reviews-form [type="submit"]:hover {
+	background-color: #a8dadc;
+	color: #ffffff;
+}
+.product-reviews-form .form-ratings-item {
+	display: flex;
+	align-items: center;
+}
+.product-reviews-form .form-ratings-item .title {
+	font-size: 18px;
+	display: inline-block;
+	line-height: 1;
+	margin: 0 0 0 25px;
+}
+@media only screen and (max-width: 575px) {
+	.product-reviews-form .form-ratings-item .title {
+		font-size: 16px;
+	}
+}
+.product-reviews-form .product-ratingsform-form-icon {
+	display: flex;
+	cursor: pointer;
+	font-size: 16px;
+	color: #457b9d;
+	letter-spacing: 5px;
+	line-height: 1;
+}
+.product-reviews-form .product-ratingsform-form-icon:hover {
+	color: #ff5a5a;
+}
+.product-reviews-form .product-ratingsform-form-icon i {
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
+.product-reviews-form .product-ratingsform-form-icon i:hover {
+	color: #ff5a5a;
+}
+.product-reviews-form .product-ratingsform-form-icon i:hover + i {
+	color: #457b9d;
+}
+.product-reviews-form .product-ratingsform-form-icon i:hover + i + i {
+	color: #457b9d;
+}
+.product-reviews-form .product-ratingsform-form-icon i:hover + i + i + i {
+	color: #457b9d;
+}
+.product-reviews-form .product-ratingsform-form-icon i:hover + i + i + i + i {
+	color: #457b9d;
+}
+.product-form-title {
+	font-size: 24px;
+	margin-bottom: 79px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px),
+	only screen and (max-width: 767px) {
+	.product-form-title {
+		margin-bottom: 60px;
+	}
+}
+@media only screen and (max-width: 575px) {
+	.product-form-title {
+		margin-bottom: 50px;
+	}
+}
+.product-details-info-wrap {
+	border-bottom: 1px solid #a8dadc;
+	margin-bottom: 32px;
+	padding-bottom: 22px;
+}
+.product-details-info-wrap li {
+	color: #457b9d;
+	font-size: 15px;
+	list-style: none;
+	margin: 0 0 13px;
+	display: flex;
+}
+.product-details-info-wrap li span {
+	color: #1d3557;
+	display: inline-block;
+	font-weight: 500;
+	margin: 0 26px 0 0;
+	min-width: 85px;
+}
+/*! CSS Used fontfaces */
+@font-face {
+	font-family: "Playfair Display";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtXA-W2r.woff2)
+		format("woff2");
+	unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXt7A-W2r.woff2)
+		format("woff2");
+	unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+		U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXt_A-W2r.woff2)
+		format("woff2");
+	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-Q.woff2)
+		format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+		U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2)
+		format("woff2");
+	unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2)
+		format("woff2");
+	unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+		U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2)
+		format("woff2");
+	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2)
+		format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+		U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2)
+		format("woff2");
+	unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2)
+		format("woff2");
+	unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+		U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2)
+		format("woff2");
+	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2)
+		format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+		U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2)
+		format("woff2");
+	unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2)
+		format("woff2");
+	unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+		U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2)
+		format("woff2");
+	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2)
+		format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+		U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2)
+		format("woff2");
+	unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2)
+		format("woff2");
+	unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+		U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2)
+		format("woff2");
+	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2)
+		format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+		U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 800;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2)
+		format("woff2");
+	unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 800;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2)
+		format("woff2");
+	unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+		U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 800;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2)
+		format("woff2");
+	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+	font-family: "Playfair Display";
+	font-style: normal;
+	font-weight: 800;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2)
+		format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+		U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: "FontAwesome";
+	src: url("https://htmldemo.net/merier/merier/assets/fonts/fontawesome-webfont.eot?v=4.7.0");
+	src: url("https://htmldemo.net/merier/merier/assets/fonts/fontawesome-webfont.eot#iefix&v=4.7.0")
+			format("embedded-opentype"),
+		url("https://htmldemo.net/merier/merier/assets/fonts/fontawesome-webfont.woff2?v=4.7.0")
+			format("woff2"),
+		url("https://htmldemo.net/merier/merier/assets/fonts/fontawesome-webfont.woff?v=4.7.0")
+			format("woff"),
+		url("https://htmldemo.net/merier/merier/assets/fonts/fontawesome-webfont.ttf?v=4.7.0")
+			format("truetype"),
+		url("https://htmldemo.net/merier/merier/assets/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular")
+			format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu51xFIzIFKw.woff2)
+		format("woff2");
+	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+		U+FE2E-FE2F;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu51xMIzIFKw.woff2)
+		format("woff2");
+	unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu51xEIzIFKw.woff2)
+		format("woff2");
+	unicode-range: U+1F00-1FFF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu51xLIzIFKw.woff2)
+		format("woff2");
+	unicode-range: U+0370-03FF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu51xHIzIFKw.woff2)
+		format("woff2");
+	unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+		U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu51xGIzIFKw.woff2)
+		format("woff2");
+	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu51xIIzI.woff2)
+		format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+		U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCRc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+		U+FE2E-FE2F;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fABc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCBc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+1F00-1FFF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fBxc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0370-03FF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCxc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+		U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fChc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fBBc4.woff2)
+		format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+		U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu72xKOzY.woff2)
+		format("woff2");
+	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+		U+FE2E-FE2F;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu5mxKOzY.woff2)
+		format("woff2");
+	unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7mxKOzY.woff2)
+		format("woff2");
+	unicode-range: U+1F00-1FFF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4WxKOzY.woff2)
+		format("woff2");
+	unicode-range: U+0370-03FF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7WxKOzY.woff2)
+		format("woff2");
+	unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+		U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxKOzY.woff2)
+		format("woff2");
+	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2)
+		format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+		U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCRc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+		U+FE2E-FE2F;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fABc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCBc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+1F00-1FFF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBxc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0370-03FF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCxc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+		U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fChc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4.woff2)
+		format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+		U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfCRc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+		U+FE2E-FE2F;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfABc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfCBc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+1F00-1FFF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBxc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0370-03FF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfCxc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+		U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfChc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc4.woff2)
+		format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+		U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtfCRc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+		U+FE2E-FE2F;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtfABc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtfCBc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+1F00-1FFF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtfBxc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0370-03FF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtfCxc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+		U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtfChc4EsA.woff2)
+		format("woff2");
+	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+		U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtfBBc4.woff2)
+		format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+		U+FEFF, U+FFFD;
+}
