@@ -1,32 +1,3 @@
-<?php
-session_start();
-$active = 'Account';
-if (!isset($_SESSION['cid'])) {
-    header("location:login.php");
-    # code...
-  }
-
-    else {
-        
-        $customerid=$_SESSION['cid'];
-    
-    }
-
-  
-
-include('connection.php');
-?>
-
-
-
-
-<?php
-// session_start();
-// if(!isset($_SESSION['username'])){
-//     header("Location: index.php");
-// }
-// else{
-?>
 <html lang="en">
 
 <head>
@@ -95,9 +66,27 @@ include('connection.php');
 </head>
 
 <body>
+
+    <?php
+    include "./connection.php";
+
+    $customerid = 44;
+    $sql = "SELECT * FROM CUSTOMER WHERE CUSTOMER_ID='$customerid' ";
+    $query = oci_parse($conn, $sql);
+    oci_execute($query);
+    $email_pass = oci_fetch_assoc($query);
+    $customer_name = $email_pass['NAME'];
+    $phone = $email_pass['CUSTOMER_PHONE'];
+    $email = $email_pass['CUSTOMER_EMAIL'];
+    $address = $email_pass['CUSTOMER_ADDRESS'];
+    $image = $email_pass['PROFILEPIC'];
+
+    ?>
+
+
     <div id="navbar">
-        <?php 
-            include "navbar.php";
+        <?php
+        include "navbar.php";
         ?>
     </div>
     <section class="customer-profile">
@@ -131,38 +120,13 @@ include('connection.php');
                             </div>
                         </div>
 
-
-                        <?php
-                        /*
-                                $name =$_SESSION['id'];
-                                $sql ="SELECT * FROM signup WHERE customer_id='$name' ";
-                                $query=mysqli_query($conn,$sql);
-                                $email_pass=mysqli_fetch_assoc($query);
-                                $customer_name = $email_pass['customer_name'];
-                                $phone = $email_pass['phone_no'];
-                                $email = $email_pass['customer_email'];
-                                $address = $email_pass['customer_address'];
-                                $image = $email_pass['imagee'];
-                        */
-
-                        $sql = "SELECT * FROM CUSTOMER WHERE CUSTOMER_ID='$customerid' ";
-                        $query = oci_parse($conn, $sql);
-                        oci_execute($query);
-                        $email_pass = oci_fetch_assoc($query);
-                        $customer_name = $email_pass['NAME'];
-                        $phone = $email_pass['CUSTOMER_PHONE'];
-                        $email = $email_pass['CUSTOMER_EMAIL'];
-                        $address = $email_pass['CUSTOMER_ADDRESS'];
-                        $image = $email_pass['PROFILEPIC'];
-                        ?>
-
                         <div class="col-lg-9 col-md-8 d-md-block d-none">
                             <div class="card-body tab-content border ">
                                 <!-- Customer profile -->
                                 <div class="tab-pane active" id="profile">
                                     <h6>MY PROFILE</h6>
                                     <div class="text-center">
-                                        <img class="img-fluid rounded-circle mt-5 mb-2" height="120px" width="120px" src="<?php echo $image ?>" alt="customer pic">
+                                        <img class="img-fluid rounded-circle mt-5 mb-2" height="120px" width="120px" src="./assets/images/customer profile pic/<?php echo $image ?>" alt="customer pic">
                                         <p>Name: <?php echo $customer_name ?> </p>
                                         <p>Email: <?php echo $email ?></p>
                                         <p>Phone Number: <?php echo $phone ?> </p>

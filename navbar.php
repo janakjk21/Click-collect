@@ -200,9 +200,7 @@ if (!empty($header[0]['currency_format'])) {
                             <?php if (isset($_SESSION['username'])) {
                                 $name = $_SESSION['id'];
 
-<<<<<<< HEAD
                                 $sql = "SELECT * FROM customer WHERE customer_id='$name'";
-=======
                                 /*
                                         $sql ="SELECT * FROM signup WHERE customer_id='$name' ";
                                         $query=mysqli_query($conn,$sql);
@@ -212,7 +210,6 @@ if (!empty($header[0]['currency_format'])) {
                                         */
 
                                 $sql = "SELECT * FROM CUSTOMER WHERE CUSTOMER_ID='$customer_id'";
->>>>>>> 6d44be307327377539d7f662579cd46783775db9
                                 $query = oci_parse($conn, $sql);
                                 oci_execute($query);
                                 $email_pass = oci_fetch_array($query);

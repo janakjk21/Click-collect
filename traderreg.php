@@ -22,11 +22,13 @@ if (isset($_POST["register"])) {
         $target_file = $target_dir . basename($_FILES["TRADER_PROFILE"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        
         // Check if file already exists
         if (file_exists($target_file)) {
             echo "Sorry, file already exists.";
             $uploadOk = 0;
         }
+        
         //checking the file type
         if (
             $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
