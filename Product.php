@@ -44,6 +44,7 @@
 
     ?>
 
+<<<<<<< HEAD
     <!-- Code for the rating system -->
     <?php
 
@@ -81,6 +82,8 @@
         }
     }
 
+=======
+>>>>>>> 993a89730b032cd1246cfb3ec0a2353944d7c49b
     ?>
 
     <?php

@@ -1,9 +1,7 @@
 <?php
-
-include "../config.php";
-
-
+include "../connection.php";
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -50,9 +48,9 @@ include "../config.php";
 
                         <?php
 
-                        $id = $_SESSION['trader_id'];
+                        $id = 123;
 
-                        $qry = "SELECT * FROM trader where trader_id='$id'";
+                        $qry = "SELECT * FROM TRADER where TRADER_ID='$id'";
 
                         $result = oci_parse($conn, $qry);
                         oci_execute($result);
@@ -63,11 +61,11 @@ include "../config.php";
 
                         <table>
                             <tr>
-                                <th><img src="images/<?php echo $row['TRADER_IMAGE'] ?>" class="img-responsive img-fluid"></th>
+                                <th><img src="images/<?php echo $row['TRADER_PROFILE'] ?>" class="img-responsive img-fluid"></th>
                             </tr>
                             <tr>
 
-                                <th class="gmail"><?php echo $row['EMAIL'] ?></th>
+                                <th class="gmail"><?php echo $row['TRADER_EMAIL'] ?></th>
 
                             </tr>
                             <th class="font-text text-muted signout-opt"><a href="logout.php">Signout</a></th>
@@ -86,6 +84,8 @@ include "../config.php";
                     </div>
                 </div>
             </div>
+
+            
             <!--Right side content-->
             <div class="col-md-8 col-lg-9 ">
                 <div class="card">
@@ -133,9 +133,9 @@ include "../config.php";
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Sno</th>
+                                        <th scope="col">S.N</th>
                                         <th scope="col">Customer Name</th>
-                                        <th scope="col">Product name</th>
+                                        <th scope="col">Product Name</th>
                                         <th scope="col">Product Price</th>
                                         <th scope="col">Quantity</th>
                                         <th scope="col">Time</th>
@@ -353,6 +353,8 @@ include "../config.php";
                             </div>
                         </div>
                         <!-- Offer Modal Ends-->
+                        
+                        
                         <!--Profile data-->
                         <div class="tab-pane" id="profile">
                             <h6 class="text-dark text-center">Your Profile Information</h6>
@@ -360,7 +362,7 @@ include "../config.php";
 
                             <?php
 
-                            $qry = "SELECT * FROM trader where trader_id='$id'";
+                            $qry = "SELECT * FROM TRADER where TRADER_ID='$id'";
 
                             $result = oci_parse($conn, $qry);
                             oci_execute($result);
@@ -373,19 +375,19 @@ include "../config.php";
                                     <input type="hidden" name="traderId" class="form-control" value="<?php echo $row2['TRADER_ID'] ?>">
 
                                     <label for="exampleFormControlInput1" class="text-dark">Full Name</label>
-                                    <input type="Text" name="traderName" class="form-control" value="<?php echo $row2['TRADER_NAME'] ?>">
+                                    <input type="Text" name="traderName" class="form-control" value="<?php echo $row2['NAME'] ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1" class="text-dark">Email</label>
-                                    <input type="Text" name="email" class="form-control" value="<?php echo $row2['EMAIL'] ?>">
+                                    <input type="Text" name="email" class="form-control" value="<?php echo $row2['TRADER_EMAIL'] ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput1" class="text-dark">Your Bio</label>
-                                    <textarea name="traderDesc" class="form-control p-2"><?php echo $row2['TRADER_DESCRIPTION'] ?></textarea>
+                                    <label for="exampleFormControlInput1" class="text-dark">Address</label>
+                                    <input type="Text" name="traderAddress" class="form-control" value="<?php echo $row2['TRADER_ADDRESS'] ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1" class="text-dark">Phone Number</label>
-                                    <input type="Text" name="phone" class="form-control" value="<?php echo $row2['PHONE_NO'] ?>">
+                                    <input type="Text" name="phone" class="form-control" value="<?php echo $row2['TRADER_PHONE'] ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1" class="text-dark">Upload Your Profile
