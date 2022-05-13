@@ -14,23 +14,72 @@
 </head>
 
 <body>
-
-
+    <!-- code for the single product  -->
     <?php
     include "./connection.php";
-    $sql = 'SELECT * FROM PRODUCT ';
+    $sql = 'SELECT * FROM PRODUCT where PRODUCT_ID=	21 ';
     $stid = oci_parse($conn, $sql);
 
 
     oci_execute($stid);
     while (($row = oci_fetch_array($stid, OCI_ASSOC)) != false) {
 
-        $productprice = $row['PRODUCTPRICE'];
+
+
+        $product_id = $row['PRODUCT_ID'];
+        $product_pic1 = $row['PRODUCT_PIC1'];
+        $product_pic2 = $row['PRODUCT_PIC2'];
+        $product_pic3 = $row['PRODUCT_PIC3'];
+        $product_name = $row['PRODUCT_NAME'];
+        $category = $row['PRODUCT_ID'];
+        $product_price = $row['PRODUCTPRICE'];
+        $product_quantity = $row['PRODUCTQUANTITY'];
+        $product_unit = $row['PRODUCTUNIT'];
+        $minorder = $row['MINORDER'];
+        $maxorder = $row['MAXORDER'];
+        $PRODUCTDES = $row['PRODUCTDES'];
+        $disamount = $row['DISAMOUNT'];
+        $shop_id = $row['SHOP_ID'];
     }
 
+    ?>
+
+    <!-- Code for the rating system -->
+    <?php
 
 
+    include './connection.php';
 
+
+    $Err = "";
+    // If upload button is clicked ...
+    if (isset($_POST['submit'])) {
+        $name = $category = $feedback = "";
+
+        if (empty($_POST["name"])) {
+            $Err = "Name is required";
+        } else {
+            $name = $_POST["name"];
+        }
+        if (empty($_POST["email"])) {
+            $Err = "Category is required";
+        } else {
+            $email = $_POST["feedback"];
+            echo $category;
+        }
+        if (empty($_POST["price"])) {
+            $Err = "Name is required";
+        } else {
+            $feedback = $_POST["price"];
+        }
+        $rating = $_POST["rating"];
+        $sql = "INSERT INTO REVIEW (REVIEW_ID,PRODUCT_ID, CUSTOMER_ID, RATING,REVIEWR_NAME,REVIEW,REVIEWER_EMAIL)VALUES (1234,' $product_id ', 5675, ' $rating ','$name','$feedback ','$email ')";
+        $nop = oci_parse($conn, $sql);
+        $e = oci_execute($nop);
+        if (empty($e)) {
+            $Err = "data insered sucessful";
+        }
+    }
 
     ?>
 
@@ -54,13 +103,13 @@
                         </ol>
                         <div class="carousel-inner rounded">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" src="./assets/img/home4-category2-banner1.webp" alt="First slide">
+                                <img class="d-block w-100" src="./assets/img/<?php echo $product_pic1 ?>" alt="First slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="./assets/img/home4-category2-banner2.webp" alt="Second slide">
+                                <img class="d-block w-100" src="./assets/img/<?php echo $product_pic2 ?>" alt="Second slide">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="./assets/img/home4-category3-banner1.webp" alt="Third slide">
+                                <img class="d-block w-100" src="./assets/img/<?php echo $product_pic3 ?>" alt="Third slide">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -76,7 +125,7 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="product-details-content">
-                        <h3 class="product-details-title">Casual Women pants</h3>
+                        <h3 class="product-details-title"><?php echo $product_name ?></h3>
                         <div class="product-details-review">
                             <div class="product-review-icon">
                                 <i class="fa fa-star"></i>
@@ -85,22 +134,24 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star-half-o"></i>
                             </div>
-                            <button type="button" class="product-review-show">156 reviews</button>
+
                         </div>
-                        <p class="product-details-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, repellendus. Nam voluptate illo ut quia non sapiente provident alias quos laborum incidunt, earum accusamus, natus. Vero pariatur ut veniam sequi amet consectetur.</p>
+                        <p class="product-details-desc"><?php echo $PRODUCTDES ?>.</p>
                         <div class="product-details-color-list">
-                            <h4>Color:</h4>
+                            <h4>Max-Min product </h4>
                             <div class="color-list-check">
+
                                 <input class="form-check-input bg-red" type="radio" name="flexRadioColorList" id="colorList1">
-                                <label class="form-check-label" for="colorList1">Red</label>
+
+                                <label class="form-check-label" for="colorList1"><?php echo $maxorder ?></label>
                             </div>
                             <div class="color-list-check">
                                 <input class="form-check-input bg-green" type="radio" name="flexRadioColorList" id="colorList2" checked="">
-                                <label class="form-check-label" for="colorList2">Green</label>
+
+                                <label class="form-check-label" for="colorList2"><?php echo $minorder ?></label>
                             </div>
                             <div class="color-list-check me-0">
-                                <input class="form-check-input bg-blue" type="radio" name="flexRadioColorList" id="colorList3">
-                                <label class="form-check-label" for="colorList3">Blue</label>
+
                             </div>
                         </div>
                         <div class="product-details-pro-qty">
@@ -111,7 +162,7 @@
                                 <div class="inc qty-btn">+</div>
                             </div>
                         </div>
-                        <div class="product-details-price"><?php echo $productprice ?><span class="price-old">$650.00</span></div>
+                        <div class="product-details-price"><?php echo $product_price ?><span class="price-old"> <?php echo $disamount ?></span></div>
                         <div class="product-details-action">
                             <button type="button" class="product-action-btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Add to cart</button>
                             <button type="button" class="product-action-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
@@ -124,121 +175,80 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="nav product-details-nav me-lg-6" id="product-details-nav-tab" role="tablist">
-                        <button class="nav-link" id="specification-tab" data-bs-toggle="tab" data-bs-target="#specification" type="button" role="tab" aria-controls="specification" aria-selected="false">Specification</button>
                         <button class="nav-link active" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="true">Review</button>
                     </div>
                     <div class="tab-content me-lg-6" id="product-details-nav-tabContent">
-                        <div class="tab-pane" id="specification" role="tabpanel" aria-labelledby="specification-tab">
-                            <ul class="product-details-info-wrap">
-                                <li><span>Weight :</span> 250 g</li>
-                                <li><span>Dimensions :</span>10 x 10 x 15 cm</li>
-                                <li><span>Materials :</span> 60% cotton, 40% polyester</li>
-                                <li><span>Other Info :</span> American heirloom jean shorts pug seitan letterpress</li>
-                            </ul>
 
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius velit corporis quo voluptate culpa soluta, esse accusamus, sunt quia omnis amet temporibus sapiente harum quam itaque libero tempore. Ipsum, ducimus. lorem</p>
-                        </div>
 
                         <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
-                            <!--== Start Reviews Content Item ==-->
-                            <div class="product-review-item">
-                                <div class="product-review-top">
-                                    <div class="product-review-thumb">
-                                        <img src="assets/images/shop/details/c1.png" alt="Images">
-                                    </div>
-                                    <div class="product-review-content">
-                                        <h4 class="product-reviewer-name">Tomas Doe</h4>
-                                        <h5 class="product-reviewer-designation">Delveloper</h5>
-                                        <div class="product-review-icon">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra amet, sodales faucibus nibh. Vivamus amet potenti ultricies nunc gravida duis. Nascetur scelerisque massa sodales egestas augue neque euismod scelerisque viverra.</p>
-                                <button type="button" class="review-reply"><i class="fa fa fa-undo"></i></button>
-                            </div>
-                            <!--== End Reviews Content Item ==-->
+                            <?php
+                            include "./connection.php";
+                            $sql = 'SELECT * FROM REVIEW where PRODUCT_ID=	21 ';
+                            $stid = oci_parse($conn, $sql);
 
-                            <!--== Start Reviews Content Item ==-->
-                            <div class="product-review-item product-review-reply">
-                                <div class="product-review-top">
-                                    <div class="product-review-thumb">
-                                        <img src="assets/images/shop/details/c2.png" alt="Images">
-                                    </div>
-                                    <div class="product-review-content">
-                                        <h4 class="product-reviewer-name">Robat Fiftyk</h4>
-                                        <h5 class="product-reviewer-designation">UI/UX Designer</h5>
-                                        <div class="product-review-icon">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra amet, sodales faucibus nibh. Vivamus amet potenti ultricies nunc gravida duis. Nascetur scelerisque massa sodales egestas augue neque euismod scelerisque viverra.</p>
-                                <button type="button" class="review-reply"><i class="fa fa fa-undo"></i></button>
-                            </div>
-                            <!--== End Reviews Content Item ==-->
 
-                            <!--== Start Reviews Content Item ==-->
-                            <div class="product-review-item mb-0">
-                                <div class="product-review-top">
-                                    <div class="product-review-thumb">
-                                        <img src="assets/images/shop/details/c3.png" alt="Images">
-                                    </div>
-                                    <div class="product-review-content">
-                                        <h4 class="product-reviewer-name">Arry twentyk</h4>
-                                        <h5 class="product-reviewer-designation">UI/UX Designer</h5>
-                                        <div class="product-review-icon">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+                            oci_execute($stid);
+                            while (($row = oci_fetch_array($stid, OCI_ASSOC)) != false) {
+                            ?> <div class="product-review-item mb-0">
+                                    <div class="product-review-top">
+                                        <!-- <div class="product-review-thumb">
+                                            <img src="assets/images/shop/details/c3.png" alt="Images">
+                                        </div> -->
+                                        <div class="product-review-content">
+                                            <h4 class="product-reviewer-name"><?php echo $row['REVIEWR_NAME'] ?></h4>
+                                            <h5 class="product-reviewer-designation"><?php echo $row['REVIEWER_EMAIL'] ?></h5>
+                                            <div class="product-review-icon">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra amet, sodales faucibus nibh. Vivamus amet potenti ultricies nunc gravida duis. Nascetur scelerisque massa sodales egestas augue neque euismod scelerisque viverra.</p>
-                                <button type="button" class="review-reply"><i class="fa fa fa-undo"></i></button>
-                            </div>
-                            <!--== End Reviews Content Item ==-->
+                                    <p class="desc"><?php echo $row['REVIEWR_NAME'] ?>.</p>
+                                    <button type="button" class="review-reply"><i class="fa fa fa-undo"></i></button>
+                                </div><?php
+
+
+
+                                    }
+
+                                        ?>
+
+
+                            <hr>
                         </div>
                     </div>
                 </div>
+
+
+
+
+
                 <div class="col-lg-5">
                     <div class="product-reviews-form-wrap">
                         <h4 class="product-form-title">Leave a reply</h4>
                         <div class="product-reviews-form">
-                            <form action="#">
+                            <form action="" method="POST">
                                 <div class="form-input-item">
-                                    <textarea class="form-control" placeholder="Enter you feedback"></textarea>
+                                    <textarea class="form-control" placeholder="Enter you feedback" id="feedback" type="text" name="feedback"></textarea>
                                 </div>
                                 <div class="form-input-item">
-                                    <input class="form-control" type="text" placeholder="Full Name">
+                                    <input class="form-control" type="text" placeholder="Full Name" id="name" name="name" style="padding:3%">
                                 </div>
                                 <div class="form-input-item">
-                                    <input class="form-control" type="email" placeholder="Email Address">
+                                    <input class="form-control" type="email" placeholder="Email Address" id="email" name="email" style="padding:3%">
                                 </div>
                                 <div class="form-input-item">
                                     <div class="form-ratings-item">
-                                        <div class="product-ratingsform-form-icon">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </div>
+                                        <input id="ratinginput" name="rating" class="rating rating-loading" data-min="0" data-max="5" data-step="0.1" value="2">
+
                                         <span class="title">Provide Your Ratings</span>
                                     </div>
                                 </div>
                                 <div class="form-input-item mb-0">
-                                    <button type="submit" class="btn">SUBMIT</button>
+                                    <button type="submit" name="submit" class="btn">SUBMIT</button>
                                 </div>
                             </form>
                         </div>
