@@ -44,7 +44,6 @@
 
     ?>
 
-<<<<<<< HEAD
     <!-- Code for the rating system -->
     <?php
 
@@ -74,7 +73,7 @@
             $feedback = $_POST["price"];
         }
         $rating = $_POST["rating"];
-        $sql = "INSERT INTO REVIEW (REVIEW_ID,PRODUCT_ID, CUSTOMER_ID, RATING,REVIEWR_NAME,REVIEW,REVIEWER_EMAIL)VALUES (1234,' $product_id ', 5675, ' $rating ','$name','$feedback ','$email ')";
+        $sql = "INSERT INTO REVIEW (REVIEW_ID,PRODUCT_ID, CUSTOMER_ID, RATING,REVIEWR_NAME,REVIEW,REVIEWER_EMAIL)VALUES (123,' $product_id ', 567, ' $rating ','$name','$feedback ','$email ')";
         $nop = oci_parse($conn, $sql);
         $e = oci_execute($nop);
         if (empty($e)) {
@@ -82,8 +81,6 @@
         }
     }
 
-=======
->>>>>>> 993a89730b032cd1246cfb3ec0a2353944d7c49b
     ?>
 
     <?php
@@ -131,11 +128,8 @@
                         <h3 class="product-details-title"><?php echo $product_name ?></h3>
                         <div class="product-details-review">
                             <div class="product-review-icon">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-o"></i>
+
+
                             </div>
 
                         </div>
@@ -192,6 +186,7 @@
 
                             oci_execute($stid);
                             while (($row = oci_fetch_array($stid, OCI_ASSOC)) != false) {
+
                             ?> <div class="product-review-item mb-0">
                                     <div class="product-review-top">
                                         <!-- <div class="product-review-thumb">
@@ -201,11 +196,20 @@
                                             <h4 class="product-reviewer-name"><?php echo $row['REVIEWR_NAME'] ?></h4>
                                             <h5 class="product-reviewer-designation"><?php echo $row['REVIEWER_EMAIL'] ?></h5>
                                             <div class="product-review-icon">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
+                                                <?php
+                                                $x = $row['RATING'];
+
+                                                while ($x  > 0) {
+
+                                                ?>
+                                                    <i class="fa fa-star"></i> <?php
+                                                                                $x = $x - 1;
+                                                                            }
+
+                                                                                ?>
+
+
+
                                             </div>
                                         </div>
                                     </div>

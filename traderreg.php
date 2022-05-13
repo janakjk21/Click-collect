@@ -22,13 +22,13 @@ if (isset($_POST["register"])) {
         $target_file = $target_dir . basename($_FILES["TRADER_PROFILE"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-        
+
         // Check if file already exists
         if (file_exists($target_file)) {
             echo "Sorry, file already exists.";
             $uploadOk = 0;
         }
-        
+
         //checking the file type
         if (
             $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
@@ -56,36 +56,36 @@ if (isset($_POST["register"])) {
             $opq += 1;
         }
         if (!empty($tname) && !empty($temail) && !empty($tphone) && !empty($location) && !empty($tpassword) && !empty($trepassword)) {
-            if (preg_match($namevalid, $tname)) {
-                if ($opq == 0) {
-                    if (preg_match($numbervalid, $tphone)) {
-                        if (strlen($tphone) == 10) {
-                            if (strlen($tpassword) > 8) {
-                                if ($tpassword == $trepassword) {
-                                    if (isset($_POST['check'])) {
-                                        // Check if $uploadOk is set to 0 by an error
-                                        if ($uploadOk == 0) {
-                                            echo "Sorry, your file was not uploaded.";
-                                            // if everything is ok, try to upload file
+
+            if ($opq == 0) {
+                if (preg_match($numbervalid, $tphone)) {
+                    if (strlen($tphone) == 10) {
+                        if (strlen($tpassword) > 8) {
+                            if ($tpassword == $trepassword) {
+                                if (isset($_POST['check'])) {
+                                    // Check if $uploadOk is set to 0 by an error
+                                    if ($uploadOk == 0) {
+                                        echo "Sorry, your file was not uploaded.";
+                                        // if everything is ok, try to upload file
+                                    } else {
+
+                                        if (move_uploaded_file($_FILES["TRADER_PROFILE"]["tmp_name"], $target_dir)) {
+                                            echo "The file " . basename($_FILES["TRADER_PROFILE"]["name"]) . " has been uploaded.";
                                         } else {
 
-                                            if (move_uploaded_file($_FILES["TRADER_PROFILE"]["tmp_name"], $target_dir)) {
-                                                echo "The file " . basename($_FILES["TRADER_PROFILE"]["name"]) . " has been uploaded.";
-                                            } else {
-
-                                                echo "Sorry, there was an error uploading your file.";
-                                            }
+                                            echo "Sorry, there was an error uploading your file.";
                                         }
-                                        $tpassword = md5($tpassword);
-                                        $query = "INSERT INTO TRADER (TRADER_ID,TRADER_TYPE,NAME,TRADER_ADDRESS,TRADER_PHONE,TRADER_EMAIL,PASSWORD,TRADER_REPASSWORD,TRADER_STAT,CATEGORY,TRADER_PROFILE) VALUES (TRADER_SEQ.nextval,'$ttype','$tname','$location','$tphone','$temail','$tpassword','$trepassword',1,'$tcat','$filename')";
+                                    }
+                                    $tpassword = md5($tpassword);
+                                    $query = "INSERT INTO TRADER (TRADER_ID,TRADER_TYPE,NAME,TRADER_ADDRESS,TRADER_PHONE,TRADER_EMAIL,PASSWORD,TRADER_REPASSWORD,TRADER_STAT,CATEGORY,TRADER_PROFILE) VALUES (TRADER_SEQ.nextval,'$ttype','$tname','$location','$tphone','$temail','$tpassword','$trepassword',1,'$tcat','$filename')";
 
-                                        $std = oci_parse($conn, $query);
+                                    $std = oci_parse($conn, $query);
 
-                                        $e = oci_execute($std);
-                                        if ($e) {
-                                            $to      = $temail; // Send email to our user
-                                            $subject = 'Signup | Comfirmation'; // Give the email a subject 
-                                            $message = 'Thanks for being member of Cleckdiced. Your account has been activated, you can now login to your  account with the following Detais:
+                                    $e = oci_execute($std);
+                                    if ($e) {
+                                        $to      = $temail; // Send email to our user
+                                        $subject = 'Signup | Comfirmation'; // Give the email a subject 
+                                        $message = 'Thanks for being member of Cleckdiced. Your account has been activated, you can now login to your  account with the following Detais:
                                                      -----------------------------------------
                                                      User Type: Trader
                                                      Username: ' . $tname . '
@@ -94,38 +94,35 @@ if (isset($_POST["register"])) {
                                                      Click the link below to login to your account 
                                                      http://localhost/projectmanagement/common/login.php  
                                                      '; // Our message above including the link
-                                            $headers = 'From: cleckdiced@gmail.com' . "\r\n"; // Set from headers
-                                            $c = mail($to, $subject, $message, $headers); // Send our email
-                                            echo $c;
-                                            if ($c) {
+                                        $headers = 'From: cleckdiced@gmail.com' . "\r\n"; // Set from headers
+                                        $c = mail($to, $subject, $message, $headers); // Send our email
+                                        echo $c;
+                                        if ($c) {
 
-                                                $success = "A Trader Account Confirmation Message Has Been Sent,Please Check Your Email.";
-                                            } else {
-                                                var_dump(error_get_last()['meesage']);
-                                            }
+                                            $success = "A Trader Account Confirmation Message Has Been Sent,Please Check Your Email.";
                                         } else {
-                                            echo "string";
+                                            var_dump(error_get_last()['meesage']);
                                         }
                                     } else {
-                                        $errormessage = "You Must Agree cleckdiced Terms And Conditions !!!";
+                                        echo "string";
                                     }
                                 } else {
-                                    $errormessage = "Password Does not Match !!!";
+                                    $errormessage = "You Must Agree cleckdiced Terms And Conditions !!!";
                                 }
                             } else {
-                                $errormessage = "Password Must Be Minimum 8 characters Long !!!";
+                                $errormessage = "Password Does not Match !!!";
                             }
                         } else {
-                            $errormessage = "Phone Number Shoud Have 10 Digits !!!";
+                            $errormessage = "Password Must Be Minimum 8 characters Long !!!";
                         }
                     } else {
-                        $errormessage = "Invalid Phone Number !!!";
+                        $errormessage = "Phone Number Shoud Have 10 Digits !!!";
                     }
                 } else {
-                    $errormessage = "This Email Already Has An Account !!!";
+                    $errormessage = "Invalid Phone Number !!!";
                 }
             } else {
-                $errormessage = "Username Already Taken. Please Try With Another !!!";
+                $errormessage = "This Email Already Has An Account !!!";
             }
         } else {
             $errormessage = "Please Fill All Fields !!!";
