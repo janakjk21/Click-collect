@@ -325,7 +325,6 @@
     <script src="script/action.js"></script>
     <script src="http://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
 
-    </script>
 
     <script>
         $('a[data-toggle="tab"]').click(function(e) {
@@ -342,7 +341,6 @@
         if (selectedTab != null) {
             $('a[data-toggle="tab"][href="' + selectedTab + '"]').tab('show');
         }
-        });
     </script>
 
 </body>
