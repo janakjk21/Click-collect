@@ -17,7 +17,7 @@ if (isset($_POST["register"])) {
     $tcat = $_POST['CATEGORY'];
 
     if (isset($_FILES['TRADER_PROFILE'])) { //if customer select a file
-        $target_dir = "traprofile/";
+        $target_dir = "assets/images/trader profile/";
         $filename = $_FILES['TRADER_PROFILE']['name'];
         $target_file = $target_dir . basename($_FILES["TRADER_PROFILE"]["name"]);
         $uploadOk = 1;
@@ -39,7 +39,7 @@ if (isset($_POST["register"])) {
         $numbervalid = "/^[0-9]+$/"; //for number validation
         //to validate username
         $abc = "SELECT * FROM TRADER WHERE NAME = '$tname'";
-        $bcd = oci_parse($connection, $abc);
+        $bcd = oci_parse($conn, $abc);
         oci_execute($bcd);
         $cde = 0;
         while ($def = oci_fetch_assoc($bcd)) {
@@ -47,7 +47,7 @@ if (isset($_POST["register"])) {
         }
         //for email validation
         $mno = "SELECT * FROM TRADER WHERE TRADER_EMAIL = '$temail'";
-        $nop = oci_parse($connection, $mno);
+        $nop = oci_parse($conn, $mno);
         oci_execute($nop);
         $opq = 0;
         while ($pqr = oci_fetch_assoc($nop)) {
@@ -77,7 +77,7 @@ if (isset($_POST["register"])) {
                                         $tpassword = md5($tpassword);
                                         $query = "INSERT INTO TRADER (TRADER_ID,TRADER_TYPE,NAME,TRADER_ADDRESS,TRADER_PHONE,TRADER_EMAIL,PASSWORD,TRADER_REPASSWORD,TRADER_STAT,CATEGORY,TRADER_PROFILE) VALUES (TRADER_SEQ.nextval,'$ttype','$tname','$location','$tphone','$temail','$tpassword','$trepassword',1,'$tcat','$filename')";
 
-                                        $std = oci_parse($connection, $query);
+                                        $std = oci_parse($conn, $query);
 
                                         $e = oci_execute($std);
                                         if ($e) {

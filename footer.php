@@ -29,12 +29,12 @@
                     </div><!-- widget end -->
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="widget course-links-widget">
-                            <h5 class="widget-title">Popular Courses</h5>
+                            <h5 class="widget-title">Quick Links</h5>
                             <ul class="courses-link-list">
-                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Academic English</a></li>
-                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Web Technology</a></li>
-                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>PC Systems</a></li>
-                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Ui Web Design</a></li>
+                                <li><a href="index.php"><i class="fas fa-long-arrow-alt-right"></i>Home</a></li>
+                                <li><a href="login.php"><i class="fas fa-long-arrow-alt-right"></i>Login</a></li>
+                                <li><a href="traderreg.php"><i class="fas fa-long-arrow-alt-right"></i>Trader Registration</a></li>
+                                <li><a href="register.php"><i class="fas fa-long-arrow-alt-right"></i>Customer Registration</a></li>
                                 <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Web Development</a></li>
                                 <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Apps Development</a></li>
                             </ul>
