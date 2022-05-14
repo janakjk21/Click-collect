@@ -48,7 +48,7 @@ include "../connection.php";
 
                         <?php
 
-                        $id = 123;
+                        $id = 21;
 
                         $qry = "SELECT * FROM TRADER where TRADER_ID='$id'";
 
@@ -61,7 +61,7 @@ include "../connection.php";
 
                         <table>
                             <tr>
-                                <th><img src="images/<?php echo $row['TRADER_PROFILE'] ?>" class="img-responsive img-fluid"></th>
+                                <th><img src="../assets/images/trader profile/<?php echo $row['TRADER_PROFILE'] ?>" class="img-responsive img-fluid"></th>
                             </tr>
                             <tr>
 
@@ -85,7 +85,7 @@ include "../connection.php";
                 </div>
             </div>
 
-            
+
             <!--Right side content-->
             <div class="col-md-8 col-lg-9 ">
                 <div class="card">
@@ -353,8 +353,8 @@ include "../connection.php";
                             </div>
                         </div>
                         <!-- Offer Modal Ends-->
-                        
-                        
+
+
                         <!--Profile data-->
                         <div class="tab-pane" id="profile">
                             <h6 class="text-dark text-center">Your Profile Information</h6>

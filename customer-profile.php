@@ -157,7 +157,7 @@
                                     $email = $_POST['email_id'];
                                     $mobile = $_POST['phone_no'];
                                     $addr = $_POST['address'];
-                                    
+
 
                                     $customersql = "SELECT CUSTOMER_ID FROM CUSTOMER WHERE NAME = '$customer_name' ";
                                     $customer_query = oci_parse($conn, $customersql);
@@ -200,32 +200,29 @@
                                 </div>
 
                                 <?php
-                                if (isset($_POST['submit'])) {
+                                if (isset($_POST['changePassword1'])) {
 
                                     $old_password = $_POST['oldPass'];
                                     $new_password1 = $_POST['newPass1'];
                                     $new_password2 = $_POST['newPass2'];
-                                    
 
-                                    $customersql = "SELECT CUSTOMER_ID FROM CUSTOMER WHERE NAME = '$customer_name' ";
-                                    $customer_query = oci_parse($conn, $customersql);
-                                    oci_execute($customer_query);
-                                    $customer_id = oci_fetch_assoc($customer_query);
+
+                                    $passwordsql = "SELECT CUSTOMER_ID FROM CUSTOMER WHERE NAME = '$customer_name' ";
+                                    $password_query = oci_parse($conn, $passwordsql);
+                                    oci_execute($password_query);
+                                    $customer_id = oci_fetch_assoc($password_query);
                                     $id = $customer_id['CUSTOMER_ID'];
 
-                                        $emailquery = "UPDATE CUSTOMER SET NAME='$username', CUSTOMER_EMAIL='$email',
-                                                    CUSTOMER_ADDRESS='$addr', CUSTOMER_PHONE='$mobile', PROFILEPIC='$file_name' WHERE CUSTOMER_ID = $id ";
-                                    } else {
-                                        $emailquery = "UPDATE CUSTOMER SET NAME='$username', CUSTOMER_EMAIL='$email',
-                                                CUSTOMER_ADDRESS='$addr', CUSTOMER_PHONE='$mobile' WHERE CUSTOMER_ID = $id ";
-                                    }
+                                    $new_password1 = md5($new_password1);
+                                    $passwordquery = "UPDATE CUSTOMER SET PASSWORD='$new_password1', CUSTOMER_REPASSWORD='$new_password2' WHERE CUSTOMER_ID = $id ";
 
-                                    $query = oci_parse($conn, $emailquery) or die("Record not updated");
-                                    oci_execute($query);
+                                    $query2 = oci_parse($conn, $passwordquery) or die("Record not updated");
+                                    oci_execute($query2);
 
-                                    if ($query) {
+                                    if ($query2) {
                                         echo ("<meta http-equiv='refresh' content='0'>");
                                     }
+                                }
 
                                 ?>
                                 <!-- Change Password Ends-->
