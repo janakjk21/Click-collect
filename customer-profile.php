@@ -81,7 +81,7 @@ if (!isset($_SESSION['NAME'])) {
     <?php
     include "./connection.php";
 
-    $customerid = 45;
+    $customerid = $_SESSION['cid'];
     $sql = "SELECT * FROM CUSTOMER WHERE CUSTOMER_ID='$customerid' ";
     $query = oci_parse($conn, $sql);
     oci_execute($query);
@@ -347,11 +347,7 @@ if (!isset($_SESSION['NAME'])) {
         var selectedTab = sessionStorage.getItem('selectedTab');
         if (selectedTab != null) {
             $('a[data-toggle="tab"][href="' + selectedTab + '"]').tab('show');
-<<<<<<< HEAD
         };
-=======
-        }
->>>>>>> b832d6e948e51c068a3c013857e63f716fe24e34
     </script>
 
 </body>
