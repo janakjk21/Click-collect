@@ -1,5 +1,15 @@
 <?php
+if (!isset($_SESSION['NAME'])) {
+    session_start();
+}
+
+
+?>
+
+
+<?php
 $active = 'Account';
+
 include("connection.php");
 
 if (isset($_POST['login'])) {
@@ -30,7 +40,7 @@ if (isset($_POST['login'])) {
         if ($opq == 1) {
             $_SESSION['tid'] = $row['TRADER_ID'];
             $_SESSION['NAME'] = $name;
-            header('location:traderprofile.php');
+            header('location:./traderdashboard/traderprofile.php');
         } else {
             $errormessage = "Invalid Login Details !!!";
         }
