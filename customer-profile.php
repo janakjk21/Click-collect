@@ -1,3 +1,13 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+if (!isset($_SESSION['NAME'])) {
+    header("Location: index.php");
+}
+
+?>
+
 <html lang="en">
 
 <head>
@@ -69,9 +79,9 @@
 
     <?php
     include "./connection.php";
-
+    $name = $_SESSION['cid'];
     $customerid = 44;
-    $sql = "SELECT * FROM CUSTOMER WHERE CUSTOMER_ID='$customerid' ";
+    $sql = "SELECT * FROM CUSTOMER WHERE CUSTOMER_ID=$name";
     $query = oci_parse($conn, $sql);
     oci_execute($query);
     $email_pass = oci_fetch_assoc($query);
@@ -305,8 +315,7 @@
         var selectedTab = sessionStorage.getItem('selectedTab');
         if (selectedTab != null) {
             $('a[data-toggle="tab"][href="' + selectedTab + '"]').tab('show');
-        }
-        });
+        };
     </script>
 
 </body>

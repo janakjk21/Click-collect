@@ -42,7 +42,7 @@ if (isset($_POST["register"])) {
         //to validate username
         $abc = "SELECT * FROM TRADER WHERE NAME = '$tname'";
         $bcd = oci_parse($conn, $abc);
-        oci_execute($bcd);
+        oci_execute($bcd, OCI_DEFAULT);
         $cde = 0;
         while ($def = oci_fetch_assoc($bcd)) {
             $cde += 1;
@@ -50,7 +50,7 @@ if (isset($_POST["register"])) {
         //for email validation
         $mno = "SELECT * FROM TRADER WHERE TRADER_EMAIL = '$temail'";
         $nop = oci_parse($conn, $mno);
-        oci_execute($nop);
+        oci_execute($nop, OCI_DEFAULT);
         $opq = 0;
         while ($pqr = oci_fetch_assoc($nop)) {
             $opq += 1;

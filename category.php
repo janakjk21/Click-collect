@@ -13,11 +13,11 @@
 <body>
     <?php include "./connection.php";
 
-    /*
-    $shop="SELECT * FROM shop";
-    $query=mysqli_query($conn,$shop);
-    $total_shops=mysqli_num_rows($query);
-*/
+    $shop = "SELECT * FROM SHOP";
+    $query = oci_parse($conn, $shop);
+
+
+    $total_shops = oci_execute($query);
 
 
     ?>

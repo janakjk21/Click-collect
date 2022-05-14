@@ -1,9 +1,9 @@
 <?php
-
-if (!isset($_SESSION['username'])) {
+include "./connection.php";
+if (!isset($_SESSION['NAME'])) {
     session_start();
 }
-include "./connection.php";
+
 ?>
 <?php $cur_format = '$';
 if (!empty($header[0]['currency_format'])) {
@@ -197,27 +197,20 @@ if (!empty($header[0]['currency_format'])) {
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <?php if (isset($_SESSION['username'])) {
-                                $name = $_SESSION['id'];
+                            <?php if (isset($_SESSION['NAME'])) {
 
-                                // $sql = "SELECT * FROM customer WHERE customer_id='$name'";
-                                // /*
-                                //         $sql ="SELECT * FROM signup WHERE customer_id='$name' ";
-                                //         $query=mysqli_query($conn,$sql);
-                                //         $email_pass=mysqli_fetch_assoc($query);
-                                //         $customer_name = $email_pass['customer_name'];
-                                //         $image = $email_pass['imagee'];
-                                //         */
+                                $customer_id = $_SESSION['cid'];
+
 
                                 $sql = "SELECT * FROM CUSTOMER WHERE CUSTOMER_ID='$customer_id'";
                                 $query = oci_parse($conn, $sql);
                                 oci_execute($query);
                                 $email_pass = oci_fetch_array($query);
                                 $customer_name = $email_pass['NAME'];
-                                $image = $email_pass['IMAGE'];
+                                $image = $email_pass['PROFILEPIC'];
 
                             ?>
-                                <a class="nav-link active text-center " href="customer-profile.php"><img src="<?php echo $image ?>" class="mr-1 rounded-circle" alt="">Welcome |
+                                <a class="nav-link active text-center " href="customer-profile.php"><img src="./assets/images/customer profile pic/<?php echo $image ?>" class="mr-1 rounded-circle" alt="">Welcome |
                                     <?Php echo $customer_name ?>
                                 </a>
                             <?php   } ?>
@@ -294,8 +287,9 @@ if (!empty($header[0]['currency_format'])) {
         </div>
     </div>
 
+    <?php include "./script.php" ?>
 
-
+    <script src="http://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
 </body>
 
 </html>
