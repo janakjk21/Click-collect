@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-set_error_handler("var_dump");
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// set_error_handler("var_dump");
 
 $active = 'Home';
 // session_start();
@@ -68,8 +68,7 @@ if (isset($_POST["register"])) {
                                         echo "Sorry, your file was not uploaded.";
                                         // if everything is ok, try to upload file
                                     } else {
-
-                                        if (move_uploaded_file($_FILES["TRADER_PROFILE"]["tmp_name"], $target_dir)) {
+                                        if (move_uploaded_file($_FILES["TRADER_PROFILE"]["tmp_name"], $target_file)) {
                                             echo "The file " . basename($_FILES["TRADER_PROFILE"]["name"]) . " has been uploaded.";
                                         } else {
 
@@ -78,7 +77,6 @@ if (isset($_POST["register"])) {
                                     }
                                     $tpassword = md5($tpassword);
                                     $query = "INSERT INTO TRADER (TRADER_ID,TRADER_TYPE,NAME,TRADER_ADDRESS,TRADER_PHONE,TRADER_EMAIL,PASSWORD,TRADER_REPASSWORD,TRADER_STAT,CATEGORY,TRADER_PROFILE) VALUES (TRADER_SEQ.nextval,'$ttype','$tname','$location','$tphone','$temail','$tpassword','$trepassword',1,'$tcat','$filename')";
-
                                     $std = oci_parse($conn, $query);
 
                                     $e = oci_execute($std);
