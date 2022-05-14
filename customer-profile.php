@@ -80,15 +80,9 @@ if (!isset($_SESSION['NAME'])) {
 
     <?php
     include "./connection.php";
-<<<<<<< HEAD
-    $name = $_SESSION['cid'];
-    $customerid = 44;
-    $sql = "SELECT * FROM CUSTOMER WHERE CUSTOMER_ID=$name";
-=======
 
     $customerid = 45;
     $sql = "SELECT * FROM CUSTOMER WHERE CUSTOMER_ID='$customerid' ";
->>>>>>> b832d6e948e51c068a3c013857e63f716fe24e34
     $query = oci_parse($conn, $sql);
     oci_execute($query);
     $email_pass = oci_fetch_assoc($query);
