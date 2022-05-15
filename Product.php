@@ -17,7 +17,7 @@
     <!-- code for the single product  -->
     <?php
     include "./connection.php";
-    $sql = 'SELECT * FROM PRODUCT where PRODUCT_ID=	21 ';
+    $sql = 'SELECT * FROM PRODUCT where PRODUCT_ID=	1 ';
     $stid = oci_parse($conn, $sql);
 
 
@@ -159,7 +159,7 @@
                                 <div class="inc qty-btn">+</div>
                             </div>
                         </div>
-                        <div class="product-details-price"><?php echo $product_price ?><span class="price-old"> <?php echo $disamount ?></span></div>
+                        <div class="product-details-price"><?php echo $product_price  ?><span class="price-old"> <?php echo $disamount ?></span></div>
                         <div class="product-details-action">
                             <button type="button" class="product-action-btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Add to cart</button>
                             <button type="button" class="product-action-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">

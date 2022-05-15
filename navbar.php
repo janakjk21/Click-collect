@@ -198,16 +198,30 @@ if (!empty($header[0]['currency_format'])) {
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <?php if (isset($_SESSION['NAME'])) {
+                                if (!empty($_SESSION['cid'])) {
+                                    $customer_id = $_SESSION['cid'];
+                                    $sql = "SELECT * FROM CUSTOMER WHERE CUSTOMER_ID='$customer_id'";
 
-                                $customer_id = $_SESSION['cid'];
+                                    $query = oci_parse($conn, $sql);
+                                    oci_execute($query);
+                                    $email_pass = oci_fetch_array($query);
+                                    $customer_name = $email_pass['NAME'];
+                                    $image = $email_pass['PROFILEPIC'];
+                                } else {
+                                    $customer_id = $_SESSION['tid'];
+
+                                    $sql = "SELECT * FROM TRADER WHERE TRADER_ID='$customer_id'";
+
+                                    $query = oci_parse($conn, $sql);
+                                    oci_execute($query);
+                                    $email_pass = oci_fetch_array($query);
+                                    $customer_name = $email_pass['NAME'];
+                                    $image = $email_pass['TRADER_PROFILE'];
+                                }
 
 
-                                $sql = "SELECT * FROM CUSTOMER WHERE CUSTOMER_ID='$customer_id'";
-                                $query = oci_parse($conn, $sql);
-                                oci_execute($query);
-                                $email_pass = oci_fetch_array($query);
-                                $customer_name = $email_pass['NAME'];
-                                $image = $email_pass['PROFILEPIC'];
+
+
 
                             ?>
                                 <a class="nav-link active text-center " href="customer-profile.php"><img src="./assets/images/customer profile pic/<?php echo $image ?>" class="mr-1 rounded-circle" alt="">Welcome |

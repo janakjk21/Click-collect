@@ -17,6 +17,7 @@
 
         include "./connection.php";
         include "navbar.php";
+        echo $_SESSION['tid'];
 
 
         ?></div>

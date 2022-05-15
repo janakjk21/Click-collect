@@ -37,10 +37,13 @@ if (isset($_POST['login'])) {
         oci_execute($nop);
         $row = oci_fetch_assoc($nop);
         $opq = oci_num_rows($nop);
+        echo $opq;
+        echo $row['TRADER_ID'];
         if ($opq == 1) {
+
             $_SESSION['tid'] = $row['TRADER_ID'];
             $_SESSION['NAME'] = $name;
-            header('location:./traderdashboard/traderprofile.php');
+            header('location:./traderprofile.php');
         } else {
             $errormessage = "Invalid Login Details !!!";
         }
