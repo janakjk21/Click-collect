@@ -101,108 +101,6 @@ if (!isset($_SESSION['tid'])) {
         });
     </script>
     <style>
-        .navbar {
-            background-color: #000000;
-        }
-
-        .navbar-collapse .right {
-            float: right;
-        }
-
-        .navbar-brand {
-            float: left;
-            padding: 10px 15px;
-            font-size: 18px;
-            line-height: 20px;
-            height: 70px;
-        }
-
-        .navbar-brand:hover,
-        .navbar-brand:focus {
-            text-decoration: none;
-        }
-
-        .navbar ul.nav>li>a {
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        .navbar ul.nav>li>a:hover {
-            background: #e7e7e7;
-        }
-
-        .padding-nav {
-            padding-top: 10px;
-        }
-
-        .btn-primary {
-            background: #ed0651;
-
-        }
-
-        #search .navbar-form {
-            float: right;
-        }
-
-        #search {
-            clear: both;
-            border-top: solid 1px #74b72e;
-            text-align: right;
-        }
-
-        #search .navbar-form .input-group {
-            display: table;
-        }
-
-        #search .navbar-form .input-group .form-control {
-            width: 100%;
-        }
-
-        #slider {
-            margin-bottom: 40px;
-        }
-
-        .sidebar {
-            margin: 0;
-            padding: 0;
-            width: 200px;
-            background-color: #f1f1f1;
-            position: absolute;
-            height: 100%;
-            overflow: auto;
-            margin-bottom: 50px;
-        }
-
-        .sidebar a {
-            display: block;
-            color: black;
-            padding: 16px;
-            text-decoration: none;
-        }
-
-        .sidebar a.active {
-            background-color: #74b72e;
-            color: white;
-        }
-
-        .sidebar a:hover:not(.active) {
-            background-color: #555;
-            color: white;
-        }
-
-        .panel-body {
-            margin-left: 80px;
-            margin-top: 50px;
-        }
-
-
-        .form-control {
-            border: 1px solid #74b72e;
-            background: white;
-
-        }
-
         .btn-primary12 {
             background-color: #ff0303;
             border: none;
@@ -219,9 +117,15 @@ if (!isset($_SESSION['tid'])) {
 
 
 
-    <div class="row ">
+    <div class="row" style="margin-top:5%;margin-buttom:5%;">
 
-        <div class="panel-body col-md-7 box ">
+
+
+        <div class="col-md-3 ">
+
+        </div>
+        <div class="panel-body col-md-7 box">
+            <h1> Add shop</h1>
 
             <br>
             <?php
@@ -239,12 +143,12 @@ if (!isset($_SESSION['tid'])) {
                 echo "</div>";
             }
             ?>
-            <h1 class="text-justify" style="padding-left:10%"> Edit shop</h1>
 
-            <form method=" post" class="form-horizontal" enctype="multipart/form-data" style="padding:10%">
-                <div class="form-group ">
+            <form method="post" class="form-horizontal" enctype="multipart/form-data">
+                <div class="form-group">
 
-                    <label class=" control-label"> Shop Name </label>
+                    <label class="control-label"> Shop Name </label>
+
                     <input type="text" name="SHOP_NAME" class="form-control" required placeholder="Enter shop name ...">
 
 
@@ -256,19 +160,22 @@ if (!isset($_SESSION['tid'])) {
 
                     <input name="SHOP_ADDRESS" type="text" class="form-control" required placeholder="Enter your address ...">
 
+
                 </div>
 
                 <div class="form-group">
                     <label class=" control-label"> Shop Contact</label>
 
+
                     <input name="SHOP_PHONE" type="text" class="form-control" required placeholder="Enter your phone number...">
+
 
                 </div>
                 <div class="form-group">
                     <label class=" control-label"> Shop Email</label>
 
-
                     <input name="SHOP_EMAIL" type="email" class="form-control" required placeholder="Enter your email...">
+
 
                 </div>
                 <div class="form-group">
@@ -280,9 +187,10 @@ if (!isset($_SESSION['tid'])) {
 
                 </div>
                 <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
 
-                    <button class="btn  btn-success"> <input name="add" value="Insert Shop" type="submit" class="btn btn-primary12 form-control">
-                    </button>
+
+                    <input name="add" value="Insert Shop" type="submit" class="btn btn-primary12 form-control">
 
 
                 </div>

@@ -1,13 +1,13 @@
 <?php
 $active = 'Account';
 SESSION_START();
-include('./connection.php');
-// $trader_session = $_SESSION['tid'];
+include 'connection.php';
+$trader_session = $_SESSION['tid'];
 $session_id = $_GET['sid'];
 
 $get_shop = "select * from SHOP WHERE SHOP_ID='$session_id'";
 
-$run_shop = oci_parse($connection, $get_shop);
+$run_shop = oci_parse($conn, $get_shop);
 
 oci_execute($run_shop);
 
