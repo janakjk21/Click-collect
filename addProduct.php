@@ -41,11 +41,11 @@ if (!isset($_SESSION['tid'])) {
 
 
         if (isset($_FILES['PRODUCT_PIC1'])) { //if customer select a file
-            $target_dir1 = "../assets/img";
+            $target_dir1 = "./assets/img/";
             $filename1 = $_FILES['PRODUCT_PIC1']['name'];
-            $target_dir2 = "../assets/img";
+            $target_dir2 = "./assets/img/";
             $filename3 = $_FILES['PRODUCT_PIC2']['name'];
-            $target_dir3 = "../assets/img";
+            $target_dir3 = "./assets/img/";
             $filename2 = $_FILES['PRODUCT_PIC3']['name'];
 
 

@@ -10,7 +10,7 @@ if (!isset($_SESSION['tid'])) {
     // $sname=$_GET['sname'];
 }
 
-include('../connection.php');
+include('./connection.php');
 
 ?>
 <!DOCTYPE html>

@@ -4,8 +4,9 @@ include('connection.php');
 $active = 'Cart';
 
 if (!isset($_SESSION['cid'])) {
-} else {
     $customerid = $_SESSION['cid'];
+} else {
+   
     $_SESSION['cid'] = $customerid;
 }
 
@@ -222,7 +223,7 @@ SPLIT;
                         $t = 0;
 
 
-                        $a = "SELECT * FROM CART,PRODUCT WHERE CART.PRODUCT_ID=PRODUCT.PRODUCT_ID AND CUSTOMER_ID=$customerid";
+                        $a = "SELECT * FROM CART,PRODUCT WHERE CART.PRODUCT_ID=PRODUCT.PRODUCT_ID AND CUSTOMER_ID='$customerid'";
                         $b = oci_parse($conn, $a);
                         $c = oci_execute($b);
                         $f = oci_num_rows($b);
