@@ -162,7 +162,7 @@ include('./connection.php');
     include './navbar.php';
     ?>
 
-    <div class="row" style="margin-top:5%;margin-buttom:5%;">
+    <div class="row" style="margin-top:5%;margin-bottom:5%;">
         <div class="col-md-1"></div>
         <div class="col-md-3">
             <?php
