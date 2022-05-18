@@ -1,13 +1,13 @@
 <?php
-//session_start();
+
 include('connection.php');
 $active = 'Cart';
 
 if (!isset($_SESSION['cid'])) {
-    $customerid = $_SESSION['cid'];
+    session_start();
 } else {
-   
-    $_SESSION['cid'] = $customerid;
+
+    $customerid = $_SESSION['cid'];
 }
 
 
@@ -218,7 +218,7 @@ SPLIT;
                         <h1>Shopping Cart</h1>
 
                         <?php
-
+                        $customerid = $_SESSION['cid'];
 
                         $t = 0;
 

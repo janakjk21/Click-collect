@@ -291,7 +291,7 @@ include('./connection.php');
                                     echo '<tbody>';
                                     echo '<tr>';
 
-                                    echo '<td><img src="tradershop/' . $row['SHOP_PHOTO'] . '" style=" width:50px; height:50px;" /></td>';
+                                    echo '<td><img src="./assets/img/' . $row['SHOP_PHOTO'] . '" style=" width:50px; height:50px;" /></td>';
                                     echo '<td>' . $row['SHOP_NAME'] . '</td>';
                                     echo '<td>' . $row['SHOP_ADDRESS'] . '</td>';
                                     echo '<td>' . $row['SHOP_PHONE'] . '</td>';

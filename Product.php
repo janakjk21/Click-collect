@@ -14,7 +14,57 @@
 </head>
 
 <body>
+    <!-- //code for cart -->
     <!-- code for the single product  -->
+    <?php
+    session_start();
+    $active = 'Shop';
+    include('connection.php');
+    error_reporting(0);
+    if (isset($_SESSION['cid'])) {
+
+        $customerid = $_SESSION['cid'];
+    }
+    if (isset($_GET['pid'])) {
+        $pid = $_GET['pid'];
+    }
+
+    if (isset($_POST['addtocart'])) {
+        $torder = $_POST['torder'];
+        $x = "SELECT * FROM PRODUCT WHERE PRODUCT_ID='$pid'";
+        $y = oci_parse($connection, $x);
+        oci_execute($y);
+        while ($z = oci_fetch_assoc($y)) {
+            if ($z['PRODUCTQUANTITY'] > 0) {
+                if ($torder < $z['MINORDER'] || $torder > $z['MAXORDER']) {
+                    $ermessage = "Place A Valid Order !!!";
+                } else {
+                    $d = "SELECT CART_ID FROM CART WHERE  PRODUCT_ID='$pid' AND CUSTOMER_ID='$customerid' ";
+                    $e = oci_parse($connection, $d);
+                    $f = oci_execute($e);
+                    oci_fetch_assoc($e);
+                    $g = oci_num_rows($e);
+                    if ($g > 0) {
+                        $ermessage = "You Have Already Make An Order For This Product,Please Check You cart !!!";
+                    } else {
+                        $a = "INSERT INTO CART (CART_ID,QUANTITY,CUSTOMER_ID,PRODUCT_ID) VALUES (CART_SEQ.nextval,'$torder','$customerid','$pid')";
+                        $b = oci_parse($connection, $a);
+                        $c = oci_execute($b);
+                        if ($c) {
+                            // echo "timi kun thauma chau";
+                            header('location:cart.php');
+                        } else {
+                            // echo'tablema gayenau';
+                        }
+                    }
+                }
+            } else {
+                $ermessage = "Product is out of Stock!";
+            }
+        }
+    }
+
+    ?>
     <?php
     include "./connection.php";
     $sql = 'SELECT * FROM PRODUCT where PRODUCT_ID=	1 ';
@@ -161,7 +211,7 @@
                         </div>
                         <div class="product-details-price"><?php echo $product_price  ?><span class="price-old"> <?php echo $disamount ?></span></div>
                         <div class="product-details-action">
-                            <button type="button" class="product-action-btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal">Add to cart</button>
+                            <button class="product-action-btn" data-bs-toggle="modal" data-bs-target="#action-CartAddModal" type="submit" name="addtocart">Add to cart</button>
                             <button type="button" class="product-action-wishlist" data-bs-toggle="modal" data-bs-target="#action-WishlistModal">
                                 <i class="fa fa-heart"></i>
                             </button>

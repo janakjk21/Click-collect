@@ -33,12 +33,12 @@
 
                             if ($total_shops) {
                                 while ($row = oci_fetch_array($query)) {
-                                    $products = "SELECT * FROM product WHERE shop={$row['SHOP']}";
+                                    $products = "SELECT * FROM product WHERE SHOP_ID={$row['SHOP_ID']}";
                                     $product_query = oci_parse($conn, $products);
                                     oci_execute($product_query);
                                     $total_products = oci_num_fields($query);
                             ?>
-                                    <li><a class="text-capitalize" href="category_shop.php?sid=<?php echo $row['SHOP'] ?>"><?php echo $row['SHOPE_NAME'] ?><i class="fas fa-angle-right"></i></a>
+                                    <li><a class="text-capitalize" href="category_shop.php?sid=<?php echo $row['SHOP_ID'] ?>"><?php echo $row['SHOP_NAME'] ?><i class="fas fa-angle-right"></i></a>
                                         <ul>
                                             <?php
                                             if ($total_products) {
