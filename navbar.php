@@ -160,7 +160,7 @@ if (!empty($header[0]['currency_format'])) {
 </head>
 
 <body>
-    <div id="bg-light">
+    <div id="bg-light" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; border-radius:3%">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand mr-md-2 mr-lg-2 mr-0" href="index.php"><img src="./assets/img/click & clect groceries.png" style="height: 30px;" alt=""></a>

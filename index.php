@@ -21,10 +21,10 @@
 
 
         ?></div>
-    <div class="container">
+    <div class="container" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; ">
         <?php include "category.php"; ?>
     </div>
-    <div class="container mt-3">
+    <div class="container mt-3" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; ">
         <div class="row">
             <div class="col-md-12">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
