@@ -7,20 +7,22 @@
     <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" referrerpolicy="no-referrer" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style/style.css">
-    <title>Home | Click-collect</title>
+
+    <title>Home - Click & Collect Groceries</title>
 </head>
 
 <body>
 
     <div id="navbar">
         <?php
-
         include "./connection.php";
         include "navbar.php";
         echo $_SESSION['tid'];
+        ?>
+    </div>
 
 
-        ?></div>
+    ?></div>
     <div class="container" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; ">
         <?php include "category.php"; ?>
     </div>
@@ -56,23 +58,20 @@
             </div>
         </div>
         <div class="row">
-            <?php include "./product_card_image_tiles.php" ?>
+            <?php
+            include "./product_card_image_tiles.php"
+            ?>
         </div>
     </div>
 
+    <?php
+    include "./Swiper.php"
+    ?>
 
 
-    <?php include "./Swiper.php" ?>
-
-
-
-
-    <?php include "./footer.php" ?>
-
-
-
-
-
+    <?php
+    include "./footer.php"
+    ?>
 
 
     <script src="http://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
