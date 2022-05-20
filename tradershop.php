@@ -193,7 +193,7 @@ include('./connection.php');
 
                         if (!isset($_SESSION['tid'])) {
                         } else {
-                            echo "<center><img src='./assets/img/$trader_image' class='img-responsive' ></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
+                            echo "<center><img src='./assets/img/$trader_image' class='img-responsive' style='border-radius:50%;'></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
                         }
 
                         ?>

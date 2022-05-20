@@ -21,6 +21,7 @@
         ?>
     </div>
 
+<<<<<<< HEAD
     <div class="container" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;">
         <?php 
         include "category.php"; 
@@ -29,6 +30,15 @@
 
     <div class="container mt-3">
         <div class="row" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+=======
+
+    ?></div>
+    <div class="container" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; ">
+        <?php include "category.php"; ?>
+    </div>
+    <div class="container mt-3" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; ">
+        <div class="row">
+>>>>>>> 07bffcfa0cf119e1246845f40bbdb74721150809
             <div class="col-md-12">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -59,19 +69,19 @@
             </div>
         </div>
         <div class="row">
-            <?php 
-            include "./product_card_image_tiles.php" 
+            <?php
+            include "./product_card_image_tiles.php"
             ?>
         </div>
     </div>
 
-    <?php 
-    include "./Swiper.php" 
+    <?php
+    include "./Swiper.php"
     ?>
 
 
-    <?php 
-    include "./footer.php" 
+    <?php
+    include "./footer.php"
     ?>
 
 
