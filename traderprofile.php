@@ -123,7 +123,7 @@ include('./connection.php');
                         if (!isset($_SESSION['tid'])) {
                         } else {
 
-                            echo "<center><img src='./assets/img/trader profile pic/$trader_image' class='img-responsive' ></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
+                            echo "<center><img src='./assets/img/trader profile pic/$trader_image' class='img-responsive'  ></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
                         }
 
                         ?>
@@ -182,46 +182,44 @@ include('./connection.php');
                     <div class=" column col-md-8">
 
                         <div class="row">
-                            <div class=" column3 col-md-7">
-                                <img style="width:70%; height:250px; padding-right:20px; margin-top: 0px; justify-content: center;" src="./assets/img/<?php echo $d['TRADER_PROFILE'] ?> ">
+                            <div class=" column3 col-md-8">
+                                <img style="width:80%; height:250px;  margin-top: 0px; justify-content: center;" src="./assets/img/trader profile pic/<?php echo $d['TRADER_PROFILE'] ?> ">
                             </div>
 
                             <div class="column4 col-md-4">
                                 <ul class="list-unstyled">
 
-                                    <li>
-                                        <h4>Name:
-                                            <i>
-                                                <?php echo $d['NAME'] ?>
-                                            </i>
-                                        </h4>
-                                    </li>
+
+                                    <h4 style="color:#233243;">Name:
+                                        <i>
+                                            <?php echo $d['NAME'] ?>
+                                        </i>
+                                    </h4>
+
 
                                     <br>
-                                    <li>
-                                        <h4>Address :
-                                            <i>
-                                                <?php echo $d['TRADER_ADDRESS'] ?>
-                                            </i>
-                                        </h4>
-                                    </li>
-                                    <br>
-                                    <li>
-                                        <h4>Phone:
-                                            <i>
-                                                <?php echo $d['TRADER_PHONE'] ?>
-                                            </i>
-                                        </h4>
-                                    </li>
+                                    <h4>Address :
+                                        <h3>
+                                            <?php echo $d['TRADER_ADDRESS'] ?>
+                                        </h3>
+                                    </h4>
+
                                     <br>
 
-                                    <li>
-                                        <h4>Email:
-                                            <i>
-                                                <?php echo $d['TRADER_EMAIL'] ?>
-                                            </i>
-                                        </h4>
-                                    </li>
+                                    <h4>Phone:
+                                        <i>
+                                            <?php echo $d['TRADER_PHONE'] ?>
+                                        </i>
+                                    </h4>
+
+                                    <br>
+
+
+                                    <h4>Email:
+                                        <i>
+                                            <?php echo $d['TRADER_EMAIL'] ?>
+                                        </i>
+                                    </h4>
                                 </ul>
 
                             </div>

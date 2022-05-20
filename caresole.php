@@ -58,7 +58,7 @@
             border-radius: 6px;
             text-align: center;
             position: relative;
-            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
         }
 
         .carousel .item .img-box {
@@ -180,8 +180,8 @@
 </head>
 
 <body>
-    <div class="container-xl">
-        <div class="row">
+    <div class="container-xl ">
+        <div class="row box">
             <div class="col-md-12">
                 <h2>Featured <b>Products</b></h2>
                 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
@@ -472,10 +472,10 @@
                     </div>
                     <!-- Carousel controls -->
                     <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
+                        <i class="carousel-control-prev-icon" style=" background-color: black;"></i>
                     </a>
                     <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
+                        <i class="carousel-control-next-icon" style=" background-color: black;"></i>
                     </a>
                 </div>
             </div>
