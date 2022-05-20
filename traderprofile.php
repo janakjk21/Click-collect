@@ -20,7 +20,6 @@ include('./connection.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CleckDiced</title>
     <link rel="stylesheet" href="Styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="Styles/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,6 +29,8 @@ include('./connection.php');
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Trader Profile - Click & Collect Groceries</title>
     <style>
         .view a {
             float: left;
@@ -88,7 +89,7 @@ include('./connection.php');
     ?>
 
 
-    <div class="row" style="margin-top:5%;margin-buttom:5%;">
+    <div class="row" style="margin-top:5%; margin-buttom:5%;">
         <div class="col-md-1"></div>
         <div class="col-md-3 box">
             <?php
@@ -122,7 +123,7 @@ include('./connection.php');
                         if (!isset($_SESSION['tid'])) {
                         } else {
 
-                            echo "<center><img src='./assets/img/$trader_image' class='img-responsive' ></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
+                            echo "<center><img src='./assets/img/trader profile pic/$trader_image' class='img-responsive' ></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
                         }
 
                         ?>

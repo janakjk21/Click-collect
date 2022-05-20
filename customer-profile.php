@@ -138,7 +138,7 @@ if (!isset($_SESSION['NAME'])) {
                                 <div class="tab-pane active" id="profile">
                                     <h6>MY PROFILE</h6>
                                     <div class="text-center">
-                                        <img class="img-fluid rounded-circle mt-5 mb-2" height="120px" width="120px" src="./assets/images/customer profile pic/<?php echo $image ?>" alt="customer pic">
+                                        <img class="img-fluid rounded-circle mt-5 mb-2" height="120px" width="120px" src="./assets/img/customer profile pic/<?php echo $image ?>" alt="customer pic">
                                         <p>Name: <?php echo $customer_name ?> </p>
                                         <p>Email: <?php echo $email ?></p>
                                         <p>Phone Number: <?php echo $phone ?> </p>
