@@ -123,11 +123,7 @@ include('./connection.php');
                         if (!isset($_SESSION['tid'])) {
                         } else {
 
-<<<<<<< HEAD
-                            echo "<center><img src='./assets/img/trader profile pic/$trader_image' class='img-responsive'></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
-=======
                             echo "<center><img src='./assets/img/trader profile pic/$trader_image' class='img-responsive'  ></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
->>>>>>> 06066d86ae86635c7764668bc958a0ee0f7c5589
                         }
 
                         ?>
@@ -229,7 +225,7 @@ include('./connection.php');
                             </div>
                         </div>
                         <div class="row">
-                            <div class=" column2 col-md-5">
+                            <div class=" column2 col-md-5" style="display: flex;">
                                 <a class="btn btn-primary sad" href="updatetraderpassword.php">Update Password
                                 </a>
                                 <a class="btn btn-primary sad" href="updatetrader.php?tid='.$traderid.'">Update Profile

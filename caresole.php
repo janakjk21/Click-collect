@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bootstrap Multiple Item Product Carousel</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -34,7 +33,6 @@
             margin: 0 auto;
             height: 4px;
             border-radius: 1px;
-            background: #7ac400;
             left: 0;
             right: 0;
             bottom: -20px;
@@ -199,10 +197,10 @@
                                     <div class="thumb-wrapper">
                                         <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                                         <div class="img-box">
-                                            <img src="/examples/images/products/ipad.jpg" class="img-fluid" alt="">
+                                            <img src="./assets/img/featured products/tuna.jpg" class="img-fluid" alt="">
                                         </div>
                                         <div class="thumb-content">
-                                            <h4>Apple iPad</h4>
+                                            <h4>Tuna</h4>
                                             <div class="star-rating">
                                                 <ul class="list-inline">
                                                     <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -221,10 +219,10 @@
                                     <div class="thumb-wrapper">
                                         <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                                         <div class="img-box">
-                                            <img src="/examples/images/products/headphone.jpg" class="img-fluid" alt="Headphone">
+                                            <img src="./assets/img/featured products/chicken.jpg" class="img-fluid" alt="Headphone">
                                         </div>
                                         <div class="thumb-content">
-                                            <h4>Sony Headphone</h4>
+                                            <h4>Chicken</h4>
                                             <div class="star-rating">
                                                 <ul class="list-inline">
                                                     <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -243,10 +241,10 @@
                                     <div class="thumb-wrapper">
                                         <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                                         <div class="img-box">
-                                            <img src="/examples/images/products/macbook-air.jpg" class="img-fluid" alt="Macbook">
+                                            <img src="./assets/img/featured products/tomato.jpg" class="img-fluid" alt="Macbook">
                                         </div>
                                         <div class="thumb-content">
-                                            <h4>Macbook Air</h4>
+                                            <h4>Tomato</h4>
                                             <div class="star-rating">
                                                 <ul class="list-inline">
                                                     <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -265,10 +263,10 @@
                                     <div class="thumb-wrapper">
                                         <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                                         <div class="img-box">
-                                            <img src="/examples/images/products/nikon.jpg" class="img-fluid" alt="Nikon">
+                                            <img src="./assets/img/featured products/pizza.png" class="img-fluid" alt="Nikon">
                                         </div>
                                         <div class="thumb-content">
-                                            <h4>Nikon DSLR</h4>
+                                            <h4>Pizza</h4>
                                             <div class="star-rating">
                                                 <ul class="list-inline">
                                                     <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -291,10 +289,10 @@
                                     <div class="thumb-wrapper">
                                         <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                                         <div class="img-box">
-                                            <img src="/examples/images/products/play-station.jpg" class="img-fluid" alt="Play Station">
+                                            <img src="./assets/img/featured products/cake.jpg" class="img-fluid" alt="Play Station">
                                         </div>
                                         <div class="thumb-content">
-                                            <h4>Sony Play Station</h4>
+                                            <h4>Cake</h4>
                                             <p class="item-price"><strike>$289.00</strike> <span>$269.00</span></p>
                                             <div class="star-rating">
                                                 <ul class="list-inline">

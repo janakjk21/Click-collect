@@ -30,31 +30,31 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="widget course-links-widget">
                             <h5 class="widget-title">Quick Links</h5>
-                            <ul class="courses-link-list">
+                            <ul class="courses-link-list" style="list-style-type: none;">
                                 <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>
                                 <li><a href="login.php"><i class="fas fa-long-arrow-alt-right"></i>Login</a></li>
                                 <li><a href="register.php"><i class="fas fa-long-arrow-alt-right"></i>Customer Registration</a></li>
                                 <li><a href="traderreg.php"><i class="fas fa-long-arrow-alt-right"></i>Trader Registration</a></li>
-                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Web Development</a></li>
-                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Apps Development</a></li>
+                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Products</a></li>
+                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Cart</a></li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="widget latest-news-widget">
-                            <h5 class="widget-title">lastest news</h5>
+                            <h5 class="widget-title">Our Blogs</h5>
                             <ul class="small-post-list">
                                 <li>
                                     <div class="small-post-item">
-                                        <a href="#" class="post-date">July 18, 2018</a>
-                                        <h6 class="small-post-title"><a href="#">Lorem Ipsum is simply dummy text of the printing.</a></h6>
+                                        <a href="#" class="post-date">March 18, 2022</a>
+                                        <h6 class="small-post-title"><a href="#">Our new products</a></h6>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="small-post-item">
-                                        <a href="#" class="post-date">July 28, 2018</a>
-                                        <h6 class="small-post-title"><a href="#">Lorem Ipsum is simply dummy text of the printing</a></h6>
+                                        <a href="#" class="post-date">April 28, 2022</a>
+                                        <h6 class="small-post-title"><a href="#">Our new traders</a></h6>
                                     </div>
                                 </li>
                             </ul>
