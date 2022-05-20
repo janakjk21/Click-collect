@@ -205,185 +205,190 @@ SPLIT;
     <div id="content" style="margin-top:40px;">
         <!-- #content Begin -->
         <div class="container">
-            <!-- container Begin -->
-            <div id="cart" class="col-md-9">
-                <!-- col-md-9 Begin -->
+            <div class='row'>
+                <div id="cart" class="col-md-9">
+                    <!-- col-md-9 Begin -->
 
-                <div class="box">
+                    <div class="box" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
+                        <!-- box Begin -->
+
+                        <form action="checkout.php" method="post" enctype="multipart/form-data">
+                            <!-- form Begin -->
+
+                            <h1>Shopping Cart</h1>
+
+                            <?php
+                            $customerid = $_SESSION['cid'];
+
+                            $t = 0;
+
+
+                            $a = "SELECT * FROM CART,PRODUCT WHERE CART.PRODUCT_ID=PRODUCT.PRODUCT_ID AND CUSTOMER_ID='$customerid'";
+                            $b = oci_parse($conn, $a);
+                            $c = oci_execute($b);
+                            $f = oci_num_rows($b);
+                            echo '<div class="table-responsive">';
+                            echo '<table class="table table-striped text-center">';
+                            echo '<thead>';
+                            echo '<tr>';
+                            echo '<th scope="col">Product</th>';
+                            echo '<th scope="col">Product Name</th>';
+                            echo '<th scope="col">Price</th>';
+                            echo '<th scope="col" class="text-center">Quantity</th>';
+                            echo '<th scope="col" class="text-right">Total Price</th>';
+                            echo '<th>Action</th>';
+                            echo '</tr>';
+                            echo '</thead>';
+                            while ($d = oci_fetch_assoc($b)) {
+                                echo '<tbody>';
+                                $m = $d['PRODUCT_ID'];
+                                echo '<tr>';
+                                echo '<td><img src="products/' . $d['PRODUCT_PIC1'] . '" /> </td>';
+                                echo '<td>' . $d['PRODUCT_NAME'] . '</td>';
+                                $dis = $d['DISAMOUNT'];
+                                echo '<td>$' . ($d['PRODUCTPRICE'] - ($d['PRODUCTPRICE'] * ($dis / 100))) . '</td>';
+                                echo '<td>' . $d['QUANTITY'] . '</td>';
+                                $m = $d['QUANTITY'] * ($d['PRODUCTPRICE'] - ($d['PRODUCTPRICE'] * ($dis / 100)));
+                                $t = $t + $m;
+
+                                $id = $d['CART_ID'];
+
+
+                                echo '<td class="text-right">$' . $m . '</td>';
+                                echo '<td class="text-right"><button class="btn btn-sm btn-danger"><a href="removecart.php?cartid=' . $id . '" style="text-decoration:none; color:white; font-style:bold;"> Remove</a></button> </td>';
+                                echo '</tr>';
+                            }
+
+
+
+
+                            ?>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><strong>Grand Total</strong></td>
+                                <td class="text-right"><strong> <?php echo "$" . $t;  ?></strong></td>
+                                </td>
+                            </tr>
+                            </tbody>
+                            </table>
+
+
+
+
+                            <div class="box-footer">
+                                <!-- box-footer Begin -->
+
+                                <div class="pull-left">
+                                    <!-- pull-left Begin -->
+
+                                    <a href="shop.php" class="btn btn-default">
+                                        <!-- btn btn-default Begin -->
+
+                                        <i class="fa fa-chevron-left"></i> Continue Shopping
+
+                                    </a><!-- btn btn-default Finish -->
+
+                                </div><!-- pull-left Finish -->
+
+                                <div class="pull-right">
+                                    <!-- pull-right Begin -->
+
+
+
+
+                                    <form method="POST" action="checkout.php" enctype="multipart/form-data" style="height: 400px; width: 300px; background-color: none;">
+
+                                        <br>
+                                        <h2 style="text-align: center; color:#ff5300;">Collection Day And Time</h2><br>
+
+                                        <select name="day" style="color:black;" class="form-control">
+                                            <?php collection(); ?>
+                                        </select>
+
+                                        <select name="timing" style="color:black; margin-top: 10px;" class="form-control">
+                                            <?php timer(); ?>
+                                        </select>
+
+                                        <br>
+                                        <div class="text-center">
+
+                                            <button type="submit" name="submit" class="btn btn-success"> Checkout</button>
+                                        </div>
+
+                                    </form>
+
+                                </div><!-- pull-right Finish -->
+
+                            </div><!-- box-footer Finish -->
+
+                        </form><!-- form Finish -->
+
+                    </div><!-- box Finish -->
+
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <!-- col-md-3 Begin -->
+
+                <div id="order-details" class="box" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
                     <!-- box Begin -->
 
-                    <form action="checkout.php" method="post" enctype="multipart/form-data">
-                        <!-- form Begin -->
+                    <div class="box-header">
+                        <!-- box-header Begin -->
 
-                        <h1>Shopping Cart</h1>
+                        <h3>Order Details</h3>
 
-                        <?php
-                        $customerid = $_SESSION['cid'];
+                    </div><!-- box-header Finish -->
 
-                        $t = 0;
+                    <p class="text-muted">
+                        <!-- text-muted Begin -->
+                        Pricing is calculated according to the delivery details and items added in cart
+                    </p><!-- text-muted Finish -->
 
+                    <div class="table-responsive">
+                        <!-- table-responsive Begin -->
 
-                        $a = "SELECT * FROM CART,PRODUCT WHERE CART.PRODUCT_ID=PRODUCT.PRODUCT_ID AND CUSTOMER_ID='$customerid'";
-                        $b = oci_parse($conn, $a);
-                        $c = oci_execute($b);
-                        $f = oci_num_rows($b);
-                        echo '<div class="table-responsive">';
-                        echo '<table class="table table-striped text-center">';
-                        echo '<thead>';
-                        echo '<tr>';
-                        echo '<th scope="col">Product</th>';
-                        echo '<th scope="col">Product Name</th>';
-                        echo '<th scope="col">Price</th>';
-                        echo '<th scope="col" class="text-center">Quantity</th>';
-                        echo '<th scope="col" class="text-right">Total Price</th>';
-                        echo '<th>Action</th>';
-                        echo '</tr>';
-                        echo '</thead>';
-                        while ($d = oci_fetch_assoc($b)) {
-                            echo '<tbody>';
-                            $m = $d['PRODUCT_ID'];
-                            echo '<tr>';
-                            echo '<td><img src="products/' . $d['PRODUCT_PIC1'] . '" /> </td>';
-                            echo '<td>' . $d['PRODUCT_NAME'] . '</td>';
-                            $dis = $d['DISAMOUNT'];
-                            echo '<td>$' . ($d['PRODUCTPRICE'] - ($d['PRODUCTPRICE'] * ($dis / 100))) . '</td>';
-                            echo '<td>' . $d['QUANTITY'] . '</td>';
-                            $m = $d['QUANTITY'] * ($d['PRODUCTPRICE'] - ($d['PRODUCTPRICE'] * ($dis / 100)));
-                            $t = $t + $m;
+                        <table class="table">
+                            <!-- table Begin -->
 
-                            $id = $d['CART_ID'];
+                            <tbody>
+                                <!-- tbody Begin -->
 
 
-                            echo '<td class="text-right">$' . $m . '</td>';
-                            echo '<td class="text-right"><button class="btn btn-sm btn-danger"><a href="removecart.php?cartid=' . $id . '" style="text-decoration:none; color:white; font-style:bold;"> Remove</a></button> </td>';
-                            echo '</tr>';
-                        }
+                                <tr>
+                                    <!-- tr Begin -->
 
+                                    <td> Delivery Charge</td>
+                                    <td> $0 </td>
 
+                                </tr><!-- tr Finish -->
 
+                                <tr class="total">
+                                    <!-- tr Begin -->
 
-                        ?>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><strong>Grand Total</strong></td>
-                            <td class="text-right"><strong> <?php echo "$" . $t;  ?></strong></td>
-                            </td>
-                        </tr>
-                        </tbody>
-                        </table>
+                                    <td> Total </td>
+                                    <th><?php echo '$' . $t;  ?> </th>
 
+                                </tr><!-- tr Finish -->
 
+                            </tbody><!-- tbody Finish -->
 
+                        </table><!-- table Finish -->
 
-                        <div class="box-footer">
-                            <!-- box-footer Begin -->
-
-                            <div class="pull-left">
-                                <!-- pull-left Begin -->
-
-                                <a href="shop.php" class="btn btn-default">
-                                    <!-- btn btn-default Begin -->
-
-                                    <i class="fa fa-chevron-left"></i> Continue Shopping
-
-                                </a><!-- btn btn-default Finish -->
-
-                            </div><!-- pull-left Finish -->
-
-                            <div class="pull-right">
-                                <!-- pull-right Begin -->
-
-
-
-
-                                <form method="POST" action="checkout.php" enctype="multipart/form-data" style="height: 400px; width: 300px; background-color: none;">
-
-                                    <br>
-                                    <h2 style="text-align: center; color:#ff5300;">Collection Day And Time</h2><br>
-
-                                    <select name="day" style="color:black;" class="form-control">
-                                        <?php collection(); ?>
-                                    </select>
-
-                                    <select name="timing" style="color:black; margin-top: 10px;" class="form-control">
-                                        <?php timer(); ?>
-                                    </select>
-
-                                    <br>
-                                    <div class="text-center">
-
-                                        <button type="submit" name="submit" class="btn btn-success"> Checkout</button>
-                                    </div>
-
-                                </form>
-
-                            </div><!-- pull-right Finish -->
-
-                        </div><!-- box-footer Finish -->
-
-                    </form><!-- form Finish -->
+                    </div><!-- table-responsive Finish -->
 
                 </div><!-- box Finish -->
 
-            </div><!-- #row same-heigh-row Finish -->
+            </div>
+            <!-- container Begin -->
+            <!-- #row same-heigh-row Finish -->
 
         </div><!-- col-md-9 Finish -->
 
-        <div class="col-md-3">
-            <!-- col-md-3 Begin -->
-
-            <div id="order-details" class="box">
-                <!-- box Begin -->
-
-                <div class="box-header">
-                    <!-- box-header Begin -->
-
-                    <h3>Order Details</h3>
-
-                </div><!-- box-header Finish -->
-
-                <p class="text-muted">
-                    <!-- text-muted Begin -->
-                    Pricing is calculated according to the delivery details and items added in cart
-                </p><!-- text-muted Finish -->
-
-                <div class="table-responsive">
-                    <!-- table-responsive Begin -->
-
-                    <table class="table">
-                        <!-- table Begin -->
-
-                        <tbody>
-                            <!-- tbody Begin -->
-
-
-                            <tr>
-                                <!-- tr Begin -->
-
-                                <td> Delivery Charge</td>
-                                <td> $0 </td>
-
-                            </tr><!-- tr Finish -->
-
-                            <tr class="total">
-                                <!-- tr Begin -->
-
-                                <td> Total </td>
-                                <th><?php echo '$' . $t;  ?> </th>
-
-                            </tr><!-- tr Finish -->
-
-                        </tbody><!-- tbody Finish -->
-
-                    </table><!-- table Finish -->
-
-                </div><!-- table-responsive Finish -->
-
-            </div><!-- box Finish -->
-
-        </div><!-- col-md-3 Finish -->
+        <!-- col-md-3 Finish -->
 
 
     </div><!-- container Finish -->

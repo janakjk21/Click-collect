@@ -112,8 +112,8 @@ if (isset($_POST['login'])) {
             </div>
 
             <div class="col-md-8" style="margin:100px auto 40px auto;">
-                <div class="box">
-                    <div class="box-body">
+                <div class="box" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
+                    <div class=" box-body">
                         <form action="" class="form-container" enctype="multipart/form-data" method="POST" ">
                            <h2 class=" loghead text-center"><b>Login Form</b></h2>
                             <br>

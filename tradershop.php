@@ -174,7 +174,7 @@ include('./connection.php');
                 <div class="panel panel-default sidebar-menu">
                     <!--  panel panel-default sidebar-menu Begin  -->
 
-                    <div class="panel-heading">
+                    <div class="panel-heading" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
                         <!--  panel-heading  Begin  -->
 
                         <?php
@@ -200,41 +200,41 @@ include('./connection.php');
 
                     </div><!--  panel-heading Finish  -->
 
-                    <div class="panel-body box">
+                    <div class="panel-body box" ">
                         <!--  panel-body Begin  -->
 
-                        <ul class="nav-pills nav-stacked nav" style="display: flex;flex-direction: column; padding-left:30px;">
-                            <!--  nav-pills nav-stacked nav Begin  -->
+                        <ul class=" nav-pills nav-stacked nav" style="display: flex;flex-direction: column; padding-left:30px;">
+                        <!--  nav-pills nav-stacked nav Begin  -->
 
-                            <li class="<?php if (isset($_GET['editprofile'])) {
-                                            echo "active";
-                                        } ?> ">
+                        <li class="<?php if (isset($_GET['editprofile'])) {
+                                        echo "active";
+                                    } ?> ">
 
-                                <a class="active btn" href="traderprofile.php">Trader Profile</a>
+                            <a class="active btn" href="traderprofile.php">Trader Profile</a>
 
-                            </li>
+                        </li>
 
-                            <li class="<?php if (isset($_GET['Products'])) {
-                                            echo "active";
-                                        } ?>">
+                        <li class="<?php if (isset($_GET['Products'])) {
+                                        echo "active";
+                                    } ?>">
 
-                                <a href="traderproduct.php " class="btn ">My Products</a>
+                            <a href="traderproduct.php " class="btn ">My Products</a>
 
-                            </li>
+                        </li>
 
-                            <li class="<?php if (isset($_GET['tradershop'])) {
-                                            echo "active";
-                                        } ?>">
+                        <li class="<?php if (isset($_GET['tradershop'])) {
+                                        echo "active";
+                                    } ?>">
 
-                                <a href="tradershop.php" class="btn ">Shop</a>
+                            <a href="tradershop.php" class="btn ">Shop</a>
 
-                            </li>
+                        </li>
 
-                            <li>
+                        <li>
 
-                                <a href="logout.php" class="btn ">Log Out</a>
+                            <a href="logout.php" class="btn ">Log Out</a>
 
-                            </li>
+                        </li>
 
                         </ul><!--  nav-pills nav-stacked nav Begin  -->
 
@@ -245,7 +245,7 @@ include('./connection.php');
 
         <div class=" col-md-8">
 
-            <div class="box">
+            <div class="box" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
                 <!-- box Begin -->
 
                 <div class="row">

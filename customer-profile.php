@@ -115,8 +115,8 @@ if (!isset($_SESSION['NAME'])) {
                     <div class="row">
                         <!-- right side user setting -->
                         <div class="col-lg-3 col-md-4  ">
-                            <div class="card right-side-nav">
-                                <div class="row">
+                            <div class="right-side-nav">
+                                <div class="row" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
                                     <nav class="nav d-block pl-4">
                                         <a data-toggle="tab" class="nav-link active" href="#profile"><i class="fas fa-user"></i><span>Profile</span> </a>
                                         <a data-toggle="tab" class="nav-link" href="#updateProfile"><i class="fas fa-user-edit"></i><span>Update Profile</span> </a>
@@ -131,8 +131,8 @@ if (!isset($_SESSION['NAME'])) {
                             </div>
                         </div>
 
-                        <div class="col-lg-9 col-md-8 ">
-                            <div class="card-body tab-content border ">
+                        <div class="col-lg-9 col-md-8">
+                            <div class="card-body tab-content border " style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
 
                                 <!-- Customer profile -->
                                 <div class="tab-pane active" id="profile">
