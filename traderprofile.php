@@ -94,7 +94,7 @@ include('./connection.php');
         <div class="col-md-3 box">
             <?php
 
-            $traderid = 1;
+            $traderid = $_SESSION['tid'];
             $a = "SELECT * FROM TRADER WHERE TRADER_ID='$traderid'";
             $b = oci_parse($conn, $a);
             $c = oci_execute($b);
@@ -123,7 +123,7 @@ include('./connection.php');
                         if (!isset($_SESSION['tid'])) {
                         } else {
 
-                            echo "<center><img src='./assets/img/trader profile pic/$trader_image' class='img-responsive' ></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
+                            echo "<center><img src='./assets/img/trader profile pic/$trader_image' class='img-responsive'></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
                         }
 
                         ?>

@@ -41,19 +41,22 @@ if (!isset($_SESSION)) {
                     </ol>
                     <div class="carousel-inner rounded">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="./assets/img/Banner Swiper/fresh meat.png" alt="First slide">
+                            <img class="d-block w-100" src="./assets/img/Banner Swiper/click & collect groceries.png" alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="./assets/img/Banner Swiper/fresh fish.png" alt="Second slide">
+                            <img class="d-block w-100" src="./assets/img/Banner Swiper/fresh meat.png" alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="./assets/img/Banner Swiper/bakery.png" alt="Third slide">
+                            <img class="d-block w-100" src="./assets/img/Banner Swiper/fresh fish.png" alt="Third slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="./assets/img/Banner Swiper/vegetables.png" alt="Fourth slide">
+                            <img class="d-block w-100" src="./assets/img/Banner Swiper/bakery.png" alt="Fourth slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="./assets/img/Banner Swiper/delicatessen.png" alt="Fifth slide">
+                            <img class="d-block w-100" src="./assets/img/Banner Swiper/vegetables.png" alt="Fifth slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="./assets/img/Banner Swiper/delicatessen.png" alt="Sixth slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
