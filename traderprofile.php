@@ -162,7 +162,7 @@ include('./connection.php');
 
                             <li>
 
-                                <a href=" logout.php" class="btn btn-primary">Log Out</a>
+                                <a href="./logout.php" class="btn btn-primary">Log Out</a>
 
                             </li>
 

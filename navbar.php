@@ -207,7 +207,7 @@ if (!empty($header[0]['currency_format'])) {
                                     $email_pass = oci_fetch_array($query);
                                     $customer_name = $email_pass['NAME'];
                                     $image = $email_pass['PROFILEPIC'];
-                                } else {
+                                } elseif (!empty($_SESSION['tid'])) {
                                     $customer_id = $_SESSION['tid'];
 
                                     $sql = "SELECT * FROM TRADER WHERE TRADER_ID='$customer_id'";
@@ -227,9 +227,7 @@ if (!empty($header[0]['currency_format'])) {
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active text-center" href="cart.php"><i class="fas fa-shopping-cart basket"></i>
-                                <?php if (isset($_COOKIE['cart_count'])) {
-                                    echo '<span id="item-holder">' . $_COOKIE["cart_count"] . '</span>';
-                                } ?>
+
                             </a>
                         </li>
                         <li class="nav-item dropdown">
@@ -237,16 +235,16 @@ if (!empty($header[0]['currency_format'])) {
                                 More<i class="fas fa-angle-down ml-1"></i>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <?php if (isset($_SESSION['username'])) { ?>
+                                <?php if (isset($_SESSION['NAME'])) { ?>
                                     <a class="dropdown-item" href="customer-profile.php">Profie Setting</a>
                                 <?php } ?>
-                                <?php if (!isset($_SESSION['username'])) { ?>
+                                <?php if (!isset($_SESSION['NAME'])) { ?>
                                     <a class="dropdown-item" href="register.php">Register</a>
                                 <?php } ?>
-                                <?php if (!isset($_SESSION['username'])) { ?>
+                                <?php if (!isset($_SESSION['NAME'])) { ?>
                                     <a class="dropdown-item" href="login.php">Login</a>
                                 <?php } ?>
-                                <?php if (isset($_SESSION['username'])) { ?>
+                                <?php if (isset($_SESSION['NAME'])) { ?>
                                     <a class="dropdown-item" href="logout.php">Logout</a>
                                 <?php } ?>
                             </div>

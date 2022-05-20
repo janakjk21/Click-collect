@@ -101,7 +101,7 @@ if (!isset($_SESSION['NAME'])) {
         ?>
     </div>
 
-    <section class="customer-profile">
+    <div class="customer-profile" style="margin:5%;">
         <div class="container mt-3">
             <div class="row">
                 <div class="col-md-12 col-12">
@@ -114,7 +114,7 @@ if (!isset($_SESSION['NAME'])) {
 
                     <div class="row">
                         <!-- right side user setting -->
-                        <div class="col-lg-3 col-md-4 d-md-block d-none ">
+                        <div class="col-lg-3 col-md-4  ">
                             <div class="card right-side-nav">
                                 <div class="row">
                                     <nav class="nav d-block pl-4">
@@ -131,7 +131,7 @@ if (!isset($_SESSION['NAME'])) {
                             </div>
                         </div>
 
-                        <div class="col-lg-9 col-md-8 d-md-block d-none">
+                        <div class="col-lg-9 col-md-8 ">
                             <div class="card-body tab-content border ">
 
                                 <!-- Customer profile -->
@@ -325,10 +325,9 @@ if (!isset($_SESSION['NAME'])) {
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <?php include 'footer.php'; ?>
 
-    <?php include "footer.php" ?>
-    <?php include "script.php" ?>
 
     <script src="script/action.js"></script>
     <script src="http://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>

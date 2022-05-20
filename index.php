@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,15 +19,16 @@
 
 <body>
 
-    <div id="navbar">
-        <?php
-        include "./connection.php";
-        include "navbar.php";
-        ?>
-    </div>
+
+    <?php
+    include "./connection.php";
+    include "navbar.php";
+
+    ?>
+
+
 
     <div class="container" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; ">
-        <?php include "category.php"; ?>
     </div>
     <div class="container mt-3">
         <div class="row" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; ">
@@ -67,14 +74,17 @@
         </div>
     </div>
 
-    <?php
-    include "./Swiper.php"
-    ?>
 
+    </div>
 
     <?php
-    include "./footer.php"
+    include "./caresole.php"
     ?>
+
+    <div class="container-fluid"><?php
+                                    include "./footer.php"
+                                    ?></div>
+
 
 
     <script src="http://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>

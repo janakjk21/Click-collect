@@ -9,6 +9,7 @@ if (isset($_SESSION['cid'])) {
 }
 if (isset($_GET['pid'])) {
     $pid = $_GET['pid'];
+    $product_id = $_GET['pid'];
 }
 
 if (isset($_POST['addtocart'])) {
@@ -46,6 +47,77 @@ if (isset($_POST['addtocart'])) {
     }
 }
 
+
+
+
+$Err = "";
+// If upload button is clicked ...
+if (isset($_POST['submit'])) {
+    $name = $category = $feedback = "";
+
+    if (empty($_POST["name"])) {
+        $Err = "Name is required";
+    } else {
+        $name = $_POST["name"];
+    }
+    if (empty($_POST["email"])) {
+        $Err = "Category is required";
+    } else {
+        $email = $_POST["feedback"];
+        echo $category;
+    }
+    if (empty($_POST["price"])) {
+        $Err = "Name is required";
+    } else {
+        $feedback = $_POST["price"];
+    }
+    $rating = $_POST["rating"];
+    $sql = "INSERT INTO REVIEW (REVIEW_ID,PRODUCT_ID, CUSTOMER_ID, RATING,REVIEWR_NAME,REVIEW,REVIEWER_EMAIL)VALUES (22,' 1', 567, ' $rating ','$name','$feedback ','$email ')";
+    $nop = oci_parse($conn, $sql);
+    $e = oci_execute($nop);
+    if (empty($e)) {
+        $Err = "data insered sucessful";
+    }
+}
+?>
+
+
+<?php
+
+
+include './connection.php';
+
+
+$Err = "";
+// If upload button is clicked ...
+if (isset($_POST['submit'])) {
+    $name = $category = $feedback = "";
+
+    if (empty($_POST["name"])) {
+        $Err = "Name is required";
+    } else {
+        $name = $_POST["name"];
+    }
+    if (empty($_POST["email"])) {
+        $Err = "Category is required";
+    } else {
+        $email = $_POST["feedback"];
+        echo $category;
+    }
+    if (empty($_POST["price"])) {
+        $Err = "Name is required";
+    } else {
+        $feedback = $_POST["price"];
+    }
+    $rating = $_POST["rating"];
+    $sql = "INSERT INTO REVIEW (REVIEW_ID,PRODUCT_ID, CUSTOMER_ID, RATING,REVIEWR_NAME,REVIEW,REVIEWER_EMAIL)VALUES (123,' $product_id ', 567, ' $rating ','$name','$feedback ','$email ')";
+    $nop = oci_parse($conn, $sql);
+    $e = oci_execute($nop);
+    if (empty($e)) {
+        $Err = "data insered sucessful";
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,47 +135,9 @@ if (isset($_POST['addtocart'])) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/product.css">
+
     <style>
-        .navbar {
-            background-color: #000000;
-        }
-
-        .navbar-collapse .right {
-            float: right;
-        }
-
-        .navbar-brand {
-            float: left;
-            padding: 10px 15px;
-            font-size: 18px;
-            line-height: 20px;
-            height: 70px;
-        }
-
-        .navbar-brand:hover,
-        .navbar-brand:focus {
-            text-decoration: none;
-        }
-
-        .navbar ul.nav>li>a {
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        .navbar ul.nav>li>a:hover {
-            background: #e7e7e7;
-        }
-
-        .padding-nav {
-            padding-top: 10px;
-        }
-
-        .btn-primary {
-            background: #ed0651;
-
-        }
-
         #search .navbar-form {
             float: right;
         }
@@ -299,232 +333,223 @@ if (isset($_POST['addtocart'])) {
 
 <body>
     <?php
+    include("./navbar.php");
+    ?>
+    <?php
     if (isset($_SESSION['cid'])) {
         $customerid = $_SESSION['cid'];
     ?>
 
     <?php } ?>
     <div class="container">
-        <div class="card">
-            <div class="container-fliud">
-                <?php
-                if (isset($ermessage)) {
-                ?>
-                    <div class='alert alert-danger' id='myAlert'>
-                        <a class='close' data-dismiss='alert'>&times;
-                        </a>
+
+        <div class="row">
+            <!--col-md-3 end-->
+            <div class="col-md-11">
+                <div class="row">
+                    <div class=" col-md-12 d-flex">
                         <?php
-                        echo "$ermessage";
+                        $a = "SELECT * FROM PRODUCT WHERE PRODUCT_ID='$pid'";
+
+                        $b = oci_parse($conn, $a);
+                        oci_execute($b);
+                        while ($c = oci_fetch_assoc($b)) {
+                            $product_pic1 =  $c['PRODUCT_PIC1'];
+                            $product_pic2 =  $c['PRODUCT_PIC2'];
+                            $product_pic3 =  $c['PRODUCT_PIC3'];
+
+
+
                         ?>
-                    </div>
-                <?php
-                }
-                ?>
-                <div class="col-md-3">
-                    <!--col-md-3 begin-->
-                    <div class="panel panel-default sidebar-menu">
-                        <!-- panel panel-default sidebar-menu Begin -->
-                        <div class="panel-heading">
-                            <!-- panel-heading Begin -->
-                            <h3 class="panel-title" style="padding-left: 70px; font-size: 25px; font-family: 'Comic Sans MS', cursive, sans-serif">OFFER</h3>
-                        </div><!-- panel-heading Finish -->
 
-                        <div class="panel-body">
-                            <!-- panel-body Begin -->
-                            <img src="banner_meat.jpg" style=" height: 100%; width: 100%;">
-                        </div><!-- panel-body Finish -->
+                            <div class="col-md-6">
 
-                    </div><!-- panel panel-default sidebar-menu Finish -->
-                    <div class="panel panel-default sidebar-menu">
-                        <!-- panel panel-default sidebar-menu Begin -->
-                        <div class="panel-heading">
-                            <!-- panel-heading Begin -->
-                            <h3 class="panel-title" style="padding-left: 70px; font-size: 25px; font-family: 'Comic Sans MS', cursive, sans-serif">OFFER</h3>
-                        </div><!-- panel-heading Finish -->
+                                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner rounded">
+                                        <div class="carousel-item active">
+                                            <img class="d-block w-100" src="./assets/img/<?php echo $product_pic1 ?>" alt="First slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="./assets/img/<?php echo $product_pic2 ?>" alt="Second slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="./assets/img/<?php echo $product_pic3 ?>" alt="Third slide">
+                                        </div>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
 
-                        <div class="panel-body">
-                            <!-- panel-body Begin -->
-                            <img src="meat.jpg" style=" height: 100%; width: 100%;">
-                        </div><!-- panel-body Finish -->
-
-                    </div><!-- panel panel-default sidebar-menu Finish -->
-                </div>
-                <!--col-md-3 end-->
-                <div class="col-md-9">
-                    <div class="wrapper row">
-                        <div class="preview col-md-6">
-                            <?php
-                            $a = "SELECT * FROM PRODUCT WHERE PRODUCT_ID='$pid'";
-
-                            $b = oci_parse($conn, $a);
-                            oci_execute($b);
-                            while ($c = oci_fetch_assoc($b)) {
-
-                                echo '<div class="preview-pic tab-content">';
-                                echo '<div class="tab-pane active" id="pic-1">';
-                                echo '<div id="myCarousel" class="carousel slide" data-ride="carousel">';
-                                echo '<div id="ProductImage">';
-                                echo '<ol class="carousel-indicators">';
-                                echo '<li data-target="#myCarousel" data-slide-to="0" class="active"></li>';
-                                echo '<li data-target="#myCarousel" data-slide-to="1"></li>';
-                                echo '<li data-target="#myCarousel" data-slide-to="2"></li>';
-                                echo '</ol>';
-                                echo '<div class="carousel-inner">';
-                                echo '<div class="item active">';
-                                echo '<center>';
-                                echo '<img class="img-responsive" src="./assets/img/' . $c['PRODUCT_PIC1'] . '" alt="Product1">';
-                                echo '</center>';
-                                echo '</div>';
-                                echo '<div class="item">';
-                                echo '<center>';
-                                echo '<img class="img-responsive" src="./assets/img/' . $c['PRODUCT_PIC2'] . '" alt="Product2">';
-
-                                echo '</center>';
-                                echo '</div>';
-                                echo '<div class="item">';
-                                echo '<center>';
-                                echo '<img class="img-responsive" src="./assets/img/' . $c['PRODUCT_PIC3'] . '" alt="Product3">';
-                                echo '</center>';
-                                echo '</div>';
-
-                                echo '</div>';
-                                echo '<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-     <span class="sr-only">Previous</span>
-   </a>';
-                                echo '<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-   </a>';
-                                echo '</div>';
-                                echo '</div>';
-                                echo '</div>';
-                                echo '</div>';
-                                echo '</div>';
-                                echo '<div class="details col-md-6">';
-                                echo '<h3 class="product-title">' . $c['PRODUCT_NAME'] . '</h3>';
-                                echo '<br>';
-                                if ($c['DISAMOUNT'] > 0) {
-                                    echo '<h4 class="price">Price: <s><span>$' . $c['PRODUCTPRICE'] . '/' . $c['PRODUCTUNIT'] . '</span></s></h4>';
-                                    $d = $c['DISAMOUNT'];
-                                    $c['PRODUCTPRICE'] = $c['PRODUCTPRICE'] - ($c['PRODUCTPRICE'] * ($d / 100));
-                                    echo '<h4 class="price">Discount Price: <span>$' . ($c['PRODUCTPRICE'] - ($c['PRODUCTPRICE'] * ($d / 100))) . '/' . $c['PRODUCTUNIT'] . '</span></h4>';
-                                } else {
-                                    echo '<h4 class="price">Price: <span>$' . $c['PRODUCTPRICE'] . '/' . $c['PRODUCTUNIT'] . '</span></h4>';
-                                }
-                                if ($c['PRODUCTQUANTITY'] > 0) {
-                                    echo '<h4 class="stock">STOCK AVAILABLE: <span>' . $c['PRODUCTQUANTITY'] . $c['PRODUCTUNIT'] . '</span></h4>';
-                                } else {
-                                    echo '<h4 class="stock">STOCK AVAILABLE: <span> OUT OF STOCK!!</span></h4>';
-                                }
-                                echo '<h4 class="min">Minimum order: <span>' . $c['MINORDER'] . $c['PRODUCTUNIT'] . '</span></h4>';
-                                echo '<h4 class="max">maximum order: <span>' . $c['MAXORDER'] . $c['PRODUCTUNIT'] . '</span></h4>';
-                                echo '<br>';
-                                echo '<form action="" method="POST" enctype="multipart/form-data">';
-                                echo '<input type="hidden" name="pid" value="' . $c['PRODUCT_ID'] . '">';
-                                echo '<h4 class="stock">My order: <span><input type="text" style="width:60px;" name="torder">&nbsp' . $c['PRODUCTUNIT'] . '</h4>';
-                                echo '<br>';
-                                echo '<br>';
-
-                                echo '<button class="add-to-cart btn btn-default" type="submit" name="addtocart">add to cart</button>';
-                                echo '<button class="cancel btn btn-danger" style="margin-left:5px; ";  name="cancel"><a href="shop.php" style="color:white;">Cancel</a></button>';
-                                echo '</form>';
-
-
-                                echo '<br>';
-
-
-                                echo '<div class="row" id="thumbs">';
-                                echo '<div class="col-xs-4">';
-                                echo '<a data-target="#myCarousel" data-slide-to="0" href="#" class="thumb"><img  src="products/' . $c['PRODUCT_PIC1'] . '" alt="Product1" class="img-responsive"></a>';
-                                echo '</div>';
-
-                                echo '<div class="col-xs-4">';
-                                echo '<a data-target="#myCarousel" data-slide-to="1" href="#" class="thumb"><img  src="products/' . $c['PRODUCT_PIC2'] . '" alt="product2" class="img-responsive"></a>';
-                                echo '</div>';
-                                echo '<div class="col-xs-4">';
-                                echo '<a data-target="#myCarousel" data-slide-to="2" href="#" class="thumb"><img  src="products/' . $c['PRODUCT_PIC3'] . '" alt="Product3" class="img-responsive"></a>';
-                                echo '</div>';
-                                echo '</div>';
-
-
-                                echo '</div>';
-                                echo '</div>';
-                                echo '<br>';
-                                echo '<div class="box" id="details">';
-
-                                echo '<h4>Product Details</h4>';
-
-                                echo '<p class="product-description">' . $c['PRODUCTDES'] . '</p>';
-                                echo '<br>';
-
-                                echo '<hr>';
-
-                                echo '</div>';
-                            }
-                            ?>
-
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-
-                        <div class="preview col-md-6">
-                            <h2 style="color:#74b72e;">Product Reviews</h2>
-
-                            <?php
-                            $x = "SELECT * FROM REVIEW,CUSTOMER WHERE PRODUCT_ID='$pid' AND REVIEW.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID";
-                            $y = oci_parse($conn, $x);
-                            $z = oci_execute($y);
-                            while ($v = oci_fetch_assoc($y)) {
-                                echo '<h4>' . $v['NAME'] . '</h4>';
-                                echo '<p style="color:#74b72e;">' . $v['REVIEW'] . '</p>';
-                            }
-
-                            ?>
-
-                        </div>
-
-                        <?php
-                        if (isset($_SESSION['cid'])) { ?>
-                            <div class="details col-md-6">
-                                <h2 style="color:#74b72e;">Add Review on this Product</h2>
-                                <br>
-
-                                <form action="" method="POST">
-                                    <textarea rows="5" cols="60" name="review">
-        	 </textarea><br>
-                                    <input type="submit" name="re" value="Submit" class="btn btn-success" />
-                                </form>
-                            <?php
-                            if (isset($_POST['re'])) {
-                                $review = $_POST['review'];
-
-                                $e = "INSERT INTO REVIEW (REVIEW,CUSTOMER_ID,PRODUCT_ID) VALUES ('$review','$customerid','$pid')";
-                                $r = oci_parse($conn, $e);
-                                $t = oci_execute($r);
-                            }
-                        } else {
-                            // header("location:login.php");
-
-                        }
-                            ?>
                             </div>
+                        <?php
+
+                            echo '<div class=" col-md-6 box">';
+                            echo '<h3 class="product-title">' . $c['PRODUCT_NAME'] . '</h3>';
+                            echo '<br>';
+                            if ($c['DISAMOUNT'] > 0) {
+                                echo '<h4 class="price">Price: <s><span>$' . $c['PRODUCTPRICE'] . '/' . $c['PRODUCTUNIT'] . '</span></s></h4>';
+                                $d = $c['DISAMOUNT'];
+                                $c['PRODUCTPRICE'] = $c['PRODUCTPRICE'] - ($c['PRODUCTPRICE'] * ($d / 100));
+                                echo '<h4 class="price">Discount Price: <span>$' . ($c['PRODUCTPRICE'] - ($c['PRODUCTPRICE'] * ($d / 100))) . '/' . $c['PRODUCTUNIT'] . '</span></h4>';
+                            } else {
+                                echo '<h4 class="price">Price: <span>$' . $c['PRODUCTPRICE'] . '/' . $c['PRODUCTUNIT'] . '</span></h4>';
+                            }
+                            if ($c['PRODUCTQUANTITY'] > 0) {
+                                echo '<h4 class="stock">STOCK AVAILABLE: <span>' . $c['PRODUCTQUANTITY'] . $c['PRODUCTUNIT'] . '</span></h4>';
+                            } else {
+                                echo '<h4 class="stock">STOCK AVAILABLE: <span> OUT OF STOCK!!</span></h4>';
+                            }
+                            echo '<h4 class="min">Minimum order: <span>' . $c['MINORDER'] . $c['PRODUCTUNIT'] . '</span></h4>';
+                            echo '<h4 class="max">maximum order: <span>' . $c['MAXORDER'] . $c['PRODUCTUNIT'] . '</span></h4>';
+                            echo '<br>';
+                            echo '<form action="" method="POST" enctype="multipart/form-data">';
+                            echo '<input type="hidden" name="pid" value="' . $c['PRODUCT_ID'] . '">';
+                            echo '<h4 class="stock">My order: <span><input type="text" style="width:60px;" name="torder">&nbsp' . $c['PRODUCTUNIT'] . '</h4>';
+                            echo '<br>';
+                            echo '<br>';
+
+                            echo '<button class="add-to-cart btn btn-default" type="submit" name="addtocart">add to cart</button>';
+                            echo '<button class="cancel btn btn-danger" style="margin-left:5px; ";  name="cancel"><a href="shop.php" style="color:white;">Cancel</a></button>';
+                            echo '</form>';
+
+
+                            echo '<br>';
+
+
+
+                            echo '</div>';
+
+
+                            echo '</div>';
+                            echo '</div>';
+                            echo '<br>';
+                            echo '<div class="box" id="details">';
+
+                            echo '<h4>Product Details</h4>';
+
+                            echo '<p class="product-description">' . $c['PRODUCTDES'] . '</p>';
+                            echo '<br>';
+
+                            echo '<hr>';
+
+                            echo '</div>';
+                        }
+                        ?>
 
                     </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="nav product-details-nav me-lg-6" id="product-details-nav-tab" role="tablist">
+                            <button class="nav-link active" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="true">Review</button>
+                        </div>
+                        <div class="tab-content me-lg-6" id="product-details-nav-tabContent">
 
-                    </br>
+
+                            <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
+                                <?php
+                                include "./connection.php";
+                                $sql = 'SELECT * FROM REVIEW where PRODUCT_ID=	21 ';
+                                $stid = oci_parse($conn, $sql);
+
+
+                                oci_execute($stid);
+                                while (($row = oci_fetch_array($stid, OCI_ASSOC)) != false) {
+
+                                ?> <div class="product-review-item mb-0">
+                                        <div class="product-review-top">
+
+                                            <div class="product-review-content">
+                                                <h4 class="product-reviewer-name"><?php echo $row['REVIEWR_NAME'] ?></h4>
+                                                <h5 class="product-reviewer-designation"><?php echo $row['REVIEWER_EMAIL'] ?></h5>
+                                                <div class="product-review-icon">
+                                                    <?php
+                                                    $x = $row['RATING'];
+
+                                                    while ($x  > 0) {
+
+                                                    ?>
+                                                        <i class="fa fa-star"></i> <?php
+                                                                                    $x = $x - 1;
+                                                                                }
+
+                                                                                    ?>
 
 
 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="desc"><?php echo $row['REVIEWR_NAME'] ?>.</p>
+                                        <button type="button" class="review-reply"><i class="fa fa fa-undo"></i></button>
+                                    </div><?php
+
+
+
+                                        }
+
+                                            ?>
+
+
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="col-lg-5">
+                        <div class="product-reviews-form-wrap">
+                            <h4 class="product-form-title">Leave a reply</h4>
+                            <div class="product-reviews-form">
+                                <form action="" method="POST">
+                                    <div class="form-input-item">
+                                        <textarea class="form-control" placeholder="Enter you feedback" id="feedback" type="text" name="feedback"></textarea>
+                                    </div>
+                                    <div class="form-input-item">
+                                        <input class="form-control" type="text" placeholder="Full Name" id="name" name="name" style="padding:3%">
+                                    </div>
+                                    <div class="form-input-item">
+                                        <input class="form-control" type="email" placeholder="Email Address" id="email" name="email" style="padding:3%">
+                                    </div>
+                                    <div class="form-input-item">
+                                        <div class="form-ratings-item">
+                                            <input id="ratinginput" name="rating" class="rating rating-loading" data-min="0" data-max="5" data-step="0.1" value="2">
+
+                                            <span class="title">Provide Your Ratings</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-input-item mb-0">
+                                        <button type="submit" name="submit" class="btn">SUBMIT</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+
     <?php
     include("footer.php");
     ?>
-
+    <?php include "./script.php" ?>
 
     <script type="text/javascript">
         $(document).ready(function() {

@@ -26,7 +26,7 @@
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="widget course-links-widget">
                             <h5 class="widget-title">Quick Links</h5>
@@ -40,7 +40,7 @@
                             </ul>
                         </div>
                     </div>
-                   
+
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="widget latest-news-widget">
                             <h5 class="widget-title">lastest news</h5>
@@ -60,7 +60,7 @@
                             </ul>
                         </div>
                     </div>
-       
+
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="widget newsletter-widget">
                             <h5 class="widget-title">Newsletter</h5>
