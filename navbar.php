@@ -219,12 +219,8 @@ if (!empty($header[0]['currency_format'])) {
                                     $image = $email_pass['TRADER_PROFILE'];
                                 }
 
-
-
-
-
                             ?>
-                                <a class="nav-link active text-center " href="customer-profile.php"><img src="./assets/images/customer profile pic/<?php echo $image ?>" class="mr-1 rounded-circle" alt="">Welcome |
+                                <a class="nav-link active text-center " href="customer-profile.php"><img src="./assets/img/customer profile pic/<?php echo $image ?>" class="mr-1 rounded-circle" alt="">Welcome |
                                     <?Php echo $customer_name ?>
                                 </a>
                             <?php   } ?>

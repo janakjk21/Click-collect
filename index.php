@@ -28,11 +28,10 @@ if (!isset($_SESSION)) {
 
 
 
-
     <div class="container" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; ">
     </div>
-    <div class="container mt-3" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; ">
-        <div class="row">
+    <div class="container mt-3">
+        <div class="row" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; ">
             <div class="col-md-12">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -42,13 +41,16 @@ if (!isset($_SESSION)) {
                     </ol>
                     <div class="carousel-inner rounded">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="./assets/img/home4-category2-banner1.webp" alt="First slide">
+                            <img class="d-block w-100" src="./assets/img/Banner Swiper/fresh meat.png" alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="./assets/img/home4-category2-banner2.webp" alt="Second slide">
+                            <img class="d-block w-100" src="./assets/img/Banner Swiper/fresh fish.png" alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="./assets/img/home4-category3-banner1.webp" alt="Third slide">
+                            <img class="d-block w-100" src="./assets/img/Banner Swiper/bakery.png" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="./assets/img/Banner Swiper/vegetables.png" alt="Fourth slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -62,6 +64,12 @@ if (!isset($_SESSION)) {
                 </div>
             </div>
         </div>
+        <div class="row" style="margin-top: 3%;">
+            <?php
+            include "./product_card_image_tiles.php"
+            ?>
+        </div>
+    </div>
 
 
     </div>

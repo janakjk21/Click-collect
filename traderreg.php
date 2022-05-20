@@ -17,7 +17,7 @@ if (isset($_POST["register"])) {
     $tcat = $_POST['CATEGORY'];
 
     if (isset($_FILES['TRADER_PROFILE'])) { //if customer select a file
-        $target_dir = "assets/images/trader profile/";
+        $target_dir = "assets/img/trader profile pic/";
         $filename = $_FILES['TRADER_PROFILE']['name'];
         $target_file = $target_dir . basename($_FILES["TRADER_PROFILE"]["name"]);
         $uploadOk = 1;

@@ -13,9 +13,10 @@
 
 <body>
 
-    <div style="text-align: center;">
-        <h1 style="font-size:50px ; "> Deal of The day</h1>
+    <div style="margin-left:auto; margin-right:auto; ">
+        <h1 style="font-size:50px;"> Deal of The day</h1>
     </div>
+
     <div class="container">
         <!-- Categories grid-->
         <div class="row">
@@ -23,7 +24,7 @@
             <div class="col-md-4 col-sm-6">
                 <div class=" card border-0 " style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; border-radius:3%">
                     <a class="card-img-tiles" href="shop-style1-ls.html">
-                        <div class="main-img"><img src="https://via.placeholder.com/340x326/FF8C00/000000" alt="Clothing" style="border-radius: 3%;"></div>
+                        <div class="main-img"><img src="" alt="Clothing" style="border-radius: 3%;"></div>
                         <div class="thumblist"><img src="https://via.placeholder.com/175x164/FF8C00/000000" alt="Clothing" style="border-radius: 3%;"><img src="https://via.placeholder.com/175x164/FF8C00/000000" alt="Clothing" style="border-radius: 3%;"></div>
                     </a>
                     <div class="card-body border mt-n1 py-4 text-center">
