@@ -73,9 +73,7 @@ if (!isset($_SESSION)) {
 
 
     </div>
-    <?php
-    include "./product_card_image_tiles.php"
-    ?>
+
     <?php
     include "./caresole.php"
     ?>
