@@ -91,7 +91,7 @@ include('./connection.php');
 
     <div class="row" style="margin-top:5%; margin-buttom:5%;">
         <div class="col-md-1"></div>
-        <div class="col-md-3 box">
+        <div class="col-md-3 box" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
             <?php
 
             $traderid = $_SESSION['tid'];
@@ -175,7 +175,7 @@ include('./connection.php');
 
         <div class=" col-md-7">
 
-            <div class="box">
+            <div class="box" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
                 <!-- box Begin -->
 
                 <div class="row">
