@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 	<!-- <link rel="stylesheet" href="./Topcatogerios.css" /> -->
 	<!-- Link Swiper's CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 	<!-- Demo styles -->
@@ -59,7 +61,7 @@
 		.swiper-slide img {
 			display: block;
 			width: 100%;
-			height: 70%;
+			/* height: 70%; */
 			object-fit: cover;
 			border-radius: 5%;
 		}
@@ -77,63 +79,174 @@
 		<div class="swiper mySwiper" style="border-radius:5%;background-color: #f9f9f9">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
-					<div style="width: 300px">
+					<div class="card">
+						<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
+							<img src="./assets/img/Banner Swiper/home4-category2-banner1.webp" class="w-100" />
+							<a href="#!">
+								<div class="mask">
+									<div class="d-flex justify-content-start align-items-end h-100">
+										<h5><span class="badge bg-primary ms-2">New</span></h5>
+									</div>
+								</div>
+								<div class="hover-overlay">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+								</div>
+							</a>
+						</div>
+						<div class="card-body">
+							<a href="" class="text-reset">
+								<h5 class="card-title mb-3">Product name</h5>
+							</a>
+							<a href="" class="text-reset">
+								<p>Category</p>
+							</a>
+							<h6 class="mb-3">$61.99</h6>
+						</div>
+
+					</div>
+
+					<!-- <div style="width: 300px">
 						<a class="" href="" style="text-decoration: none">
 							<div>
 								<img src="./assets/img/swiper/product04.webp" alt="Milks &amp; Creams" data-ll-status="loaded" class="entered lazyloaded" />
 							</div>
 							<h3 style="color: #a2c207">Milks & Creams</h3>
 						</a>
+					</div> -->
+				</div>
+				<div class="swiper-slide">
+					<div class="card">
+						<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
+							<img src="./assets/img/Banner Swiper/home4-category2-banner1.webp" class="w-100" />
+							<a href="#!">
+								<div class="mask">
+									<div class="d-flex justify-content-start align-items-end h-100">
+										<h5><span class="badge bg-primary ms-2">New</span></h5>
+									</div>
+								</div>
+								<div class="hover-overlay">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+								</div>
+							</a>
+						</div>
+						<div class="card-body">
+							<a href="" class="text-reset">
+								<h5 class="card-title mb-3">Product name</h5>
+							</a>
+							<a href="" class="text-reset">
+								<p>Category</p>
+							</a>
+							<h6 class="mb-3">$61.99</h6>
+						</div>
+
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<div style="width: 323px">
-						<a class="" href="" style="text-decoration: none">
-							<div>
-								<img src="./assets/img/swiper/product05.webp" alt="Milks &amp; Creams" data-ll-status="loaded" class="entered lazyloaded" />
-							</div>
-							<h3 style="color: #a2c207">Milks & Creams</h3>
-						</a>
+					<div class="card">
+						<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
+							<img src="./assets/img/Banner Swiper/home4-category2-banner1.webp" class="w-100" />
+							<a href="#!">
+								<div class="mask">
+									<div class="d-flex justify-content-start align-items-end h-100">
+										<h5><span class="badge bg-primary ms-2">New</span></h5>
+									</div>
+								</div>
+								<div class="hover-overlay">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+								</div>
+							</a>
+						</div>
+						<div class="card-body">
+							<a href="" class="text-reset">
+								<h5 class="card-title mb-3">Product name</h5>
+							</a>
+							<a href="" class="text-reset">
+								<p>Category</p>
+							</a>
+							<h6 class="mb-3">$61.99</h6>
+						</div>
+
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<div style="width: 323px">
-						<a class="" href="" style="text-decoration: none">
-							<div>
-								<img src="./assets/img/swiper/product06.webp" alt="Milks &amp; Creams" data-ll-status="loaded" class="entered lazyloaded" />
-							</div>
-							<h3 style="color: #a2c207">Milks & Creams</h3>
-						</a>
+					<div class="card">
+						<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
+							<img src="./assets/img/Banner Swiper/home4-category2-banner1.webp" class="w-100" />
+							<a href="#!">
+								<div class="mask">
+									<div class="d-flex justify-content-start align-items-end h-100">
+										<h5><span class="badge bg-primary ms-2">New</span></h5>
+									</div>
+								</div>
+								<div class="hover-overlay">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+								</div>
+							</a>
+						</div>
+						<div class="card-body">
+							<a href="" class="text-reset">
+								<h5 class="card-title mb-3">Product name</h5>
+							</a>
+							<a href="" class="text-reset">
+								<p>Category</p>
+							</a>
+							<h6 class="mb-3">$61.99</h6>
+						</div>
+
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<div style="width: 323px">
-						<a class="" href="" style="text-decoration: none">
-							<div>
-								<img src="./assets/img/swiper/product07.webp" alt="Milks &amp; Creams" data-ll-status="loaded" class="entered lazyloaded" />
-							</div>
-							<h3 style="color: #a2c207">Milks & Creams</h3>
-						</a>
+					<div class="card">
+						<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
+							<img src="./assets/img/Banner Swiper/home4-category2-banner1.webp" class="w-100" />
+							<a href="#!">
+								<div class="mask">
+									<div class="d-flex justify-content-start align-items-end h-100">
+										<h5><span class="badge bg-primary ms-2">New</span></h5>
+									</div>
+								</div>
+								<div class="hover-overlay">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+								</div>
+							</a>
+						</div>
+						<div class="card-body">
+							<a href="" class="text-reset">
+								<h5 class="card-title mb-3">Product name</h5>
+							</a>
+							<a href="" class="text-reset">
+								<p>Category</p>
+							</a>
+							<h6 class="mb-3">$61.99</h6>
+						</div>
+
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<div style="width: 323px">
-						<a class="" href="" style="text-decoration: none">
-							<div>
-								<img src="./assets/img/swiper/product07.webp" alt="Milks &amp; Creams" data-ll-status="loaded" class="entered lazyloaded" />
-							</div>
-							<h3 style="color: #a2c207">Milks & Creams</h3>
-						</a>
-					</div>
-				</div>
-				<div class="swiper-slide">
-					<div style="width: 323px">
-						<a class="" href="" style="text-decoration: none">
-							<div>
-								<img src="./assets/img/swiper/product07.webp" alt="Milks &amp; Creams" data-ll-status="loaded" class="entered lazyloaded" />
-							</div>
-							<h3 style="color: #a2c207">Milks & Creams</h3>
-						</a>
+					<div class="card">
+						<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
+							<img src="./assets/img/Banner Swiper/home4-category2-banner1.webp" class="w-100" />
+							<a href="#!">
+								<div class="mask">
+									<div class="d-flex justify-content-start align-items-end h-100">
+										<h5><span class="badge bg-primary ms-2">New</span></h5>
+									</div>
+								</div>
+								<div class="hover-overlay">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+								</div>
+							</a>
+						</div>
+						<div class="card-body">
+							<a href="" class="text-reset">
+								<h5 class="card-title mb-3">Product name</h5>
+							</a>
+							<a href="" class="text-reset">
+								<p>Category</p>
+							</a>
+							<h6 class="mb-3">$61.99</h6>
+						</div>
+
 					</div>
 				</div>
 

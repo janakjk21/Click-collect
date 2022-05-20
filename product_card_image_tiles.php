@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
-    <!--  All snippets are MIT license http://bootdey.com/license -->
+
     <title>product card image tiles - Bootdey.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,7 +12,7 @@
 </head>
 
 <body>
-    <div style="margin-top :70px;"></div>
+
     <div style="text-align: center;">
         <h1 style="font-size:50px ; "> Deal of The day</h1>
     </div>
@@ -22,7 +21,7 @@
         <div class="row">
             <!-- Category-->
             <div class="col-md-4 col-sm-6">
-                <div class=" card border-0 mb-grid-gutter" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; border-radius:3%">
+                <div class=" card border-0 " style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; border-radius:3%">
                     <a class="card-img-tiles" href="shop-style1-ls.html">
                         <div class="main-img"><img src="https://via.placeholder.com/340x326/FF8C00/000000" alt="Clothing" style="border-radius: 3%;"></div>
                         <div class="thumblist"><img src="https://via.placeholder.com/175x164/FF8C00/000000" alt="Clothing" style="border-radius: 3%;"><img src="https://via.placeholder.com/175x164/FF8C00/000000" alt="Clothing" style="border-radius: 3%;"></div>

@@ -1,7 +1,7 @@
 <?php
 
 include('connection.php');
-$active = 'Cart';
+
 
 if (!isset($_SESSION['cid'])) {
     session_start();

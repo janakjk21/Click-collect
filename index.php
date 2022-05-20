@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,18 +19,17 @@
 
 <body>
 
-    <div id="navbar">
-        <?php
-        include "./connection.php";
-        include "navbar.php";
-        echo $_SESSION['tid'];
-        ?>
-    </div>
+
+    <?php
+    include "./connection.php";
+    include "navbar.php";
+
+    ?>
 
 
-    ?></div>
+
+
     <div class="container" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; ">
-        <?php include "category.php"; ?>
     </div>
     <div class="container mt-3" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; ">
         <div class="row">
@@ -57,21 +62,20 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <?php
-            include "./product_card_image_tiles.php"
-            ?>
-        </div>
+
+
     </div>
-
     <?php
-    include "./Swiper.php"
+    include "./product_card_image_tiles.php"
+    ?>
+    <?php
+    include "./caresole.php"
     ?>
 
+    <div class="container-fluid"><?php
+                                    include "./footer.php"
+                                    ?></div>
 
-    <?php
-    include "./footer.php"
-    ?>
 
 
     <script src="http://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>

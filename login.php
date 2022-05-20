@@ -1,9 +1,7 @@
 <?php
-if (!isset($_SESSION['NAME'])) {
+if (!isset($_SESSION)) {
     session_start();
 }
-
-
 ?>
 
 

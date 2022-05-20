@@ -11,7 +11,7 @@ if (isset($_POST["register"])) {
     $repass = $_POST['CUSTOMER_REPASSWORD'];
 
     if (isset($_FILES['PROFILEPIC'])) { //if customer select a file
-        $target_dir = "./assets/images/customer profile pic/";
+        $target_dir = "./assets/img/customer profile pic/";
         $filename = $_FILES['PROFILEPIC']['name'];
         $target_file = $target_dir . basename($_FILES["PROFILEPIC"]["name"]);
         $uploadOk = 1;
