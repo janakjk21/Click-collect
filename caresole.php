@@ -210,7 +210,7 @@
                                     echo '<div class="thumb-wrapper">';
                                     echo '<span class="wish-icon"><i class="fa fa-heart-o"></i></span>';
                                     echo '<div class="img-box">';
-                                    echo '<img src="./assets/img/featured products/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-fluid" >';
+                                    echo '<img src="./assets/img/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-fluid" >';
                                     echo '</div>';
                                     echo '<div class="thumb-content">';
                                     echo '<h4>Tuna</h4>';
@@ -255,7 +255,7 @@
                                     echo '<div class="thumb-wrapper">';
                                     echo '<span class="wish-icon"><i class="fa fa-heart-o"></i></span>';
                                     echo '<div class="img-box">';
-                                    echo '<img src="./assets/img/featured products/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-fluid" >';
+                                    echo '<img src="./assets/img/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-fluid" >';
                                     echo '</div>';
                                     echo '<div class="thumb-content">';
                                     echo '<h4>Tuna</h4>';
