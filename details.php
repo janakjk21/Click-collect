@@ -38,7 +38,7 @@ if (isset($_POST['addtocart'])) {
                         // echo "timi kun thauma chau";
                         header('location:cart.php');
                     } else {
-                        // echo'tablema gayenau';
+                        echo 'tablema gayenau';
                     }
                 }
             }

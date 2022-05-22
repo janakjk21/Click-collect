@@ -1,6 +1,8 @@
 <?php
 include "./connection.php";
-
+if (!isset($_SESSION['NAME'])) {
+    session_start();
+}
 
 ?>
 <?php $cur_format = '$';
