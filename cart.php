@@ -243,7 +243,7 @@ SPLIT;
                                 echo '<tbody>';
                                 $m = $d['PRODUCT_ID'];
                                 echo '<tr>';
-                                echo '<td><img src="products/' . $d['PRODUCT_PIC1'] . '" /> </td>';
+                                echo '<td><img src="./assets/img/' . $d['PRODUCT_PIC1'] . '" /> </td>';
                                 echo '<td>' . $d['PRODUCT_NAME'] . '</td>';
                                 $dis = $d['DISAMOUNT'];
                                 echo '<td>$' . ($d['PRODUCTPRICE'] - ($d['PRODUCTPRICE'] * ($dis / 100))) . '</td>';

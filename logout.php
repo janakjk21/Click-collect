@@ -2,7 +2,7 @@
 
 include "connection.php";
 
-
+session_destroy();
 session_unset();
 
 session_destroy();
