@@ -110,8 +110,7 @@ include './navbar.php';
 
                               echo '<h3>';
 
-                              echo '<a href="details.php?
-                                pid=' . $ro['PRODUCT_ID'] . '">' . $ro['PRODUCT_NAME'] . '</a>';
+                              echo '<a href="details.php?pid=' . $ro['PRODUCT_ID'] . '">' . $ro['PRODUCT_NAME'] . '</a>';
 
                               echo '</h3>';
                               if ($ro['DISAMOUNT'] > 0) {
