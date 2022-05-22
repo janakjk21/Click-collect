@@ -6,6 +6,7 @@ error_reporting(0);
 if (isset($_SESSION['cid'])) {
 
     $customerid = $_SESSION['cid'];
+    echo $customerid;
 }
 if (isset($_GET['pid'])) {
     $pid = $_GET['pid'];
@@ -37,7 +38,7 @@ if (isset($_POST['addtocart'])) {
                         // echo "timi kun thauma chau";
                         header('location:cart.php');
                     } else {
-                        // echo'tablema gayenau';
+                        echo 'tablema gayenau';
                     }
                 }
             }
@@ -461,7 +462,7 @@ if (isset($_POST['submit'])) {
                             <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
                                 <?php
                                 include "./connection.php";
-                                $sql = 'SELECT * FROM REVIEW where PRODUCT_ID=	21 ';
+                                $sql = 'SELECT * FROM REVIEW where PRODUCT_ID=	$pid ';
                                 $stid = oci_parse($conn, $sql);
 
 
