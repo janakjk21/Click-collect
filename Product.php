@@ -38,7 +38,7 @@ include './navbar.php';
 
           <div class="panel-body">
             <!-- panel-body Begin -->
-            <img src="./assets/img//download.jpg" alt="Example" width="200" height="100">
+            <img src="./assets/img/butcher1.png" alt="Example" width="200" height="100">
             <ul class="nav nav-pills nav-stacked category-menu">
               <!-- nav nav-pills nav-stacked category-menu Begin -->
               <form method="POST" enctype="multipart/form-data" action="product.php">

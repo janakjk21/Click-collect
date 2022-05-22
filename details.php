@@ -8,7 +8,7 @@ if (isset($_SESSION['cid'])) {
     $customerid = $_SESSION['cid'];
 }
 if (isset($_GET['pid'])) {
-    $pid = $_GET['pid'];
+    $pid = 21;
     $product_id = $_GET['pid'];
 }
 

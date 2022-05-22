@@ -123,7 +123,7 @@ include('./connection.php');
                         if (!isset($_SESSION['tid'])) {
                         } else {
 
-                            echo "<center><img src='./assets/img/trader profile pic/$trader_image' class='img-responsive'  ></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
+                            echo "<center><img src='./assets/img/trader profile pic/$trader_image' class='img-responsive' style='border-radius: 15px;' ></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
                         }
 
                         ?>
@@ -183,7 +183,7 @@ include('./connection.php');
 
                         <div class="row">
                             <div class=" column3 col-md-8">
-                                <img style="width:80%; height:250px;  margin-top: 0px; justify-content: center;" src="./assets/img/trader profile pic/<?php echo $d['TRADER_PROFILE'] ?> ">
+                                <img style="width:80%; height:250px;  margin-top: 0px; justify-content: center; border-radius: 50%;" src="./assets/img/trader profile pic/<?php echo $d['TRADER_PROFILE'] ?> ">
                             </div>
 
                             <div class="column4 col-md-4">
@@ -226,9 +226,9 @@ include('./connection.php');
                         </div>
                         <div class="row">
                             <div class=" column2 col-md-5" style="display: flex;">
-                                <a class="btn btn-primary sad" href="updatetraderpassword.php">Update Password
+                                <a class="btn btn-primary sad m-1" href="updatetraderpassword.php">Update Password
                                 </a>
-                                <a class="btn btn-primary sad" href="updatetrader.php?tid='.$traderid.'">Update Profile
+                                <a class="btn btn-primary sad m-1" href="updatetrader.php?tid='.$traderid.'">Update Profile
                                 </a>
 
                             </div>
