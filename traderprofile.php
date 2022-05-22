@@ -1,12 +1,9 @@
 <?php
-session_start();
-$active = 'Account';
-if (!isset($_SESSION['tid'])) {
-    header("login.php");
-    # code...
-} else {
 
-    $traderid = $_SESSION['tid'];
+session_start();
+if (!isset($_SESSION["NAME"])) {
+    header("Location: login.php");
+    exit();
 }
 
 
@@ -238,6 +235,8 @@ include('./connection.php');
             </div>
         </div>
     </div>
+    <?php include "./script.php" ?>
+
 <?php
             }
             include './footer.php';

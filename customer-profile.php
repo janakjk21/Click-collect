@@ -328,8 +328,9 @@ if (!isset($_SESSION['NAME'])) {
     </div>
     <?php include 'footer.php'; ?>
 
+    <?php include "./script.php" ?>
 
-    <script src="script/action.js"></script>
+
     <script src="http://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
 
 

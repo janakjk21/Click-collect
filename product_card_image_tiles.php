@@ -28,7 +28,7 @@
                         <div class="thumblist"><img src="./assets/img/deal of the day/butchers/butcher2.png" alt="Clothing" style="border-radius: 3%;"><img src="./assets/img/deal of the day/butchers/butcher3.png" alt="Clothing" style="border-radius: 3%;"></div>
                     </a>
                     <div class="card-body border mt-n1 py-4 text-center">
-                        <h2 class="h5 mb-1">Butchers</h2><span class="d-block mb-3 font-size-xs text-muted">Starting from <span class="font-weight-semibold">$39.99</span></span><a class="btn btn-pill btn-outline-primary btn-sm" href="shop-style1-ls.html">Shop Meat</a>
+                        <h2 class="h5 mb-1">Butchers</h2><span class="d-block mb-3 font-size-xs text-muted">Starting from <span class="font-weight-semibold">$39.99</span></span><a class="btn btn-pill btn-outline-primary btn-sm" href="./product.php">Shop Meat</a>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                     <div class="thumblist"><img src="./assets/img/deal of the day/bakery/bakery2.png" alt="Clothing" style="border-radius: 3%;"><img src="./assets/img/deal of the day/bakery/bakery3.png" alt="Clothing" style="border-radius: 3%;"></div>
                 </a>
                 <div class="card-body border mt-n1 py-4 text-center">
-                    <h2 class="h5 mb-1">Bakery</h2><span class="d-block mb-3 font-size-xs text-muted">Starting from <span class="font-weight-semibold">$49.99</span></span><a class="btn btn-pill btn-outline-primary btn-sm" href="shop-style1-ls.html">Shop Bakery</a>
+                    <h2 class="h5 mb-1">Bakery</h2><span class="d-block mb-3 font-size-xs text-muted">Starting from <span class="font-weight-semibold">$49.99</span></span><a class="btn btn-pill btn-outline-primary btn-sm" href="./product.php">Shop Bakery</a>
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
                 <div class="thumblist"><img src="./assets/img/deal of the day/vegetable/vegetable2.png" alt="Clothing" style="border-radius: 3%;"><img src="./assets/img/deal of the day/vegetable/vegetable3.png" alt="Clothing" style="border-radius: 3%;"></div>
             </a>
             <div class="card-body border mt-n1 py-4 text-center">
-                <h2 class="h5 mb-1">Vegetables</h2><span class="d-block mb-3 font-size-xs text-muted">Starting from <span class="font-weight-semibold">$29.99</span></span><a class="btn btn-pill btn-outline-primary btn-sm" href="shop-style1-ls.html">Shop Vegetables</a>
+                <h2 class="h5 mb-1">Vegetables</h2><span class="d-block mb-3 font-size-xs text-muted">Starting from <span class="font-weight-semibold">$29.99</span></span><a class="btn btn-pill btn-outline-primary btn-sm" href="./product.php">Shop Vegetables</a>
             </div>
         </div>
         <!-- Category-->

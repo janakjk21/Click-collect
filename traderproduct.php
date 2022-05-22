@@ -1,9 +1,10 @@
 <?php
-session_start();
+
 $active = 'Account';
 if (!isset($_SESSION['tid'])) {
-    header("login.php");
     # code...
+    session_start();
+    header("login.php");
 } else {
 
     $traderid = $_SESSION['tid'];
