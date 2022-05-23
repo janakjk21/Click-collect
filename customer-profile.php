@@ -16,64 +16,8 @@ if (!isset($_SESSION['NAME'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" referrerpolicy="no-referrer" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
     <title>Customer Profile - Click & Collect Groceries</title>
-
-    <style>
-        .customer-profile h6 {
-            text-transform: uppercase;
-        }
-
-        .customer-profile .change-clr {
-            color: #474849;
-        }
-
-        .customer-profile .icons i {
-            color: #325C8C;
-        }
-
-        .customer-profile .active {
-            color: black;
-        }
-
-
-        .right-side-nav a {
-            color: #325C8C;
-        }
-
-        .right-side-nav a:hover {
-            color: #284970;
-        }
-
-        .right-side-nav nav i {
-            position: absolute;
-            padding-top: 4px;
-        }
-
-        .right-side-nav nav span {
-            position: relative;
-            left: 30px;
-        }
-
-        .update-profile input {
-            color: black;
-        }
-
-
-        .customer-profile p {
-            font-size: 16px;
-        }
-
-        .upload-image {
-            width: 100%;
-            border: 1px solid #000;
-            border-radius: 3px;
-        }
-
-        #invoice a {
-            text-decoration: none;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -326,6 +270,7 @@ if (!isset($_SESSION['NAME'])) {
             </div>
         </div>
     </div>
+    
     <?php include 'footer.php'; ?>
 
     <?php include "./script.php" ?>

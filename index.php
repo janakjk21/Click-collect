@@ -19,13 +19,10 @@ if (!isset($_SESSION)) {
 
 <body>
 
-
     <?php
     include "./connection.php";
     include "navbar.php";
-
     ?>
-
 
 
     <div class="container" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; ">
@@ -72,22 +69,21 @@ if (!isset($_SESSION)) {
         </div>
         <div class="row" style="margin-top: 3%;">
             <?php
-            include "./product_card_image_tiles.php"
+            include "./product_card_image_tiles.php";
             ?>
         </div>
     </div>
 
 
-    </div>
-
     <?php
-    include "./caresole.php"
+    include "./caresole.php";
     ?>
 
-    <div class="container-fluid"><?php
-                                    include "./footer.php"
-                                    ?></div>
-
+    <div class="container-fluid">
+        <?php
+        include "./footer.php";
+        ?>
+    </div>
 
 
     <script src="http://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>

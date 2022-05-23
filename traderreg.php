@@ -83,7 +83,7 @@ if (isset($_POST["register"])) {
                                     if ($e) {
                                         $to      = $temail; // Send email to our user
                                         $subject = 'Signup | Comfirmation'; // Give the email a subject 
-                                        $message = 'Thanks for being member of Cleckdiced. Your account has been activated, you can now login to your  account with the following Detais:
+                                        $message = 'Thanks for being member of Click & Collect Groceries. Your account has been activated, you can now login to your  account with the following Detais:
                                                      -----------------------------------------
                                                      User Type: Trader
                                                      Username: ' . $tname . '
@@ -105,7 +105,7 @@ if (isset($_POST["register"])) {
                                         echo "string";
                                     }
                                 } else {
-                                    $errormessage = "You Must Agree cleckdiced Terms And Conditions !!!";
+                                    $errormessage = "You Must Agree To Click & Collect Groceries Terms And Conditions !!!";
                                 }
                             } else {
                                 $errormessage = "Password Does not Match !!!";
@@ -134,14 +134,12 @@ if (isset($_POST["register"])) {
 //     echo "error";
 // }
 
-
-
-
-
 ?>
+
 <?php
 include("connection.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

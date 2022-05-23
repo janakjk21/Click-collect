@@ -64,7 +64,7 @@ if (isset($_POST["register"])) {
                                         } else {
                                             if (move_uploaded_file($_FILES["PROFILEPIC"]["tmp_name"], $target_file)) {
                                                 echo "<script>alert('Your profile has been updated')</script>";
-                                                echo "The file " . basename($_FILES["PROFILEPIC"]["name"]) . " has been uploaded.";
+                                                echo "<script>alert('The file " . basename($_FILES["PROFILEPIC"]["name"]) . " has been uploaded')</script>";
                                             } else {
                                                 echo "Sorry, there was an error uploading your file.";
                                             }
@@ -77,7 +77,7 @@ if (isset($_POST["register"])) {
                                         if ($e) {
                                             $to      = $email; // Send email to our user
                                             $subject = 'Signup | Comfirmation'; // Give the email a subject 
-                                            $message = 'Thanks for being member of Click & Collect Groceries. Your account has been activated, you can now login to your  account with the following Detais:
+                                            $message = 'Thanks for being a member of Click & Collect Groceries. Your account has been activated, you can now login to your account with the following Detais:
                                                      -----------------------------------------
                                                      User Type: Customer
                                                      Username: ' . $name . '
@@ -97,7 +97,7 @@ if (isset($_POST["register"])) {
                                             echo "string";
                                         }
                                     } else {
-                                        $errormessage = "You Must Agree Cleckdiced Terms And Conditions !!!";
+                                        $errormessage = "You Must Agree To The Click & Collect Groceries Terms And Conditions !!!";
                                     }
                                 } else {
                                     $errormessage = "Password Does not Match !!!";
@@ -128,13 +128,10 @@ if (isset($_POST["register"])) {
 // {
 //     echo "error";
 // }
-
-
-
-
-
 ?>
+
 <?php include 'navbar.php' ?>
+
 <style>
     .ui ::-webkit-input-placeholder {
         /* Chrome/Opera/Safari */
@@ -171,6 +168,17 @@ if (isset($_POST["register"])) {
     }
 </style>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration - Click & Collect Groceries</title>
+</head>
+
+<body>
+
 <div class="container">
     <div class="row">
         <div class="col-md-3"></div>
@@ -178,8 +186,8 @@ if (isset($_POST["register"])) {
             <div class="ui" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
                 <h1 class="text-center">Customer Sign-Up Form</h1>
                 <br>
+                
                 <?php
-
                 if (isset($errormessage)) {
                     echo "<div class='alert alert-danger' id='myAlert'>
                             <a href='#' class='close' data-dismiss='alert'>&times;</a>";
@@ -231,14 +239,14 @@ if (isset($_POST["register"])) {
                     <br>
                     <input type="submit" name="register" value="Sign Up" class="btn btn-primary1 btn-block btn-lg">
                 </form>
-
             </div>
         </div>
         <div class="col-lg-3"></div>
     </div>
 </div>
+
 <?php include 'footer.php'; ?>
 
 </body>
-
 </html>
+
