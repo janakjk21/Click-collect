@@ -1,4 +1,5 @@
 <?php
+include('connection.php');
 
 $active = 'Account';
 if (!isset($_SESSION['tid'])) {
@@ -12,7 +13,6 @@ if (!isset($_SESSION['tid'])) {
 
 
 
-include('connection.php');
 
 ?>
 <!DOCTYPE html>
@@ -147,6 +147,7 @@ include('connection.php');
         <div class="col-md-1 "></div>
         <div class="col-md-3 box" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
             <?php
+            $traderid = $_SESSION['tid'];
             $a = "SELECT * FROM TRADER WHERE TRADER_ID='$traderid'";
             $b = oci_parse($conn, $a);
             $c = oci_execute($b);

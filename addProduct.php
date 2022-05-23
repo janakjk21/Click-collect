@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['tid'])) {
-    header("location:../common/login.php");
+    header("location:login.php");
     # code...
 } else {
     $traderid = $_SESSION['tid'];
@@ -23,6 +23,7 @@ if (!isset($_SESSION['tid'])) {
         $minorder = $_POST['MINORDER'];
         $maxorder = $_POST['MAXORDER'];
         $pdes = $_POST['PRODUCTDES'];
+        $sid = $_POST['sid'];
 
 
         $namevalid = "/^([a-zA-Z' ]+)$/"; //for name validation
@@ -84,7 +85,7 @@ if (!isset($_SESSION['tid'])) {
 
 
 
-                                            $a = "INSERT INTO PRODUCT (PRODUCT_ID,PRODUCT_PIC1,PRODUCT_PIC2,PRODUCT_PIC3,PRODUCT_NAME,CATEGORY,PRODUCTPRICE,PRODUCTQUANTITY,PRODUCTUNIT,TRADER_ID,MINORDER,MAXORDER,PRODUCTDES) VALUES (PRODUCT_SEQ.nextval,'$filename1','$filename2','$filename3','$pname','$pcat','$pprice','$pquan','$punit','$traderid','$minorder','$maxorder','$pdes')";
+                                            $a = "INSERT INTO PRODUCT (PRODUCT_ID,PRODUCT_PIC1,PRODUCT_PIC2,PRODUCT_PIC3,PRODUCT_NAME,CATEGORY,PRODUCTPRICE,PRODUCTQUANTITY,PRODUCTUNIT,TRADER_ID,MINORDER,MAXORDER,PRODUCTDES,SHOP_ID) VALUES (PRODUCT_SEQ.nextval,'$filename1','$filename2','$filename3','$pname','$pcat','$pprice','$pquan','$punit','$traderid','$minorder','$maxorder','$pdes','$sid')";
                                             $b = oci_parse($conn, $a);
                                             $d = oci_execute($b);
 
@@ -347,7 +348,14 @@ if (!isset($_SESSION['tid'])) {
 
                 </div>
             </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label"> Shop ID </label>
 
+                <div class="col-md-6">
+                    <input name="sid" type="number" class="form-control" required placeholder="Enter the Shop Name">
+
+                </div>
+            </div>
 
 
             <div class="form-group">
