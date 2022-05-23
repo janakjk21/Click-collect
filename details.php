@@ -51,35 +51,7 @@ if (isset($_POST['addtocart'])) {
 
 
 
-$Err = "";
-// If upload button is clicked ...
-if (isset($_POST['submit'])) {
-    $name = $category = $feedback = "";
 
-    if (empty($_POST["name"])) {
-        $Err = "Name is required";
-    } else {
-        $name = $_POST["name"];
-    }
-    if (empty($_POST["email"])) {
-        $Err = "Category is required";
-    } else {
-        $email = $_POST["feedback"];
-        echo $category;
-    }
-    if (empty($_POST["price"])) {
-        $Err = "Name is required";
-    } else {
-        $feedback = $_POST["price"];
-    }
-    $rating = $_POST["rating"];
-    $sql = "INSERT INTO REVIEW (REVIEW_ID,PRODUCT_ID, CUSTOMER_ID, RATING,REVIEWR_NAME,REVIEW,REVIEWER_EMAIL)VALUES (22,' 1', 567, ' $rating ','$name','$feedback ','$email ')";
-    $nop = oci_parse($conn, $sql);
-    $e = oci_execute($nop);
-    if (empty($e)) {
-        $Err = "data insered sucessful";
-    }
-}
 ?>
 
 
@@ -89,6 +61,7 @@ if (isset($_POST['submit'])) {
 include './connection.php';
 
 
+$customerid = $_SESSION['cid'];
 $Err = "";
 // If upload button is clicked ...
 if (isset($_POST['submit'])) {
@@ -111,7 +84,7 @@ if (isset($_POST['submit'])) {
         $feedback = $_POST["price"];
     }
     $rating = $_POST["rating"];
-    $sql = "INSERT INTO REVIEW (REVIEW_ID,PRODUCT_ID, CUSTOMER_ID, RATING,REVIEWR_NAME,REVIEW,REVIEWER_EMAIL)VALUES (123,' $product_id ', 567, ' $rating ','$name','$feedback ','$email ')";
+    $sql = "INSERT INTO REVIEW (REVIEW_ID,PRODUCT_ID, CUSTOMER_ID, RATING,REVIEWR_NAME,REVIEW,REVIEWER_EMAIL)VALUES (123,' $product_id ', $customerid, ' $rating ','$name','$feedback ','$email ')";
     $nop = oci_parse($conn, $sql);
     $e = oci_execute($nop);
     if (empty($e)) {
@@ -451,99 +424,66 @@ if (isset($_POST['submit'])) {
                     </div>
                 </div>
                 <hr>
+                <hr>
                 <div class="row">
-                    <div class="col-lg-7">
-                        <div class="nav product-details-nav me-lg-6" id="product-details-nav-tab" role="tablist">
-                            <button class="nav-link active" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="true">Review</button>
-                        </div>
-                        <div class="tab-content me-lg-6" id="product-details-nav-tabContent">
 
+                    <div class="preview col-md-6">
+                        <h2 style="color:#74b72e;">Product Reviews</h2>
 
-                            <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
-                                <?php
-                                include "./connection.php";
-                                $sql = 'SELECT * FROM REVIEW where PRODUCT_ID=	$pid ';
-                                $stid = oci_parse($conn, $sql);
+                        <?php
+                        $x = "SELECT * FROM REVIEW,CUSTOMER WHERE PRODUCT_ID='$pid' AND REVIEW.CUSTOMER_ID=CUSTOMER.CUSTOMER_ID";
+                        $y = oci_parse($conn, $x);
+                        $z = oci_execute($y);
+                        while ($v = oci_fetch_assoc($y)) {
+                            echo '<h4>' . $v['NAME'] . '</h4>';
+                            echo '<p style="color:#74b72e;">' . $v['REVIEW'] . '</p>';
+                        }
 
+                        ?>
 
-                                oci_execute($stid);
-                                while (($row = oci_fetch_array($stid, OCI_ASSOC)) != false) {
-
-                                ?> <div class="product-review-item mb-0">
-                                        <div class="product-review-top">
-
-                                            <div class="product-review-content">
-                                                <h4 class="product-reviewer-name"><?php echo $row['REVIEWR_NAME'] ?></h4>
-                                                <h5 class="product-reviewer-designation"><?php echo $row['REVIEWER_EMAIL'] ?></h5>
-                                                <div class="product-review-icon">
-                                                    <?php
-                                                    $x = $row['RATING'];
-
-                                                    while ($x  > 0) {
-
-                                                    ?>
-                                                        <i class="fa fa-star"></i> <?php
-                                                                                    $x = $x - 1;
-                                                                                }
-
-                                                                                    ?>
-
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="desc"><?php echo $row['REVIEWR_NAME'] ?>.</p>
-                                        <button type="button" class="review-reply"><i class="fa fa fa-undo"></i></button>
-                                    </div><?php
-
-
-
-                                        }
-
-                                            ?>
-
-
-                                <hr>
-                            </div>
-                        </div>
                     </div>
 
+                    <?php
+                    if (isset($_SESSION['cid'])) { ?>
+                        <div class="details col-md-6">
+                            <h2 style="color:#74b72e;">Add Review on this Product</h2>
+                            <br>
 
+                            <form action="" method="POST">
+                                <textarea rows="5" cols="60" name="review">
 
+        	 </textarea><br>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Give review in star</label>
+                                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter review" min="1" max="5">
+                                    <small id="emailHelp" class="form-text text-muted">Enter the ratings between 1-5</small>
+                                </div>
+                                <input type="submit" name="re" value="Submit" class="btn btn-success" />
+                            </form>
+                        <?php
+                        if (isset($_POST['re'])) {
+                            $review = $_POST['review'];
 
+                            $e = "INSERT INTO REVIEW (REVIEW,CUSTOMER_ID,PRODUCT_ID) VALUES ('$review','$customerid','$pid')";
+                            $r = oci_parse($conn, $e);
+                            $t = oci_execute($r);
+                        }
+                    } else {
+                        // header("location:login.php");
 
-                    <div class="col-lg-5">
-                        <div class="product-reviews-form-wrap">
-                            <h4 class="product-form-title">Leave a reply</h4>
-                            <div class="product-reviews-form">
-                                <form action="" method="POST">
-                                    <div class="form-input-item">
-                                        <textarea class="form-control" placeholder="Enter you feedback" id="feedback" type="text" name="feedback"></textarea>
-                                    </div>
-                                    <div class="form-input-item">
-                                        <input class="form-control" type="text" placeholder="Full Name" id="name" name="name" style="padding:3%">
-                                    </div>
-                                    <div class="form-input-item">
-                                        <input class="form-control" type="email" placeholder="Email Address" id="email" name="email" style="padding:3%">
-                                    </div>
-                                    <div class="form-input-item">
-                                        <div class="form-ratings-item">
-                                            <input id="ratinginput" name="rating" class="rating rating-loading" data-min="0" data-max="5" data-step="0.1" value="2">
-
-                                            <span class="title">Provide Your Ratings</span>
-                                        </div>
-                                    </div>
-                                    <div class="form-input-item mb-0">
-                                        <button type="submit" name="submit" class="btn">SUBMIT</button>
-                                    </div>
-                                </form>
-                            </div>
+                    }
+                        ?>
                         </div>
-                    </div>
+
                 </div>
+
+                </br>
+
+
+
             </div>
         </div>
+    </div>
     </div>
 
 

@@ -16,7 +16,7 @@ if (!isset($_SESSION['NAME'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" referrerpolicy="no-referrer" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
+
     <title>Customer Profile - Click & Collect Groceries</title>
 </head>
 
@@ -67,7 +67,6 @@ if (!isset($_SESSION['NAME'])) {
                                         <a data-toggle="tab" class="nav-link" href="#changePassword"><i class="fas fa-key"></i><span>Change
                                                 Password</span> </a>
                                         <a data-toggle="tab" class="nav-link" href="#invoice"><i class="fas fa-receipt"></i></i><span>Invoice</span> </a>
-                                        <a data-toggle="tab" class="nav-link" href="#invoice"><i class="fas fa-receipt"></i></i><span>My Orders</span> </a>
                                         <a data-toggle="tab" class="nav-link" href="#deleteAccount"><i class="fas fa-trash-alt"></i><span>Delete Account</span> </a>
                                         <a data-toggle="tab" class="nav-link" href="#logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span> </a>
                                     </nav>
@@ -180,71 +179,7 @@ if (!isset($_SESSION['NAME'])) {
                                 }
 
                                 ?>
-                                <!-- Change Password Ends-->
 
-
-                                <!-- Invoice -->
-                                <div class="tab-pane" id="invoice">
-                                    <h6>Invoice</h6>
-                                    <table class="table table-bordered">
-                                        <?php
-                                        $sqlpayment = "SELECT * FROM PAYMENT WHERE customer_id='$name' ";
-                                        $querypayment = oci_parse($conn, $sqlpayment);
-                                        oci_execute($querypayment);
-                                        ?>
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Invoice No</th>
-                                                <th scope="col">Date</th>
-                                                <th scope="col">Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php while ($email_pass = oci_fetch_assoc($querypayment)) {
-                                            ?>
-                                                <tr>
-                                                    <th scope="row"><?php echo $email_pass['PAYMENT_ID']; ?></th>
-                                                    <td><?php echo $email_pass['PAYMENT_DATE']; ?></td>
-                                                    <td><?php echo "£ " . $email_pass['SUB_TOTAL']; ?></td>
-                                                    <!--<td><a href="" data-toggle="modal" data-target="#staticBackdrop">View</a></td> -->
-
-                                                    <table class="table table-bordered">
-                                                        <?php
-                                                        $paymentid = $email_pass['PAYMENT_ID'];
-                                                        $sqlpaymentdetails = "SELECT * FROM PAYMENT_DETAILS WHERE payment_id='$paymentid' ";
-                                                        $querypaymentdetails = oci_parse($conn, $sqlpaymentdetails);
-                                                        oci_execute($querypaymentdetails);
-                                                        ?>
-                                                        <h6>Details</h6>
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">Product Price</th>
-                                                                <th scope="col">Quantity</th>
-                                                                <th scope="col">Product</th>
-                                                                <th scope="col">Trader</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <?php while ($details = oci_fetch_assoc($querypaymentdetails)) {
-                                                            ?>
-                                                                <tr>
-                                                                    <th scope="row"><?php echo $details['PRODUCT_PRICE']; ?></th>
-                                                                    <td><?php echo $details['PRODUCT_QUANTITY']; ?></td>
-                                                                    <td><?php echo $details['PRODUCT_ID']; ?></td>
-                                                                    <td><?php echo $details['TRADER_ID']; ?></td>
-                                                                </tr>
-                                                            <?php } ?>
-                                                        </tbody>
-
-
-                                                    </table>
-
-                                                </tr>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- Invoice Ends-->
 
                                 <!-- Delete Account -->
                                 <div class="tab-pane" id="deleteAccount">
@@ -270,7 +205,7 @@ if (!isset($_SESSION['NAME'])) {
             </div>
         </div>
     </div>
-    
+
     <?php include 'footer.php'; ?>
 
     <?php include "./script.php" ?>

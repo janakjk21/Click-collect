@@ -224,7 +224,11 @@ if (!empty($header[0]['currency_format'])) {
                                 }
 
                             ?>
-                                <a class="nav-link active text-center " href="customer-profile.php"><img src="./assets/img/customer profile pic/<?php echo $image ?>" class="mr-1 rounded-circle" alt="">Welcome |
+                                <a class="nav-link active text-center " href="<?php if (!empty($_SESSION['tid'])) {
+                                                                                    echo "traderprofile.php";
+                                                                                } else {
+                                                                                    echo "customer-profile.php";
+                                                                                } ?>"><img src="./assets/img/customer profile pic/<?php echo $image ?>" class="mr-1 rounded-circle" alt="">Welcome |
                                     <?Php echo $customer_name ?>
                                 </a>
                             <?php   } ?>
@@ -257,44 +261,7 @@ if (!empty($header[0]['currency_format'])) {
                     </ul>
                 </div>
                 <!-- Modal -->
-                <div class="modal fade" id="userLogin_form" tabindex="-1" role="dialog">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <div class="modal-body">
-                                <!-- Form -->
-                                <form id="loginUser" method="POST">
-                                    <div class="form-control">
-                                        <h2 class="border-bottom text-center">Sign-In</h2>
-                                        <div class="pt-2">
-                                            <div class="inputWithIcon inputIconBg">
-                                                <input type="email" class="username" name="email" placeholder="Email" />
-                                                <i class="fa fa-envelope fa-lg fa-fw bg"></i>
-                                            </div>
-                                            <div class="inputWithIcon inputIconBg">
-                                                <input type="password" class="password" name="password" placeholder="Password" />
-                                                <i class="fas fa-key fa-lg fa-fw bg"></i>
-                                                <span class="eye">
-                                                    <i class="fas fa-eye togglePassword"></i>
-                                                </span>
-                                            </div>
-                                            <input class="btn" type="submit" value="Continue" />
-                                            <div class="text-center">
-                                                <p>
-                                                    <small>Don't have an account?
-                                                        <a href="register.php">Register</a></small>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                                <!-- /Form -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <!-- /Modal -->
             </nav>
         </div>

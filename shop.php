@@ -134,35 +134,7 @@ include("connection.php");
         <!-- #content Begin -->
         <div class="container">
             <div class='row'>
-                <div class="col-md-3">
-                    <!--col-md-3 begin-->
-                    <div class="panel panel-default sidebar-menu">
-                        <!-- panel panel-default sidebar-menu Begin -->
-                        <div class="panel-heading">
-                            <!-- panel-heading Begin -->
-                            <h3 class="panel-title" style="padding-left: 70px; font-size: 25px; font-family: 'Comic Sans MS', cursive, sans-serif">OFFER</h3>
-                        </div><!-- panel-heading Finish -->
 
-                        <div class="panel-body">
-                            <!-- panel-body Begin -->
-                            <img src="banner_meat.jpg" style=" height: 100%; width: 100%;">
-                        </div><!-- panel-body Finish -->
-
-                    </div><!-- panel panel-default sidebar-menu Finish -->
-                    <div class="panel panel-default sidebar-menu">
-                        <!-- panel panel-default sidebar-menu Begin -->
-                        <div class="panel-heading">
-                            <!-- panel-heading Begin -->
-                            <h3 class="panel-title" style="padding-left: 70px; font-size: 25px; font-family: 'Comic Sans MS', cursive, sans-serif">OFFER</h3>
-                        </div><!-- panel-heading Finish -->
-
-                        <div class="panel-body">
-                            <!-- panel-body Begin -->
-                            <img src="meat.jpg" style=" height: 100%; width: 100%;">
-                        </div><!-- panel-body Finish -->
-
-                    </div><!-- panel panel-default sidebar-menu Finish -->
-                </div>
                 <!--col-md-3 end-->
                 <div class="col-md-9">
                     <!-- col-md-9 Begin -->
@@ -208,8 +180,7 @@ include("connection.php");
                             echo '</h3>';
                             echo '<p class="shopbuttons">';
 
-                            echo '<a class="btn btn-default" href="test.php?
-                                sid=' . $row_p['SHOP_ID'] . '">View Shop</a>';
+                            echo '<a class="btn btn-default" href="product.php?sid=' . $row_p['SHOP_ID'] . '">View Shop</a>';
                             echo '</p>';
 
                             echo '</div>';
