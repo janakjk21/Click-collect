@@ -157,6 +157,8 @@ if (isset($_POST['login'])) {
         </div>
     </div>
     <hr />
+    <?php include "./script.php" ?>
+
     <?php include 'footer.php'; ?>
 </body>
 

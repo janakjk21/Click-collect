@@ -1,9 +1,11 @@
+<!--  -->
 <?php
 include "./connection.php";
-if (!isset($_SESSION['NAME'])) {
+
+
+if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-
 ?>
 <?php $cur_format = '$';
 if (!empty($header[0]['currency_format'])) {
@@ -235,15 +237,16 @@ if (!empty($header[0]['currency_format'])) {
                                 More<i class="fas fa-angle-down ml-1"></i>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <?php if (isset($_SESSION['NAME'])) { ?>
-                                    <a class="dropdown-item" href="customer-profile.php">Profie Setting</a>
-                                <?php } ?>
                                 <?php if (!isset($_SESSION['NAME'])) { ?>
                                     <a class="dropdown-item" href="register.php">Register</a>
                                 <?php } ?>
                                 <?php if (!isset($_SESSION['NAME'])) { ?>
                                     <a class="dropdown-item" href="login.php">Login</a>
                                 <?php } ?>
+                                <?php if (isset($_SESSION['NAME'])) { ?>
+                                    <a class="dropdown-item" href="customer-profile.php">Profie Setting</a>
+                                <?php } ?>
+
                                 <?php if (isset($_SESSION['NAME'])) { ?>
                                     <a class="dropdown-item" href="logout.php">Logout</a>
                                 <?php } ?>
@@ -295,7 +298,6 @@ if (!empty($header[0]['currency_format'])) {
         </div>
     </div>
 
-    <?php include "./script.php" ?>
 
     <script src="http://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
 </body>
