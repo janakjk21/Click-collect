@@ -25,6 +25,7 @@
             text-align: center;
             font-size: 18px;
             background: #fff;
+            height: 300px;
 
 
             /* Center slide text vertically */
@@ -46,9 +47,10 @@
         /* .swiper-slide img {
             display: block;
             width: 100%;
+            height: 100px;
             object-fit: cover;
             border-radius: 5%;
-        } */
+        }  */
         body {
             background: #e2eaef;
             font-family: "Open Sans", sans-serif;
@@ -216,7 +218,7 @@
             <h1 style="font-size:50px ; "> Deal of The day</h1>
         </div>
 
-        <div class="swiper mySwiper" style="background-color: #f9f9f9">
+        <div class="swiper mySwiper carousel" style="background-color: #f9f9f9">
 
             <div class="swiper-wrapper">
                 <?php
@@ -236,11 +238,11 @@
                     $z = oci_execute($y);
 
                     echo '<div class="swiper-slide">';
-                    echo '<div class="col-sm-12" style="padding:5%">';
+                    echo '<div class="col-sm-12" style="padding:5%; height: 300px;">';
                     echo '<div class="thumb-wrapper" style="padding:5%">';
                     echo '<span class="wish-icon"><i class="fa fa-heart-o"></i></span>';
                     echo '<div class="img-box">';
-                    echo '<img src="./assets/img/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-fluid">';
+                    echo '<img src="./assets/img/product/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-fluid">';
                     echo '</div>';
                     echo '<div class="thumb-content">';
                     echo '<h4>Tuna</h4>';

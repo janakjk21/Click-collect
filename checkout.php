@@ -267,7 +267,7 @@ if (isset($_POST['submit'])) {
                             echo '<tbody>';
                             $m = $d['PRODUCT_ID'];
                             echo '<tr>';
-                            echo '<td><img src="products/' . $d['PRODUCT_PIC1'] . '" /> </td>';
+                            echo '<td><img src="./assets/img/product/' . $d['PRODUCT_PIC1'] . '" /> </td>';
                             echo '<td>' . $d['PRODUCT_NAME'] . '</td>';
                             $dis = $d['DISAMOUNT'];
                             echo '<td>$' . ($d['PRODUCTPRICE'] - ($d['PRODUCTPRICE'] * ($dis / 100))) . '</td>';
@@ -420,6 +420,8 @@ if (isset($_POST['submit'])) {
 
 
 
-
-
     <?php include 'footer.php'; ?>
+    <?php include "./script.php" ?>
+    
+</body>
+</html>

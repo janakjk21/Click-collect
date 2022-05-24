@@ -76,7 +76,7 @@ if (!isset($_SESSION)) {
 
 
     <?php
-    include "./caresole.php";
+    include "./swiper.php";
     ?>
 
     <div class="container-fluid">
