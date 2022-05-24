@@ -42,11 +42,11 @@ if (!isset($_SESSION['tid'])) {
 
 
         if (isset($_FILES['PRODUCT_PIC1'])) { //if customer select a file
-            $target_dir1 = "./assets/img/";
+            $target_dir1 = "./assets/img/product/";
             $filename1 = $_FILES['PRODUCT_PIC1']['name'];
-            $target_dir2 = "./assets/img/";
+            $target_dir2 = "./assets/img/product/";
             $filename3 = $_FILES['PRODUCT_PIC2']['name'];
-            $target_dir3 = "./assets/img/";
+            $target_dir3 = "./assets/img/product/";
             $filename2 = $_FILES['PRODUCT_PIC3']['name'];
 
 
@@ -276,12 +276,10 @@ if (!isset($_SESSION['tid'])) {
                     <select name="CATEGORY" class="form-control">
 
                         <option>Bakery</option>
-                        <option>Butcher</option>
+                        <option>Butchers</option>
                         <option>Delicatessen</option>
                         <option>Fishmonger</option>
-                        <option>Green Grocery</option>
-
-
+                        <option>Greengrocer</option>
 
                     </select>
 

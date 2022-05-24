@@ -25,7 +25,7 @@ if (!isset($_SESSION['tid'])) {
 
 
         if (isset($_FILES['SHOP_PHOTO'])) { //if customer select a file
-            $target_dir1 = "./assets/img/";
+            $target_dir1 = "./assets/img/shop/";
             $filename1 = $_FILES['SHOP_PHOTO']['name'];
 
 
@@ -81,7 +81,7 @@ if (!isset($_SESSION['tid'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CleckDiced</title>
+    <title>Add Shop - Click & Collect Groceries</title>
     <link rel="stylesheet" href="Styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="Styles/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -117,7 +117,7 @@ if (!isset($_SESSION['tid'])) {
 
 
 
-    <div class="row" style="margin-top:5%;margin-buttom:5%;">
+    <div class="row" style="margin-top:5%;margin-bottom:5%;">
 
 
 

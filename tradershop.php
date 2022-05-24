@@ -19,7 +19,6 @@ include('./connection.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CleckDiced</title>
     <link rel="stylesheet" href="Styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="Styles/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,6 +29,9 @@ include('./connection.php');
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>My Shop - Click & Collect Groceries</title>
+
     <style>
         .view a:hover:not(.active) {
             background-color: #74b72e;
@@ -193,7 +195,7 @@ include('./connection.php');
 
                         if (!isset($_SESSION['tid'])) {
                         } else {
-                            echo "<center><img src='./assets/img/$trader_image' class='img-responsive' style='border-radius:50%;'></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
+                            echo "<center><img src='./assets/img/trader profile pic/$trader_image' class='img-responsive' style='border-radius:50%;'></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
                         }
 
                         ?>
@@ -291,7 +293,7 @@ include('./connection.php');
                                     echo '<tbody>';
                                     echo '<tr>';
 
-                                    echo '<td><img src="./assets/img/' . $row['SHOP_PHOTO'] . '" style=" width:50px; height:50px;" /></td>';
+                                    echo '<td><img src="./assets/img/shop/' . $row['SHOP_PHOTO'] . '" style=" width:100px; height:100px;" /></td>';
                                     echo '<td>' . $row['SHOP_NAME'] . '</td>';
                                     echo '<td>' . $row['SHOP_ADDRESS'] . '</td>';
                                     echo '<td>' . $row['SHOP_PHONE'] . '</td>';

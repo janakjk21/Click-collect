@@ -21,7 +21,7 @@ if (!isset($_SESSION['tid'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CleckDiced</title>
+    <title>My Products - Click & Collect Groceries</title>
     <link rel="stylesheet" href="Styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="Styles/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -176,7 +176,7 @@ if (!isset($_SESSION['tid'])) {
                         if (!isset($_SESSION['tid'])) {
                         } else {
 
-                            echo "<center><img src='./assets/img/$trader_image' class='img-responsive' ></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
+                            echo "<center><img src='./assets/img/trader profile pic/$trader_image' class='img-responsive' ></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
                         }
 
                         ?>
@@ -277,9 +277,9 @@ if (!isset($_SESSION['tid'])) {
                                 while ($d = oci_fetch_assoc($b)) {
                                     echo '<tbody>';
                                     echo '<tr>';
-                                    echo '<td><img src="./assets/img/' . $d['PRODUCT_PIC1'] . '" style=" width:50px; height:50px;" /> </td>';
-                                    echo '<td><img src="./assets/img/' . $d['PRODUCT_PIC2'] . '" style=" width:50px; height:50px;" /> </td>';
-                                    echo '<td><img src="./assets/img/' . $d['PRODUCT_PIC3'] . '" style=" width:50px; height:50px;" /> </td>';
+                                    echo '<td><img src="./assets/img/product/' . $d['PRODUCT_PIC1'] . '" style=" width:100px; height:50px;" /> </td>';
+                                    echo '<td><img src="./assets/img/product/' . $d['PRODUCT_PIC2'] . '" style=" width:100px; height:50px;" /> </td>';
+                                    echo '<td><img src="./assets/img/product/' . $d['PRODUCT_PIC3'] . '" style=" width:100px; height:50px;" /> </td>';
                                     echo '<td>' . $d['PRODUCT_NAME'] . '</td>';
                                     echo '<td>' . $d['PRODUCTDES'] . '</td>';
                                     echo '<td>$' . $d['PRODUCTPRICE'] . '</td>';

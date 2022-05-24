@@ -210,10 +210,10 @@
                                     echo '<div class="thumb-wrapper">';
                                     echo '<span class="wish-icon"><i class="fa fa-heart-o"></i></span>';
                                     echo '<div class="img-box">';
-                                    echo '<img src="./assets/img/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-fluid" >';
+                                    echo '<img src="./assets/img/product/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-fluid" >';
                                     echo '</div>';
                                     echo '<div class="thumb-content">';
-                                    echo '<h4>Tuna</h4>';
+                                    echo $ro['PRODUCT_NAME'];
                                     echo '<div class="star-rating">';
                                     echo '<ul class="list-inline">';
                                     echo '<li class="list-inline-item"><i class="fa fa-star"></i></li>';
@@ -223,7 +223,7 @@
                                     echo '<li class="list-inline-item"><i class="fa fa-star-o"></i></li>';
                                     echo '</ul>';
                                     echo '</div>';
-                                    echo '<p class="item-price"><strike>$' . $ro['PRODUCTPRICE'] . '/' . $ro['PRODUCTUNIT'] . '</strike> <b></b></p>';
+                                    echo '<p class="item-price">$' . $ro['PRODUCTPRICE'] . '/' . $ro['PRODUCTUNIT'] . ' <b></b></p>';
                                     echo '<a  class="btn btn-primary" href="details.php?pid=' . $ro['PRODUCT_ID'] . '">Add to Cart</a>';
                                     echo '</div>';
                                     echo '</div>';
@@ -235,50 +235,7 @@
 
 
                             </div>
-                        </div>
-
-                        <div class="item carousel-item">
-                            <div class="row">
-                                <?php
-                                include 'connection.php';
-                                $x = 1;
-
-                                $s = "SELECT * FROM PRODUCT ";
-                                // $s = "SELECT * FROM PRODUCT";
-                                $n = oci_parse($conn, $s);
-                                $o = oci_execute($n);
-                                $x = oci_num_rows($n);
-                                echo $o = oci_execute($n);;
-                                while ($ro = oci_fetch_assoc($n)) {
-
-                                    echo '<div class="col-sm-3">';
-                                    echo '<div class="thumb-wrapper">';
-                                    echo '<span class="wish-icon"><i class="fa fa-heart-o"></i></span>';
-                                    echo '<div class="img-box">';
-                                    echo '<img src="./assets/img/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-fluid" >';
-                                    echo '</div>';
-                                    echo '<div class="thumb-content">';
-                                    echo '<h4>Tuna</h4>';
-                                    echo '<div class="star-rating">';
-                                    echo '<ul class="list-inline">';
-                                    echo '<li class="list-inline-item"><i class="fa fa-star"></i></li>';
-                                    echo '<li class="list-inline-item"><i class="fa fa-star"></i></li>';
-                                    echo '<li class="list-inline-item"><i class="fa fa-star"></i></li>';
-                                    echo '<li class="list-inline-item"><i class="fa fa-star"></i></li>';
-                                    echo '<li class="list-inline-item"><i class="fa fa-star-o"></i></li>';
-                                    echo '</ul>';
-                                    echo '</div>';
-                                    echo '<p class="item-price"><strike>$' . $ro['PRODUCTPRICE'] . '/' . $ro['PRODUCTUNIT'] . '</strike> <b></b></p>';
-                                    echo '<a  class="btn btn-primary" href="details.php?pid=' . $ro['PRODUCT_ID'] . '">Add to Cart</a>';
-                                    echo '</div>';
-                                    echo '</div>';
-                                    echo '</div>';
-                                }
-
-                                ?>
-
-                            </div>
-                        </div </div>
+                        </div> 
                     </div>
                 </div>
                 <!-- Carousel controls -->

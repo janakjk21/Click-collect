@@ -6,7 +6,6 @@ error_reporting(0);
 if (isset($_SESSION['cid'])) {
 
     $customerid = $_SESSION['cid'];
-    echo $customerid;
 }
 if (isset($_GET['pid'])) {
     $pid = $_GET['pid'];
@@ -346,13 +345,13 @@ if (isset($_POST['submit'])) {
                                     </ol>
                                     <div class="carousel-inner rounded">
                                         <div class="carousel-item active">
-                                            <img class="d-block w-100" src="./assets/img/<?php echo $product_pic1 ?>" alt="First slide">
+                                            <img class="d-block w-100" src="./assets/img/product/<?php echo $product_pic1 ?>" alt="First slide">
                                         </div>
                                         <div class="carousel-item">
-                                            <img class="d-block w-100" src="./assets/img/<?php echo $product_pic2 ?>" alt="Second slide">
+                                            <img class="d-block w-100" src="./assets/img/product/<?php echo $product_pic2 ?>" alt="Second slide">
                                         </div>
                                         <div class="carousel-item">
-                                            <img class="d-block w-100" src="./assets/img/<?php echo $product_pic3 ?>" alt="Third slide">
+                                            <img class="d-block w-100" src="./assets/img/product/<?php echo $product_pic3 ?>" alt="Third slide">
                                         </div>
                                     </div>
                                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
