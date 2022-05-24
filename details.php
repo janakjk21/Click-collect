@@ -54,44 +54,7 @@ if (isset($_POST['addtocart'])) {
 ?>
 
 
-<?php
 
-
-include './connection.php';
-
-
-$customerid = $_SESSION['cid'];
-$Err = "";
-// If upload button is clicked ...
-if (isset($_POST['submit'])) {
-    $name = $category = $feedback = "";
-
-    if (empty($_POST["name"])) {
-        $Err = "Name is required";
-    } else {
-        $name = $_POST["name"];
-    }
-    if (empty($_POST["email"])) {
-        $Err = "Category is required";
-    } else {
-        $email = $_POST["feedback"];
-        echo $category;
-    }
-    if (empty($_POST["price"])) {
-        $Err = "Name is required";
-    } else {
-        $feedback = $_POST["price"];
-    }
-    $rating = $_POST["rating"];
-    $sql = "INSERT INTO REVIEW (REVIEW_ID,PRODUCT_ID, CUSTOMER_ID, RATING,REVIEWR_NAME,REVIEW,REVIEWER_EMAIL)VALUES (123,' $product_id ', $customerid, ' $rating ','$name','$feedback ','$email ')";
-    $nop = oci_parse($conn, $sql);
-    $e = oci_execute($nop);
-    if (empty($e)) {
-        $Err = "data insered sucessful";
-    }
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -436,6 +399,9 @@ if (isset($_POST['submit'])) {
                         while ($v = oci_fetch_assoc($y)) {
                             echo '<h4>' . $v['NAME'] . '</h4>';
                             echo '<p style="color:#74b72e;">' . $v['REVIEW'] . '</p>';
+                            for ($x = 0; $x < $v['RATING']; $x++) {
+                                echo '<span class="fa fa-star"></span>';
+                            }
                         }
 
                         ?>
@@ -451,19 +417,20 @@ if (isset($_POST['submit'])) {
                             <form action="" method="POST">
                                 <textarea rows="5" cols="60" name="review">
 
-        	 </textarea><br>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Give review in star</label>
-                                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter review" min="1" max="5">
-                                    <small id="emailHelp" class="form-text text-muted">Enter the ratings between 1-5</small>
-                                </div>
+        	                    </textarea><br>
+
+                                <label for="exampleInputEmail1">Give review in star</label>
+                                <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Enter review" min="1" max="5" name="rating">
+                                <small id="emailHelp" class="form-text text-muted">Enter the ratings between 1-5</small>
+
                                 <input type="submit" name="re" value="Submit" class="btn btn-success" />
                             </form>
                         <?php
                         if (isset($_POST['re'])) {
                             $review = $_POST['review'];
+                            $ratings = $_POST['rating'];
 
-                            $e = "INSERT INTO REVIEW (REVIEW,CUSTOMER_ID,PRODUCT_ID) VALUES ('$review','$customerid','$pid')";
+                            $e = "INSERT INTO REVIEW (REVIEW,RATING,CUSTOMER_ID,PRODUCT_ID) VALUES ('$review','$ratings','$customerid','$pid')";
                             $r = oci_parse($conn, $e);
                             $t = oci_execute($r);
                         }

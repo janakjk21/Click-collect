@@ -6,7 +6,7 @@ include './connection.php';
 if (isset($_GET['pid'])) {
     $pid = $_GET['pid'];
 
-    $we = "SELECT * FROM PRODUCT WHERE PRODUCTID=$pid";
+    $we = "SELECT * FROM PRODUCT WHERE PRODUCT_ID=$pid";
     $em = oci_parse($conn, $we);
     oci_execute($em);
     $c = 0;
@@ -80,7 +80,7 @@ if (isset($_GET['pid'])) {
                                                 $success = "Product Added Successfully !!!";
                                                 header('location:traderproduct.php');
                                             } else {
-                                                $a = "UPDATE PRODUCT SET  PRODUCTNAME= '$pname', PRODUCTDES='$pdes', PRODUCTPRICE='$pprice', PRODUCTQUANTITY='$pquan',PRODUCTUNIT='$punit',MAXORDER='$maxorder',MINORDER='$minorder' WHERE PRODUCTID = $pid";
+                                                $a = "UPDATE PRODUCT SET  PRODUCTNAME= '$pname', PRODUCTDES='$pdes', PRODUCTPRICE='$pprice', PRODUCTQUANTITY='$pquan',PRODUCTUNIT='$punit',MAXORDER='$maxorder',MINORDER='$minorder' WHERE PRODUCT_ID = $pid";
 
                                                 $b = oci_parse($conn, $a);
                                                 $d = oci_execute($b);
@@ -144,20 +144,7 @@ if (isset($_GET['pid'])) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
     <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".close").click(function() {
-                $('#myAlert').alert();
-
-            });
-
-        });
-    </script>
 
 
     <style>
@@ -212,12 +199,9 @@ if (isset($_GET['pid'])) {
 
         <form method="post" class="form-horizontal" enctype="multipart/form-data">
             <div class="form-group">
-                <label>Product Picture</label>
-                <br>
-                <?php echo "<img src=products/" . $c['PRODUCT_PIC1'] . ">"; ?>
-                <br><br>
+                <label class="col-md-3 control-label"> Product Image 1 </label>
                 <div class="col-md-6">
-                    <<input name="PRODUCT_PIC1" type="file" class="form-control" required>
+                    <input name="PRODUCT_PIC1" type="file" class="form-control" required>
 
                 </div>
             </div>
@@ -355,6 +339,20 @@ if (isset($_GET['pid'])) {
 
     </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".close").click(function() {
+                $('#myAlert').alert();
+
+            });
+
+        });
+    </script>
 
 </body>
 
