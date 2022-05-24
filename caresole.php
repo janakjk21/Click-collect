@@ -198,7 +198,7 @@
                                 include 'connection.php';
                                 $x = 1;
 
-                                $s = "SELECT * FROM PRODUCT ORDER BY RAND() ";
+                                $s = "SELECT * FROM PRODUCT WHERE ROWNUM <= 4";
                                 // $s = "SELECT * FROM PRODUCT";
                                 $n = oci_parse($conn, $s);
                                 $o = oci_execute($n);
