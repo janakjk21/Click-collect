@@ -179,7 +179,7 @@
 
 <body>
     <div class="container-xl ">
-        <div class="row box">
+        <div class="box">
             <div class="col-md-12">
                 <h2>Featured <b>Products</b></h2>
                 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
@@ -198,7 +198,7 @@
                                 include 'connection.php';
                                 $x = 1;
 
-                                $s = "SELECT * FROM PRODUCT WHERE ROWNUM <= 4";
+                                $s = "SELECT * FROM PRODUCT WHERE ROWNUM <= 3";
                                 // $s = "SELECT * FROM PRODUCT";
                                 $n = oci_parse($conn, $s);
                                 $o = oci_execute($n);
