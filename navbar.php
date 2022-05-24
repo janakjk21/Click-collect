@@ -228,7 +228,12 @@ if (!empty($header[0]['currency_format'])) {
                                                                                     echo "traderprofile.php";
                                                                                 } else {
                                                                                     echo "customer-profile.php";
-                                                                                } ?>"><img src="./assets/img/customer profile pic/<?php echo $image ?>" class="mr-1 rounded-circle" alt="">Welcome |
+                                                                                } ?>">
+                                    <img src="./assets/img/<?php if (!empty($_SESSION['tid'])) {
+                                                                echo "trader profile pic/" . $image;
+                                                            } else {
+                                                                echo "customer profile pic/" . $image;;
+                                                            } ?>" class="mr-1 rounded-circle" alt="">Welcome |
                                     <?Php echo $customer_name ?>
                                 </a>
                             <?php   } ?>
