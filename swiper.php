@@ -15,71 +15,7 @@
 
     <!-- Demo styles -->
     <style>
-        .swiper {
-            width: 100%;
-
-
-        }
-
-        .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background: #fff;
-            height: 300px;
-
-
-            /* Center slide text vertically */
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            -webkit-justify-content: center;
-            /* justify-content: center; */
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            -webkit-align-items: center;
-
-            /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
-        }
-
-        /* .swiper-slide img {
-            display: block;
-            width: 100%;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 5%;
-        }  */
-        body {
-            background: #e2eaef;
-            font-family: "Open Sans", sans-serif;
-        }
-
-        h2 {
-            color: #000;
-            font-size: 26px;
-            font-weight: 300;
-            text-align: center;
-            text-transform: uppercase;
-            position: relative;
-            margin: 30px 0 60px;
-        }
-
-        h2::after {
-            content: "";
-            width: 100px;
-            position: absolute;
-            margin: 0 auto;
-            height: 4px;
-            border-radius: 1px;
-            left: 0;
-            right: 0;
-            bottom: -20px;
-        }
-
         .carousel {
-            margin: 50px auto;
             padding: 0 70px;
         }
 
@@ -218,7 +154,7 @@
             <h1 style="font-size:50px ; "> Deal of The day</h1>
         </div>
 
-        <div class="swiper mySwiper carousel" style="background-color: #f9f9f9">
+        <div class=" carousel swiper mySwiper " style="background-color: #f9f9f9">
 
             <div class="swiper-wrapper">
                 <?php
@@ -238,8 +174,8 @@
                     $z = oci_execute($y);
 
                     echo '<div class="swiper-slide">';
-                    echo '<div class="col-sm-12" style="padding:5%; height: 300px;">';
-                    echo '<div class="thumb-wrapper" style="padding:5%">';
+                    echo '<div class="col-sm-12" style="padding:5%">';
+                    echo '<div class="thumb-wrapper" >';
                     echo '<span class="wish-icon"><i class="fa fa-heart-o"></i></span>';
                     echo '<div class="img-box">';
                     echo '<img src="./assets/img/product/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-fluid">';
