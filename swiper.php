@@ -15,6 +15,22 @@
 
     <!-- Demo styles -->
     <style>
+        .swiper {
+            width: 100%;
+
+
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+
+
+        }
+
+
         .carousel {
             padding: 0 70px;
         }
@@ -147,16 +163,16 @@
 </head>
 
 <body>
-    <div style="background-color: #f9f9f9">
+    <div style="background-color: #f9f9f9" class="container-xl">
         <hr>
         <div style="margin-top :70px; "></div>
         <div style="text-align: center; ">
             <h1 style="font-size:50px ; "> Deal of The day</h1>
         </div>
 
-        <div class=" carousel swiper mySwiper " style="background-color: #f9f9f9">
+        <div class=" swiper mySwiper " style="background-color: #f9f9f9">
 
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper carousel ">
                 <?php
                 include 'connection.php';
                 $x = 1;
@@ -173,9 +189,9 @@
                     $y = oci_parse($conn, $x);
                     $z = oci_execute($y);
 
-                    echo '<div class="swiper-slide">';
+                    echo '<div class="swiper-slide ">';
                     echo '<div class="col-sm-12" style="padding:5%">';
-                    echo '<div class="thumb-wrapper" >';
+                    echo '<div class="thumb-wrapper" style="height: 320px;">';
                     echo '<span class="wish-icon"><i class="fa fa-heart-o"></i></span>';
                     echo '<div class="img-box">';
                     echo '<img src="./assets/img/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-fluid">';
