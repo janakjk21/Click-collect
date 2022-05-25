@@ -27,7 +27,7 @@ $trader_image = $row_trader['TRADER_PROFILE'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CleckDiced</title>
+    <title>Update Trader Profile - Click & Collect Groceries</title>
     <link rel="stylesheet" href="Styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="Styles/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -133,7 +133,7 @@ $trader_image = $row_trader['TRADER_PROFILE'];
                     <!-- form-group Begin -->
                     <label> Trader Image: </label>
                     <input type="file" name="TRADER_PROFILE" class="form-control form-height-custom">
-                    <img class="img-responsive" style="width: 25%; height: 25%;" src="traimage/<?php echo isset($t_image) ? $t_image : $trader_image ?>" alt="trader Image">
+                    <img class="img-responsive" style="width: 25%; height: 25%;" src="./assets/img/trader profile pic/<?php echo isset($t_image) ? $t_image : $trader_image ?>" alt="trader Image">
                 </div><!-- form-group Finish -->
 
 

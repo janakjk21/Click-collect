@@ -180,7 +180,7 @@ if (!empty($header[0]['currency_format'])) {
                 </div>
                 <div class="collapse navbar-collapse" id="openSearchbar">
                     <hr />
-                    <form action="search.php" method="get" class="form-inline d-flex d-md-none justify-content-center">
+                    <form action="product.php" method="get" class="form-inline d-flex d-md-none justify-content-center">
                         <div class="input-group input-group-sm">
                             <input type="text" class="form-control" id="increase-width" name="search-product" placeholder="Search">
                             <div class="input-group-append">
@@ -191,7 +191,7 @@ if (!empty($header[0]['currency_format'])) {
                 </div>
                 <div class="collapse navbar-collapse" id="openNavbar">
                     <hr />
-                    <form action="search.php" method="get" class="form-inline ml-auto mr-5 d-none d-md-flex my-4">
+                    <form action="product.php" method="get" class="form-inline ml-auto mr-5 d-none d-md-flex my-4">
                         <div class="input-group input-group-sm">
                             <input type="text" class="form-control" name="search-product" id="increase-width" placeholder="Search">
                             <div class="input-group-append">
