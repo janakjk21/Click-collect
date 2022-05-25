@@ -176,7 +176,7 @@ if (!isset($_SESSION['tid'])) {
     <div class="container-fluid">
         <div class="row head text-center">
             <div class="col-md-1 col-sm-12">
-                <img src="logo/logo.png" class="logo" alt="logo">
+                <img src="./assets/img/click & collect groceries.png" class="logo" alt="logo">
             </div>
             <div class="col-md-6 col-sm-12"></div>
             <div class="col-md-4 col-sm-12">
@@ -253,16 +253,16 @@ if (!isset($_SESSION['tid'])) {
             while ($d = oci_fetch_assoc($b)) {
                 echo '<tbody>';
                 echo '<tr>';
-                $a = $d['QUANTITY'] * $d['PRODUCTPRICE'];
-                echo '<td>' . $d['ORDERID'] . '</td>';
-                echo '<td>' . $d['FIRSTNAME'] . '  ' . $d['LASTNAME'] . '</td>';
-                echo '<td><img src="products/' . $d['PRODUCTPIC'] . '" /> </td>';
-                echo '<td>' . $d['PRODUCTNAME'] . '</td>';
+                $a = $d['PRODUCTQUANTITY'] * $d['PRODUCTPRICE'];
+                echo '<td>' . $d['ORDER_ID'] . '</td>';
+                echo '<td>' . $d['NAME'] . '</td>';
+                echo '<td><img src="./assets/img/product/' . $d['PRODUCT_PIC1'] . '" /> </td>';
+                echo '<td>' . $d['PRODUCT_NAME'] . '</td>';
                 echo '<td>' . $d['QUANTITY'] . ' ' . $d['PRODUCTUNIT'] . '</td>';
 
 
                 echo '<td>$' . $a . '</td>';
-                echo '<td><a href="traderinvoice.php?oid=' . $d['ORDERID'] . '" class="btn btn-success">View Invoice</a></td>';
+                echo '<td><a href="traderinvoice.php?oid=' . $d['ORDER_ID'] . '" class="btn btn-success">View Invoice</a></td>';
 
 
                 echo '</tr>';
