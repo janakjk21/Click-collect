@@ -179,7 +179,7 @@
 
 <body>
     <div class="container-xl ">
-        <div class="box">
+        <div class="row box">
             <div class="col-md-12">
                 <h2>Featured <b>Products</b></h2>
                 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
