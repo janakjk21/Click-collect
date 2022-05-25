@@ -88,9 +88,69 @@ include './navbar.php';
 
         <div class="row">
           <?php
-          if (isset($_GET['sid'])) {
-            $sid = $_GET['sid'];
+          if (isset($_POST['sub'])) {
 
+            $search = $_POST['search'];
+            $s = null;
+            $cat = $_POST['cat'];
+            if (!empty($cat)) {
+              $s = "SELECT * FROM PRODUCT ,TRADER WHERE PRODUCT.PRODUCT_NAME LIKE '%$search%' AND TRADER.CATEGORY = '$cat' AND TRADER.TRADER_ID = PRODUCT.TRADER_ID";
+            } else {
+              $s = "SELECT * FROM PRODUCT WHERE PRODUCT_NAME LIKE '%$search%'";
+            }
+
+            $n = oci_parse($conn, $s);
+            $o = oci_execute($n);
+            $x = oci_num_rows($n);
+            while ($ro = oci_fetch_assoc($n)) {
+              echo '<div class="col-md-4 center-responsive">';
+              echo '<div class="product">';
+
+              echo '<img src="products/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-responsive">';
+              echo '<div class ="text">';
+
+              echo '<h3>';
+
+              echo '<a href="details.php?
+                                pid=' . $ro['PRODUCT_ID'] . '">' . $ro['PRODUCT_NAME'] . '</a>';
+
+              echo '</h3>';
+              if ($ro['DISAMOUNT'] > 0) {
+                echo '<p class="price"><s><span>$' . $ro['PRODUCTPRICE'] . '/' . $ro['PRODUCTUNIT'] . '</s></p>';
+                $d = $ro['DISAMOUNT'];
+                $ro['PRODUCTPRICE'] = $ro['PRODUCTPRICE'] - ($ro['PRODUCTPRICE'] * ($d / 100));
+                echo '<h4 class="price" style="text-align: center;"><span>$' . ($ro['PRODUCTPRICE'] - ($ro['PRODUCTPRICE'] * ($d / 100))) . '/' . $ro['PRODUCTUNIT'] . '</h4>';
+              } else {
+                echo '<p class="price"><span>$' . $ro['PRODUCTPRICE'] . '/' . $ro['PRODUCTUNIT'] . '</p>';
+              }
+
+
+
+              echo '<p class="buttons">';
+
+              echo '<a class="btn btn-default" href="details.php?
+                                pid=' . $ro['PRODUCT_ID'] . '">
+
+                                                        View Details
+
+                                                    </a>';
+
+              echo '  <a class="btn btn-primary" href="details.php?
+                            pid=' . $ro['PRODUCT_ID'] . '">
+
+                                                        <i class="fa fa-shopping-cart"></i> Add To Cart
+                                                        </a>';
+              echo '</p>';
+
+              echo '</div>';
+              echo '</div>';
+              echo '</div>';
+            }
+          } else {
+            // $sid=$_GET(['sid']);
+            $sid = $_GET['sid'];
+            // echo '$sname';
+            // if(isset($_POST['submit'])){ 
             $sql =  "SELECT * FROM PRODUCT WHERE SHOP_ID= '$sid'";
             $run_p = oci_parse($conn, $sql);
             oci_execute($run_p);
@@ -136,78 +196,16 @@ include './navbar.php';
                 echo '</p>';
               } else {
 
-                echo '  <a class="btn btn-primary" href="details.php?
-                            pid=' . $ro['PRODUCT_ID'] . '">
-                            <i class="fa fa-shopping-cart"></i> Add To Cart
-                            </a>';
+                echo '  <a class="btn btn-primary" href="details.php?pid=' . $row['PRODUCT_ID'] . '"><i class="fa fa-shopping-cart"></i> Add To Cart</a>';
                 echo '</p>';
               }
 
               echo '</div>';
               echo '</div>';
               echo '</div>';
-            }
-            if (isset($_POST['sub'])) {
-
-              $search = $_POST['search'];
-              $s = null;
-              $cat = $_POST['cat'];
-              if (!empty($cat)) {
-                $s = "SELECT * FROM PRODUCT ,TRADER WHERE PRODUCT.PRODUCT_NAME LIKE '%$search%' AND TRADER.CATEGORY = '$cat' AND TRADER.TRADER_ID = PRODUCT.TRADER_ID";
-              } else {
-                $s = "SELECT * FROM PRODUCT WHERE PRODUCT_NAME LIKE '%$search%'";
-              }
-
-              $n = oci_parse($conn, $s);
-              $o = oci_execute($n);
-              $x = oci_num_rows($n);
-              while ($ro = oci_fetch_assoc($n)) {
-                echo '<div class="col-md-4 center-responsive">';
-                echo '<div class="product">';
-
-                echo '<img src="products/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-responsive">';
-                echo '<div class ="text">';
-
-                echo '<h3>';
-
-                echo '<a href="details.php?
-                                pid=' . $ro['PRODUCT_ID'] . '">' . $ro['PRODUCT_NAME'] . '</a>';
-
-                echo '</h3>';
-                if ($ro['DISAMOUNT'] > 0) {
-                  echo '<p class="price"><s><span>$' . $ro['PRODUCTPRICE'] . '/' . $ro['PRODUCTUNIT'] . '</s></p>';
-                  $d = $ro['DISAMOUNT'];
-                  $ro['PRODUCTPRICE'] = $ro['PRODUCTPRICE'] - ($ro['PRODUCTPRICE'] * ($d / 100));
-                  echo '<h4 class="price" style="text-align: center;"><span>$' . ($ro['PRODUCTPRICE'] - ($ro['PRODUCTPRICE'] * ($d / 100))) . '/' . $ro['PRODUCTUNIT'] . '</h4>';
-                } else {
-                  echo '<p class="price"><span>$' . $ro['PRODUCTPRICE'] . '/' . $ro['PRODUCTUNIT'] . '</p>';
-                }
-
-
-
-                echo '<p class="buttons">';
-
-                echo '<a class="btn btn-default" href="details.php?
-                                pid=' . $ro['PRODUCT_ID'] . '">
-
-                                                        View Details
-
-                                                    </a>';
-
-                echo '  <a class="btn btn-primary" href="details.php?
-                            pid=' . $ro['PRODUCT_ID'] . '">
-
-                                                        <i class="fa fa-shopping-cart"></i> Add To Cart
-                                                        </a>';
-                echo '</p>';
-
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-              }
-            } else {
             }
           }
+
 
           ?></div>
 

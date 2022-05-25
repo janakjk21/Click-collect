@@ -254,7 +254,7 @@ if (!isset($_SESSION['tid'])) {
                 echo '<tbody>';
                 echo '<tr>';
                 $a = $d['QUANTITY'] * $d['PRODUCTPRICE'];
-                echo '<td>' . $d['ORDERID'] . '</td>';
+                echo '<td>' . $d['ORDER_ID'] . '</td>';
                 echo '<td>' . $d['FIRSTNAME'] . '  ' . $d['LASTNAME'] . '</td>';
                 echo '<td><img src="products/' . $d['PRODUCTPIC'] . '" /> </td>';
                 echo '<td>' . $d['PRODUCTNAME'] . '</td>';
@@ -262,7 +262,7 @@ if (!isset($_SESSION['tid'])) {
 
 
                 echo '<td>$' . $a . '</td>';
-                echo '<td><a href="traderinvoice.php?oid=' . $d['ORDERID'] . '" class="btn btn-success">View Invoice</a></td>';
+                echo '<td><a href=".php?oid=' . $d['ORDERID'] . '" class="btn btn-success">View Invoice</a></td>';
 
 
                 echo '</tr>';
