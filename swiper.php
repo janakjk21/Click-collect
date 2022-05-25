@@ -191,7 +191,7 @@
 
                     echo '<div class="swiper-slide ">';
                     echo '<div class="col-sm-12" style="padding:5%">';
-                    echo '<div class="thumb-wrapper" style="height: 320px;">';
+                    echo '<div class="thumb-wrapper" style="height: 340px;">';
                     echo '<span class="wish-icon"><i class="fa fa-heart-o"></i></span>';
                     echo '<div class="img-box">';
                     echo '<img src="./assets/img/product/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-fluid">';
