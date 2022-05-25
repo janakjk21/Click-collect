@@ -314,8 +314,8 @@ SPLIT;
                                     <input type="hidden" name="upload" value="1">
                                     <input type="hidden" name="currency_code" value="USD">
                                     <input type="hidden" name="business" value="sunnycrextha-facilitator@gmail.com">
-                                    <input type="hidden" name="return" value="http://localhost/Click&collect/order.php?cid=<?php echo $customerid; ?>&cartid=<?php echo $id; ?>&delday=<?php echo $asd; ?>&deltime=<?php echo $asw;   ?>">
-                                    <input type="hidden" name="cancel_return" value="http://Click&collect//login.php">
+                                    <input type="hidden" name="return" value="http://localhost/Click-collect/order.php?cid=<?php echo $customerid; ?>&cartid=<?php echo $id; ?>&delday=<?php echo $asd; ?>&deltime=<?php echo $asw;   ?>">
+                                    <input type="hidden" name="cancel_return" value="http://Click-collect//login.php">
 
 
 
