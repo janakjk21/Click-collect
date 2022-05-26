@@ -90,7 +90,7 @@ if (isset($_POST["register"])) {
                                                      Password: ' . $trepassword . '
                                                      -----------------------------------------
                                                      Click the link below to login to your account 
-                                                     http://localhost/projectmanagement/common/login.php  
+                                                     http://localhost/Click-collect/login.php 
                                                      '; // Our message above including the link
                                         $headers = 'From: cleckdiced@gmail.com' . "\r\n"; // Set from headers
                                         $c = mail($to, $subject, $message, $headers); // Send our email
