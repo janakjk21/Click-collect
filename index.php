@@ -27,7 +27,7 @@ if (!isset($_SESSION)) {
 
     <div class="container" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; ">
     </div>
-    <div class="container mt-3">
+    <div class="container ">
         <div class="row" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; ">
             <div class="col-md-12">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin:0px;padding:0px;">
@@ -67,13 +67,13 @@ if (!isset($_SESSION)) {
                 </div>
             </div>
         </div>
-        <div class="row" style="margin-top: 3%;">
-            <?php
-            include "./product_card_image_tiles.php";
-            ?>
-        </div>
-    </div>
 
+    </div>
+    <div class="row" style="margin-top: 3%;">
+        <?php
+        include "./product_card_image_tiles.php";
+        ?>
+    </div>
 
     <?php
     include "./swiper.php";

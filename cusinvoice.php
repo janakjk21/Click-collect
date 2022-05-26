@@ -26,8 +26,6 @@ $active = 'Account';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
-      
-
         .btn-primary {
             background: #ed0651;
 
@@ -77,12 +75,18 @@ $active = 'Account';
 </head>
 
 <body>
-    
-<?php include './navbar.php'; ?>
+
+    <?php include './navbar.php'; ?>
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
                 <?php
+                $link;
+                if (!empty($_SESSION['tid'])) {
+                    $link = "traderprofile.php";
+                } else {
+                    $link = "customer-profile.php";
+                }
                 $z = null;
 
 
@@ -171,9 +175,9 @@ $active = 'Account';
                 echo '<div class="text-right">Discount   $0';
                 echo '<div class="text-right">(Tax rate)   0%';
                 echo '<div class="text-right">Tax $0';
-                echo '<div class="text-center">Thank You for choosing Cleckdiced';
+                echo '<div class="text-center">Thank You for choosing Click&collect Groceries';
                 echo '</div>';
-                echo '<div class="text-right"><a href="customerview.php" class="btn btn-success" style="text-decoration:none;">My Profile</a>';
+                echo '<div class="text-right"><a href="' . $link . '" class="btn btn-success" style="text-decoration:none;">My Profile</a>';
                 echo '</div>';
                 echo '</div>';
 

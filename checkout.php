@@ -86,7 +86,6 @@
             background: #ed0651;
 
         }
-
     </style>
 </head>
 
@@ -229,136 +228,138 @@ SPLIT;
 
     <?php include './navbar.php'; ?>
     <!-- cart section -->
-    <div id="content" style="margin:4%">
+    <div id="content" style="margin-top:4%;margin-bottom:4%">
         <!-- #content Begin -->
         <div class="container">
+            <div class="row">
+                <!-- container Begin -->
+                <div id="cart" class="col-md-9">
+                    <!-- col-md-9 Begin -->
 
-            <!-- container Begin -->
-            <div id="cart" class="col-md-12" style="display: flex;">
-                <!-- col-md-9 Begin -->
+                    <div style=" box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;padding:5%">
+                        <!-- box Begin -->
 
-                <div class="box">
-                    <!-- box Begin -->
+                        <form action=" https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" enctype="multipart/form-data">
+                            <!-- form Begin -->
 
-                    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" enctype="multipart/form-data">
-                        <!-- form Begin -->
+                            <h1>Shopping Cart</h1>
 
-                        <h1>Shopping Cart</h1>
-
-                        <?php
-
-
-                        $t = 0;
+                            <?php
 
 
-                        $a = "SELECT * FROM CART,PRODUCT WHERE CART.PRODUCT_ID=PRODUCT.PRODUCT_ID AND CUSTOMER_ID='$customerid'";
-                        $b = oci_parse($conn, $a);
-                        $c = oci_execute($b);
-                        $f = oci_num_rows($b);
-                        echo '<div class="table-responsive">';
-                        echo '<table class="table table-striped text-center">';
-                        echo '<thead>';
-                        echo '<tr>';
-                        echo '<th scope="col">Product</th>';
-                        echo '<th scope="col">Product Name</th>';
-                        echo '<th scope="col">Price</th>';
-                        echo '<th scope="col" class="text-center">Quantity</th>';
-                        echo '<th scope="col" class="text-right">Total Price</th>';
-                        echo '<th>Action</th>';
-                        echo '</tr>';
-                        echo '</thead>';
-                        while ($d = oci_fetch_assoc($b)) {
-                            echo '<tbody>';
-                            $m = $d['PRODUCT_ID'];
+                            $t = 0;
+
+
+                            $a = "SELECT * FROM CART,PRODUCT WHERE CART.PRODUCT_ID=PRODUCT.PRODUCT_ID AND CUSTOMER_ID='$customerid'";
+                            $b = oci_parse($conn, $a);
+                            $c = oci_execute($b);
+                            $f = oci_num_rows($b);
+                            echo '<div class="table-responsive">';
+                            echo '<table class="table table-striped text-center">';
+                            echo '<thead>';
                             echo '<tr>';
-                            echo '<td><img src="./assets/img/product/' . $d['PRODUCT_PIC1'] . '" /> </td>';
-                            echo '<td>' . $d['PRODUCT_NAME'] . '</td>';
-                            $dis = $d['DISAMOUNT'];
-                            echo '<td>$' . ($d['PRODUCTPRICE'] - ($d['PRODUCTPRICE'] * ($dis / 100))) . '</td>';
-                            echo '<td>' . $d['QUANTITY'] . '</td>';
-                            $m = $d['QUANTITY'] * ($d['PRODUCTPRICE'] - ($d['PRODUCTPRICE'] * ($dis / 100)));
-                            $t = $t + $m;
-                            $id = $d['CART_ID'];
-
-                            echo '<td class="text-right">$' . $m . '</td>';
-                            echo '<td class="text-right"><button class="btn btn-sm btn-danger"><a href="removecart.php?cartid=' . $id . '" style="text-decoration:none; color:white; font-style:bold;"> Remove</a></button> </td>';
+                            echo '<th scope="col">Product</th>';
+                            echo '<th scope="col">Product Name</th>';
+                            echo '<th scope="col">Price</th>';
+                            echo '<th scope="col" class="text-center">Quantity</th>';
+                            echo '<th scope="col" class="text-right">Total Price</th>';
+                            echo '<th>Action</th>';
                             echo '</tr>';
-                        }
-                        ?>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><strong>Grand Total</strong></td>
-                            <td class="text-right"><strong> <?php echo "$" . $t;  ?></strong></td>
-                            </td>
-                        </tr>
-                        </tbody>
-                        </table>
-                        <div class="box-footer">
-                            <!-- box-footer Begin -->
+                            echo '</thead>';
+                            while ($d = oci_fetch_assoc($b)) {
+                                echo '<tbody>';
+                                $m = $d['PRODUCT_ID'];
+                                echo '<tr>';
+                                echo '<td><img src="./assets/img/product/' . $d['PRODUCT_PIC1'] . '" /> </td>';
+                                echo '<td>' . $d['PRODUCT_NAME'] . '</td>';
+                                $dis = $d['DISAMOUNT'];
+                                echo '<td>$' . ($d['PRODUCTPRICE'] - ($d['PRODUCTPRICE'] * ($dis / 100))) . '</td>';
+                                echo '<td>' . $d['QUANTITY'] . '</td>';
+                                $m = $d['QUANTITY'] * ($d['PRODUCTPRICE'] - ($d['PRODUCTPRICE'] * ($dis / 100)));
+                                $t = $t + $m;
+                                $id = $d['CART_ID'];
 
-                            <div class="pull-left">
-                                <!-- pull-left Begin -->
+                                echo '<td class="text-right">$' . $m . '</td>';
+                                echo '<td class="text-right"><button class="btn btn-sm btn-danger"><a href="removecart.php?cartid=' . $id . '" style="text-decoration:none; color:white; font-style:bold;"> Remove</a></button> </td>';
+                                echo '</tr>';
+                            }
+                            ?>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><strong>Grand Total</strong></td>
+                                <td class="text-right"><strong> <?php echo "$" . $t;  ?></strong></td>
+                                </td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            <div class="box-footer">
+                                <!-- box-footer Begin -->
 
-                                <a href="shop.php" class="btn btn-default">
-                                    <!-- btn btn-default Begin -->
-                                    <i class="fa fa-chevron-left"></i> Continue Shopping
-                                </a><!-- btn btn-default Finish -->
-                            </div><!-- pull-left Finish -->
-                            <div class="pull-right">
-                                <!-- pull-right Begin -->
-                                <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="POST">
-                                    <input type="hidden" name="business" value="sunnycrextha-facilitator@gmail.com">
-                                    <input type="hidden" name="cmd" value="_cart">
-                                    <input type="hidden" name="upload" value="1">
-                                    <input type="hidden" name="currency_code" value="USD">
-                                    <input type="hidden" name="business" value="sunnycrextha-facilitator@gmail.com">
-                                    <input type="hidden" name="return" value="http://localhost/Click-collect/order.php?cid=<?php echo $customerid; ?>&cartid=<?php echo $id; ?>&delday=<?php echo $asd; ?>&deltime=<?php echo $asw;   ?>">
-                                    <input type="hidden" name="cancel_return" value="http://Click-collect//login.php">
+                                <div class="pull-left">
+                                    <!-- pull-left Begin -->
 
-
-
-                                    <?php
-
-                                    $m = "SELECT * FROM CART,PRODUCT WHERE CART.PRODUCT_ID=PRODUCT.PRODUCT_ID AND CUSTOMER_ID='$customerid'";
-                                    $n = oci_parse($conn, $m);
-                                    $o = oci_execute($n);
-                                    $g = 0;
-                                    while ($p = oci_fetch_assoc($n)) {
-
-                                        $g = $g + 1;
-
-                                        echo '<input type="hidden" name="item_name_' . $g . '" value="' . $p['PRODUCT_NAME'] . '">';
-                                        echo '<input type="hidden" name="amount_' . $g . '" value="' . $p['PRODUCTPRICE'] . '">';
-                                        echo '<input type="hidden" name="quantity_' . $g . '" value="' . $p['QUANTITY'] . '">';
-                                    }
-                                    ?>
-
+                                    <a href="shop.php" class="btn btn-default">
+                                        <!-- btn btn-default Begin -->
+                                        <i class="fa fa-chevron-left"></i> Continue Shopping
+                                    </a><!-- btn btn-default Finish -->
+                                </div><!-- pull-left Finish -->
+                                <div class="pull-right">
+                                    <!-- pull-right Begin -->
+                                    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="POST">
+                                        <input type="hidden" name="business" value="sunnycrextha-facilitator@gmail.com">
+                                        <input type="hidden" name="cmd" value="_cart">
+                                        <input type="hidden" name="upload" value="1">
+                                        <input type="hidden" name="currency_code" value="USD">
+                                        <input type="hidden" name="business" value="sunnycrextha-facilitator@gmail.com">
+                                        <input type="hidden" name="return" value="http://localhost/Click-collect/order.php?cid=<?php echo $customerid; ?>&cartid=<?php echo $id; ?>&delday=<?php echo $asd; ?>&deltime=<?php echo $asw;   ?>">
+                                        <input type="hidden" name="cancel_return" value="http://Click-collect//login.php">
 
 
 
+                                        <?php
+
+                                        $m = "SELECT * FROM CART,PRODUCT WHERE CART.PRODUCT_ID=PRODUCT.PRODUCT_ID AND CUSTOMER_ID='$customerid'";
+                                        $n = oci_parse($conn, $m);
+                                        $o = oci_execute($n);
+                                        $g = 0;
+                                        while ($p = oci_fetch_assoc($n)) {
+
+                                            $g = $g + 1;
+
+                                            echo '<input type="hidden" name="item_name_' . $g . '" value="' . $p['PRODUCT_NAME'] . '">';
+                                            echo '<input type="hidden" name="amount_' . $g . '" value="' . $p['PRODUCTPRICE'] . '">';
+                                            echo '<input type="hidden" name="quantity_' . $g . '" value="' . $p['QUANTITY'] . '">';
+                                        }
+                                        ?>
 
 
-                                    <br>
-                                    <br>
-                                    <div class="clearfix">
-                                        <div class="float-right">
-                                            <button style="background:#012169; color:white; font-style:bold; border:none;" type="submit" name="submit" class="btn btn-primary"> Pay Via Paypal</button>
+
+
+
+
+                                        <br>
+                                        <br>
+                                        <div class="clearfix">
+                                            <div class="float-right">
+                                                <button style="background:#012169; color:white; font-style:bold; border:none;" type="submit" name="submit" class="btn btn-primary"> Pay Via Paypal</button>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                </form>
-                            </div><!-- pull-right Finish -->
+                                    </form>
+                                </div><!-- pull-right Finish -->
 
-                        </div><!-- box-footer Finish -->
+                            </div><!-- box-footer Finish -->
 
-                    </form><!-- form Finish -->
+                        </form><!-- form Finish -->
 
-                </div><!-- box Finish -->
+                    </div><!-- box Finish -->
 
-            </div><!-- #row same-heigh-row Finish -->
-            <div class="col-md-3">
+                </div>
+                <!-- #row same-heigh-row Finish -->
+            </div>
+            <div class="col-md-3 " style=" box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
                 <!-- col-md-3 Begin -->
 
                 <div id="order-details" class="box">

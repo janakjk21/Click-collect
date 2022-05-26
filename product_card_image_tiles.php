@@ -13,11 +13,14 @@
 
 <body>
 
-    <div style="margin-left:auto; margin-right:auto; ">
-        <h1 style="font-size:50px;"> Deal of The day</h1>
-    </div>
-
     <div class="container">
+
+        <div class="row" style="margin-left:auto; margin-right:auto; ">
+            <div class="col-md-4 col-sm-4"></div>
+            <h1 style="font-size:50px;"> Deal of The day</h1>
+            <div class="col-md-4 col-sm-4"></div>
+        </div>
+
         <!-- Categories grid-->
         <div class="row">
             <!-- Category-->

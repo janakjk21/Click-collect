@@ -173,40 +173,7 @@ if (!isset($_SESSION['tid'])) {
 
 <body>
 
-    <div class="container-fluid">
-        <div class="row head text-center">
-            <div class="col-md-1 col-sm-12">
-                <img src="./assets/img/click & collect groceries.png" class="logo" alt="logo">
-            </div>
-            <div class="col-md-6 col-sm-12"></div>
-            <div class="col-md-4 col-sm-12">
-
-                <h1 style="color:#ff5300;">Trader Profile</h1>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-md-10 col-sm-12">
-                <?php
-                $traderid = $_SESSION['tid'];
-
-                $a = "SELECT * FROM TRADER WHERE TRADER_ID='$traderid'";
-                $b = oci_parse($conn, $a);
-                $c = oci_execute($b);
-                while ($d = oci_fetch_assoc($b)) {
-
-                    echo '<h2>' . $d['NAME'] . '</h2>';
-
-                    echo '<hr>';
-                }
-
-                ?>
-            </div>
-            <div class="col-md-2 col-sm-12">
-                <button style=" border:none;" class="btn btn-md btn-danger"><a href="logout.php" style="text-decoration:none; color:white;">Logout</a></button>
-            </div>
-        </div>
-    </div>
+    <?php include './navbar.php'; ?>
 
     <div class="sidebar">
 
@@ -262,7 +229,7 @@ if (!isset($_SESSION['tid'])) {
 
 
                 echo '<td>$' . $a . '</td>';
-                echo '<td><a href="traderinvoice.php?oid=' . $d['ORDER_ID'] . '" class="btn btn-success">View Invoice</a></td>';
+                echo '<td><a href="./cusinvoice.php"?oid=' . $d['ORDER_ID'] . '" class="btn btn-success">View Invoice</a></td>';
 
 
                 echo '</tr>';

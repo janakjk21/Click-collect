@@ -156,6 +156,11 @@ include('./connection.php');
                                 <a href="tradershop.php" class="btn ">Shop</a>
 
                             </li>
+                            <li>
+
+                                <a href="./orderfortrader.php" class="btn ">Report</a>
+
+                            </li>
 
                             <li>
 

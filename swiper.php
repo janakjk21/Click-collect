@@ -173,12 +173,10 @@
         <div class=" swiper mySwiper " style="background-color: #f9f9f9">
 
             <div class="swiper-wrapper carousel ">
+
                 <?php
                 include 'connection.php';
-                $x = 1;
-
                 $s = "SELECT * FROM PRODUCT ";
-
                 // $s = "SELECT * FROM PRODUCT";
                 $n = oci_parse($conn, $s);
                 $o = oci_execute($n);
@@ -217,9 +215,6 @@
                 }
 
                 ?>
-
-
-
             </div>
             <div class="swiper-pagination"></div>
             <div style="margin-top :70px;"></div>
@@ -234,7 +229,7 @@
     <script>
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
-            spaceBetween: 10,
+            spaceBetween: 5,
 
             pagination: {
                 el: ".swiper-pagination",

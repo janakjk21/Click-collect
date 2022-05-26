@@ -161,34 +161,6 @@ if (!isset($_SESSION['tid'])) {
 
 
     <style>
-        .sidebar {
-            margin: 0;
-            padding: 0;
-            width: 200px;
-            background-color: #f1f1f1;
-            position: fixed;
-            height: 100%;
-            overflow: auto;
-            margin-bottom: 50px;
-        }
-
-        .sidebar a {
-            display: block;
-            color: black;
-            padding: 16px;
-            text-decoration: none;
-        }
-
-        .sidebar a.active {
-            background-color: #74b72e;
-            color: white;
-        }
-
-        .sidebar a:hover:not(.active) {
-            background-color: #555;
-            color: white;
-        }
-
         .panel-body {
             margin-left: 80px;
             margin-top: 50px;
@@ -215,13 +187,7 @@ if (!isset($_SESSION['tid'])) {
 
 <body>
 
-    <div class="sidebar">
-        <a href="traderaccount.php">My Account</a>
-        <a class="active" href="traderproduct.php">Products</a>
-        <a href="orderfortrader.php">Reports</a>
-        <a href="logout.php">Log Out</a>
-    </div>
-
+    <?php include './navbar.php'; ?>
 
     <div class="panel-body">
 

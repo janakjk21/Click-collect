@@ -66,7 +66,7 @@ if (!isset($_SESSION['NAME'])) {
                                         <a data-toggle="tab" class="nav-link" href="#updateProfile"><i class="fas fa-user-edit"></i><span>Update Profile</span> </a>
                                         <a data-toggle="tab" class="nav-link" href="#changePassword"><i class="fas fa-key"></i><span>Change
                                                 Password</span> </a>
-                                        <a data-toggle="tab" class="nav-link" href="#invoice"><i class="fas fa-receipt"></i></i><span>Invoice</span> </a>
+                                        <a class="nav-link" href="./invoice.php"><i class="fas fa-receipt"></i></i><span>Invoice</span> </a>
                                         <a data-toggle="tab" class="nav-link" href="#deleteAccount"><i class="fas fa-trash-alt"></i><span>Delete Account</span> </a>
                                         <a data-toggle="tab" class="nav-link" href="#logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span> </a>
                                     </nav>
