@@ -195,7 +195,7 @@
                     echo '<img src="./assets/img/product/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-fluid">';
                     echo '</div>';
                     echo '<div class="thumb-content">';
-                    echo '<h4>Tuna</h4>';
+                    echo $ro['PRODUCT_NAME'];
                     echo '<div class="star-rating">';
                     echo '<ul class="list-inline">';
                     while ($v = oci_fetch_assoc($y)) {
@@ -206,7 +206,7 @@
                     }
                     echo '</ul>';
                     echo '</div>';
-                    echo '<p class="item-price"><strike>$' . $ro['PRODUCTPRICE'] . '/' . $ro['PRODUCTUNIT'] . '</strike> <b></b></p>';
+                    echo '<p class="item-price">$' . $ro['PRODUCTPRICE'] . '/' . $ro['PRODUCTUNIT'] . ' <b></b></p>';
                     echo '<a class="btn btn-primary" href="details.php?pid=' . $ro['PRODUCT_ID'] . '">Add to Cart</a>';
                     echo '</div>';
                     echo '</div>';
