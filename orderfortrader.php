@@ -176,7 +176,7 @@ if (!isset($_SESSION['tid'])) {
     <?php include './navbar.php'; ?>
 
 
-    <div class="content">
+    <div class="content" style="margin-bottom:5%;">
         <div class="col-12 text-center">
             <h2 style="color:#ff5300;">Order/Payments For My Products</h2>
             <br>
@@ -241,13 +241,11 @@ if (!isset($_SESSION['tid'])) {
         </div>
     </div>
 
-
+    </div>
 
     <?php
     include 'footer.php';
     ?>
-
-    </div>
 
 </body>
 
