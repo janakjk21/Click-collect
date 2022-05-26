@@ -175,12 +175,7 @@ if (!isset($_SESSION['tid'])) {
 
     <?php include './navbar.php'; ?>
 
-    <div class="sidebar">
 
-        <a href="traderprofile.php">My Account</a>
-        <a href="traderproduct.php">My Products</a>
-        <a class="active" href="orderfortrader.php">Invoices</a>
-    </div>
     <div class="content">
         <div class="col-12 text-center">
             <h2 style="color:#ff5300;">Order/Payments For My Products</h2>
