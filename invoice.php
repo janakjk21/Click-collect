@@ -113,7 +113,7 @@ $active = 'Account';
     ?>
     <?php include './navbar.php'; ?>
     <div class="row" style="margin-top:5%;margin-bottom:5%">
-        <div class="col-md-3">
+        <div class="col-md-3" style=" box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
             <div class="panel panel-default sidebar-menu">
                 <!--  panel panel-default sidebar-menu Begin  -->
 
@@ -163,7 +163,7 @@ $active = 'Account';
                 <div class="panel-body">
                     <!--  panel-body Begin  -->
 
-                    <ul class="nav-pills nav-stacked nav">
+                    <ul class="nav-pills nav-stacked nav" style="display: flex;flex-direction: column; padding-left:30px;">
                         <!--  nav-pills nav-stacked nav Begin  -->
 
                         <li class="<?php if (isset($_GET['editprofile'])) {
@@ -210,7 +210,7 @@ $active = 'Account';
 
             </div><!--  panel panel-default sidebar-menu Finish  -->
         </div>
-        <div class="col-9">
+        <div class="col-8" style=" box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;padding:20px;margin:20px">
             <?php
             $z = null;
             $a = "SELECT * FROM ORDER_DETAIL,PRODUCT WHERE CUSTOMER_ID='$customerid' AND ORDER_DETAIL.PRODUCT_ID=PRODUCT.PRODUCT_ID";
