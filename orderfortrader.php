@@ -243,11 +243,12 @@ if (!isset($_SESSION['tid'])) {
 
 
 
-    <?php
-    include 'footer.php';
-    ?>
+
 
     </div>
+    <div style="margin-top:5%"><?php
+                                include 'footer.php';
+                                ?></div>
 
 </body>
 
