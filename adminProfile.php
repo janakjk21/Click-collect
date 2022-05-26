@@ -1,16 +1,18 @@
 <?php
 
-session_start();
-if (!isset($_SESSION["NAME"])) {
-    header("Location: login.php");
-    exit();
-}
+// session_start();
+// if (!isset($_SESSION["NAME"])) {
+//     header("Location: login.php");
+//     exit();
+// }
 
 
 
 include('./connection.php');
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +29,7 @@ include('./connection.php');
     <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Trader Profile - Click & Collect Groceries</title>
+    <title>Admin Profile - Click & Collect Groceries</title>
     <style>
         .view a {
             float: left;
@@ -91,12 +93,12 @@ include('./connection.php');
         <div class="col-md-3 box" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;">
             <?php
 
-            $traderid = $_SESSION['tid'];
-            $a = "SELECT * FROM TRADER WHERE TRADER_ID='$traderid'";
+            // $traderid = $_SESSION['tid'];
+            $a = "SELECT * FROM ADMIN WHERE ADMIN_ID=1";
             $b = oci_parse($conn, $a);
             $c = oci_execute($b);
             while ($d = oci_fetch_assoc($b)) {
-            ?>
+             ?>
                 <div class="panel panel-default sidebar-menu ">
                     <!--  panel panel-default sidebar-menu Begin  -->
 
@@ -105,23 +107,17 @@ include('./connection.php');
 
                         <?php
 
-                        $trader_session = $_SESSION['tid'];
+                        // $trader_session = $_SESSION['tid'];
 
-                        $get_trader = "select * from TRADER where TRADER_ID='$trader_session'";
+                        $get_trader = "select * from ADMIN where ADMIN_ID=1";
 
                         $run_trader = oci_parse($conn, $get_trader);
                         $connect = oci_execute($run_trader);
                         $row_trader = oci_fetch_array($run_trader);
 
-                        $trader_image = $row_trader['TRADER_PROFILE'];
+                        // $trader_image = $row_trader['TRADER_PROFILE'];
 
-                        $trader_name = $row_trader['NAME'];
-
-                        if (!isset($_SESSION['tid'])) {
-                        } else {
-
-                            echo "<center><img src='./assets/img/trader profile pic/$trader_image' class='img-responsive' style='border-radius: 15px;' ></center><br/><h3 class='panel-title' align='center'>Name: $trader_name</h3>";
-                        }
+                        $trader_name = $row_trader['ADMIN_NAME'];
 
                         ?>
 
@@ -137,7 +133,7 @@ include('./connection.php');
                                             echo "active";
                                         } ?>">
 
-                                <a class="active btn " href="#">Trader Profile</a>
+                                <a class="active btn " href="#">Admin Profile</a>
 
                             </li>
 
@@ -145,7 +141,7 @@ include('./connection.php');
                                             echo "active";
                                         } ?>">
 
-                                <a class="btn " href=" traderproduct.php">My Products</a>
+                                <a class="btn " href=" traderproduct.php">Customers</a>
 
                             </li>
 
@@ -153,7 +149,7 @@ include('./connection.php');
                                             echo "active";
                                         } ?>">
 
-                                <a href="tradershop.php" class="btn ">Shop</a>
+                                <a href="tradershop.php" class="btn ">Shops</a>
 
                             </li>
 
@@ -179,44 +175,24 @@ include('./connection.php');
                     <div class=" column col-md-8">
 
                         <div class="row">
-                            <div class=" column3 col-md-8">
-                                <img style="width:80%; height:250px;  margin-top: 0px; justify-content: center; border-radius: 50%;" src="./assets/img/trader profile pic/<?php echo $d['TRADER_PROFILE'] ?> ">
-                            </div>
+        
 
                             <div class="column4 col-md-4">
                                 <ul class="list-unstyled">
 
-
                                     <h4 style="color:#233243;">Name:
                                         <i>
-                                            <?php echo $d['NAME'] ?>
+                                            <?php echo $d['ADMIN_NAME'] ?>
                                         </i>
                                     </h4>
 
-
-                                    <br>
-                                    <h4>Address :
-                                        <h3>
-                                            <?php echo $d['TRADER_ADDRESS'] ?>
-                                        </h3>
-                                    </h4>
-
-                                    <br>
-
-                                    <h4>Phone:
+                                    <h4 style="color:#233243;">Password:
                                         <i>
-                                            <?php echo $d['TRADER_PHONE'] ?>
+                                            <?php echo $d['ADMIN_PASS'] ?>
                                         </i>
                                     </h4>
 
-                                    <br>
 
-
-                                    <h4>Email:
-                                        <i>
-                                            <?php echo $d['TRADER_EMAIL'] ?>
-                                        </i>
-                                    </h4>
                                 </ul>
 
                             </div>
@@ -238,7 +214,7 @@ include('./connection.php');
     <?php include "./script.php" ?>
 
 <?php
-            }
+             }
             include './footer.php';
 ?>
 </body>
