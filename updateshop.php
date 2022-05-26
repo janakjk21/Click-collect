@@ -28,7 +28,7 @@ $shop_photo = $row_shop['SHOP_PHOTO'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CleckDiced</title>
+    <title>Edit Shop - Click & Collect Groceries</title>
     <link rel="stylesheet" href="Styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="Styles/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -57,41 +57,7 @@ $shop_photo = $row_shop['SHOP_PHOTO'];
         }
 
 
-        .navbar {
-            background-color: #000000;
-        }
-
-        .navbar-collapse .right {
-            float: right;
-        }
-
-        .navbar-brand {
-            float: left;
-            padding: 10px 15px;
-            font-size: 18px;
-            line-height: 20px;
-            height: 70px;
-        }
-
-        .navbar-brand:hover,
-        .navbar-brand:focus {
-            text-decoration: none;
-        }
-
-        .navbar ul.nav>li>a {
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        .navbar ul.nav>li>a:hover {
-            background: #e7e7e7;
-        }
-
-        .padding-nav {
-            padding-top: 10px;
-        }
-
+        
         .btn-primary {
             background: #ed0651;
 
@@ -128,7 +94,13 @@ $shop_photo = $row_shop['SHOP_PHOTO'];
         $customerid = $_SESSION['cid'];
     }
     ?>
+
+    <?php
+    include './navbar.php';
+    ?>
+
     <div class="row">
+    <div class="col-md-2"></div>
         <div class=" column col-md-8">
             <h1 align="center"> Edit Your Shop </h1>
 
@@ -171,7 +143,7 @@ $shop_photo = $row_shop['SHOP_PHOTO'];
 
                     <input type="file" name="SHOP_PHOTO" class="form-control form-height-custom">
 
-                    <img class="img-responsive" style="width: 100px; height: 100px;" src="tradershop/<?php echo $shop_photo; ?>" alt="product Image">
+                    <img class="img-responsive" style="width: 100px; height: 100px;" src="./assets/img/shop/<?php echo $shop_photo; ?>" alt="product Image">
 
                 </div><!-- form-group Finish -->
 
