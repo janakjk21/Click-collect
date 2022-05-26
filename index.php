@@ -86,9 +86,6 @@ if (!isset($_SESSION)) {
         ?>
     </div>
 
-    <?php
-    include "./script.php";
-    ?>
 
 
 
