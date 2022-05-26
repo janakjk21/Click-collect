@@ -248,7 +248,9 @@ if (!isset($_SESSION['tid'])) {
 
 
 
-
+    <?php
+    include 'footer.php';
+    ?>
 
     </div>
 
