@@ -167,7 +167,7 @@
         <hr>
         <div style="margin-top :70px; "></div>
         <div style="text-align: center; ">
-            <h1 style="font-size:50px ; "> Deal of The day</h1>
+            <h1 style="font-size:50px ; "> Products</h1>
         </div>
 
         <div class=" swiper mySwiper " style="background-color: #f9f9f9">

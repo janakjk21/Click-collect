@@ -35,8 +35,8 @@
                                 <li><a href="login.php"><i class="fas fa-long-arrow-alt-right"></i>Login</a></li>
                                 <li><a href="register.php"><i class="fas fa-long-arrow-alt-right"></i>Customer Registration</a></li>
                                 <li><a href="traderreg.php"><i class="fas fa-long-arrow-alt-right"></i>Trader Registration</a></li>
-                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Products</a></li>
-                                <li><a href="#"><i class="fas fa-long-arrow-alt-right"></i>Cart</a></li>
+                                <li><a href="./Product.php"><i class="fas fa-long-arrow-alt-right"></i>Products</a></li>
+                                <li><a href="./cart.php"><i class="fas fa-long-arrow-alt-right"></i>Cart</a></li>
                             </ul>
                         </div>
                     </div>
@@ -48,13 +48,13 @@
                                 <li>
                                     <div class="small-post-item">
                                         <a href="#" class="post-date">March 18, 2022</a>
-                                        <h6 class="small-post-title"><a href="#">Our new products</a></h6>
+                                        <h6 class="small-post-title"><a href="./Product.php">Our new products</a></h6>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="small-post-item">
                                         <a href="#" class="post-date">April 28, 2022</a>
-                                        <h6 class="small-post-title"><a href="#">Our new traders</a></h6>
+                                        <h6 class="small-post-title"><a href="./traderprofile.php">Our new traders</a></h6>
                                     </div>
                                 </li>
                             </ul>

@@ -96,7 +96,8 @@ include './navbar.php';
             if (!empty($cat)) {
               $s = "SELECT * FROM PRODUCT ,TRADER WHERE PRODUCT.PRODUCT_NAME LIKE '%$search%' AND TRADER.CATEGORY = '$cat' AND TRADER.TRADER_ID = PRODUCT.TRADER_ID";
             } else {
-              $s = "SELECT * FROM PRODUCT WHERE PRODUCT_NAME LIKE '%$search%'";
+              $s = "SELECT * FROM PRODUCT WHERE PRODUCT_NAME LIKE '%" . $search . "%'
+              ";
             }
 
             $n = oci_parse($conn, $s);
@@ -106,7 +107,7 @@ include './navbar.php';
               echo '<div class="col-md-4 center-responsive">';
               echo '<div class="product">';
 
-              echo '<img src="products/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-responsive">';
+              echo '<img src="./assets/img/product/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-responsive">';
               echo '<div class ="text">';
 
               echo '<h3>';
@@ -158,7 +159,7 @@ include './navbar.php';
               echo '<div class="col-md-4 col-sm-6 center-responsive">';
               echo '<div class="product">';
 
-              echo '<img src="products/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-responsive">';
+              echo '<img src="./assets/img/product/' . $ro['PRODUCT_PIC1'] . '" alt="product image" class="img-responsive">';
               echo '<div class ="text">';
 
               echo '<h3>';
@@ -196,7 +197,7 @@ include './navbar.php';
                 echo '</p>';
               } else {
 
-                echo '  <a class="btn btn-primary" href="details.php?pid=' . $row['PRODUCT_ID'] . '"><i class="fa fa-shopping-cart"></i> Add To Cart</a>';
+                echo '  <a class="btn btn-primary" href="details.php?pid=' . $ro['PRODUCT_ID'] . '"><i class="fa fa-shopping-cart"></i> Add To Cart</a>';
                 echo '</p>';
               }
 

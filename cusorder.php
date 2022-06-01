@@ -117,7 +117,7 @@ if (!isset($_SESSION['cid'])) {
 
             <p class="text-muted">
 
-                If you have any questions, feel free to <a href="contact1.php">Contact Us</a>. Our Customer Service work <strong>24/7</strong>
+                If you have any questions, feel free to Contact Us</a>. Our Customer Service work <strong>24/7</strong>
 
             </p>
 
@@ -156,7 +156,7 @@ if (!isset($_SESSION['cid'])) {
                     echo '<tbody>';
                     $m = $d['PRODUCT_ID'];
                     echo '<tr>';
-                    echo '<td><img src="products/' . $d['PRODUCT_PIC1'] . '" /> </td>';
+                    echo '<td><img src="./assets/img/product/' . $d['PRODUCT_PIC1'] . '" /> </td>';
                     echo '<td>' . $d['PRODUCT_NAME'] . '</td>';
                     echo '<td>$' . $d['PRODUCTPRICE'] . '</td>';
                     echo '<td>' . $d['QUANTITY'] . '</td>';

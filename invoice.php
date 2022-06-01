@@ -141,7 +141,7 @@ $active = 'Account';
             
                 <center>
                 
-                    <img src='images/$customer_image' class='img-responsive' >
+                    <img src='./assets/img/customer profile pic/$customer_image' class='img-responsive' >
                 
                 </center>
                 

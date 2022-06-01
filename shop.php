@@ -11,7 +11,7 @@ include("connection.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CLeckDiced</title>
+    <title>Shop - Click & Collect Groceries</title>
     <link rel="stylesheet" href="Styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -130,13 +130,13 @@ include("connection.php");
     ?>
 
     <?php } ?>
-    <div id="content" style="margin-top:5%;margin-buttom:5%;">
+    <div id="content" style="margin-top:5%;margin-bottom:5%;">
         <!-- #content Begin -->
         <div class="container">
             <div class='row'>
 
                 <!--col-md-3 end-->
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <!-- col-md-9 Begin -->
                     <div class="box">
                         <!-- box Begin -->
@@ -156,7 +156,7 @@ include("connection.php");
 
                         $i = 0;
 
-                        $get_p = "SELECT * FROM ( select * from SHOP ) WHERE ROWNUM <= 8 ";
+                        $get_p = "SELECT * FROM ( select * from SHOP ) WHERE ROWNUM <= 10 ";
 
                         $run_p = oci_parse($conn, $get_p);
                         oci_execute($run_p);
@@ -166,10 +166,10 @@ include("connection.php");
                             $p_des = $row_p['SHOP_PHOTO'];
                             $s_name = $row_p['SHOP_NAME'];
 
-                            echo '<div class="col card">';
+                            echo '<div class="col card col-md-4 center-responsive">';
                             echo '<div class="productshop">';
 
-                            echo '<img src="./assets/img/' . $row_p['SHOP_PHOTO'] . '" alt="product image" class="img-responsive">';
+                            echo '<img src="./assets/img/shop/' . $row_p['SHOP_PHOTO'] . '" alt="product image" class="img-responsive">';
                             echo '<div class ="text">';
 
                             echo '<h3>';

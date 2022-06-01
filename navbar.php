@@ -180,11 +180,11 @@ if (!empty($header[0]['currency_format'])) {
                 </div>
                 <div class="collapse navbar-collapse" id="openSearchbar">
                     <hr />
-                    <form action="product.php" method="get" class="form-inline d-flex d-md-none justify-content-center">
+                    <form action="product.php" method="get" value ='21'class="form-inline d-flex d-md-none justify-content-center">
                         <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" id="increase-width" name="search-product" placeholder="Search">
+                            <input type="text" class="form-control" id="increase-width" name="sid" placeholder="Search">
                             <div class="input-group-append">
-                                <button type="submit" class="btn btn-dark" name="submit-search"> <i class="text-white fas fa-search"></i></button>
+                                <button type="submit" class="btn btn-dark" name="submit-search" value="21"> <i class="text-white fas fa-search"></i></button>
                             </div>
                         </div>
                     </form>
@@ -193,7 +193,7 @@ if (!empty($header[0]['currency_format'])) {
                     <hr />
                     <form action="product.php" method="get" class="form-inline ml-auto mr-5 d-none d-md-flex my-4">
                         <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" name="search-product" id="increase-width" placeholder="Search">
+                            <input type="text" class="form-control" name="sid" id="increase-width" placeholder="Search">
                             <div class="input-group-append">
                                 <button type="submit" class="btn btn-dark" name="submit-search"> <i class="text-white fas fa-search"></i></button>
                             </div>
